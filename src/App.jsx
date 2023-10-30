@@ -1,19 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, {useState} from 'react';
 import './App.css'
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import {  Switch, Typography } from '@mui/material';
+
+import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [themeStatus, setThemeStatus] = useState('light')
+  const handleThemeToggle = () => {
+    const theme = themeStatus === 'light' ? 'dark' : 'light'
+    setThemeStatus(theme)
+  }
 
   return (
     <>
-      <h1>Faniriantsoa RANDRIAHARIMINO</h1>
+      <CustomThemeProvider onThemeChange={themeStatus} >
+        <Switch
+          checked={themeStatus === 'light' ? true : false}
+          onChange={handleThemeToggle}
+          inputProps={{ 'aria-label': 'controlled' }}
+        />
+        <Typography variant='h2'>Faniriantsoa</Typography>
+      </CustomThemeProvider>
     </>
   )
 }
