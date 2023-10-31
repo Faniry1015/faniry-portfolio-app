@@ -2,44 +2,49 @@ import React, { useEffect } from 'react';
 import '../Styles/NavBar.css'
 
 function NavBar() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Mettez à jour la classe "active" dans la barre de navigation
-          // en fonction de la section actuellement visible
-          const sectionId = entry.target.id;
-          const navLinks = document.querySelectorAll('.nav-link');
+    useEffect(() => {
+        const ratio = 0.6;
+        const windowHeight = window.innerHeight;
+        const y = Math.round(windowHeight * ratio); // Utilisez une multiplication plutôt qu'une affectation
 
-          navLinks.forEach((link) => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === sectionId) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    const navLinks = document.querySelectorAll('.nav-link');
 
-    const sections = document.querySelectorAll('section');
+                    navLinks.forEach((link) => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').slice(1) === sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            rootMargin: `-${windowHeight - y - 1}px 0px -${y}px 0px`, // Utilisez windowHeight au lieu de window.innerHeight
+        });
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+        const sections = document.querySelectorAll('section');
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
 
-  return (
-    <nav>
-      <a href="#accueil" className="nav-link active">Accueil</a>
-      <a href="#apropos" className="nav-link">À propos</a>
-      <a href="#projets" className="nav-link">Projets</a>
-      <a href="#contact" className="nav-link">Contact</a>
-    </nav>
-  );
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+
+    return (
+        <nav>
+            <a href="#accueil" className="nav-link active">Accueil</a>
+            <a href="#apropos" className="nav-link">À propos</a>
+            <a href="#projets" className="nav-link">Projets</a>
+            <a href="#contact" className="nav-link">Contact</a>
+        </nav>
+    );
 }
 
 export default NavBar;
