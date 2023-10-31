@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Button, createTheme, Paper, ThemeProvider, CssBaseline } from '@mui/material';
+import React from 'react'
+import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { orange } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
