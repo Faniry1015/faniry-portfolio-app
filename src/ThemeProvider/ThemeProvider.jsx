@@ -7,9 +7,9 @@ function CustomThemeProvider({ children, onThemeChange }) {
     const theme = createTheme({
         palette: {
             mode: onThemeChange,
-            primary: {
-                main: orange[500]
-            }
+            // primary: {
+            //     main: orange[500]
+            // }
         }
     })
     return (

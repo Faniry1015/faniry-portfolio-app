@@ -5,7 +5,6 @@ import { Typography } from '@mui/material';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
 
-
 function App() {
   const [themeStatus, setThemeStatus] = useState('light')
   const handleThemeToggle = (checked) => {
@@ -19,16 +18,16 @@ function App() {
         <Header onThemeChange={handleThemeToggle} />
         <Typography variant='h2'>Faniriantsoa</Typography>
         <div>
-          <section id="accueil"  style={{height: '200px'}} className=''>
+          <section id="propos"  style={{height: '200px'}} className='mainSection'>
             Contenu de la section Accueil
           </section>
-          <section id="apropos" style={{height: '600px'}} className=''>
+          <section id="competences" style={{height: '600px'}} className='mainSection'>
             Contenu de la section À propos
           </section>
-          <section id="projets" style={{height: '600px'}} className=''>
+          <section id="portfolio" style={{height: '600px'}} className='mainSection'>
             Contenu de la section Projets
           </section>
-          <section id="contact" style={{height: '600px'}} className=''>
+          <section id="contact" style={{height: '600px'}} className='mainSection'>
             Contenu de la section Contact
           </section>
         </div>

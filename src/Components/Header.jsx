@@ -11,7 +11,7 @@ function Header({ onThemeChange, accueilRef, aproposRef, projetsRef, contactRef 
         setIsLight(!isLight)
     }
 
-    return (
+    return (<>
         <div className='header'>
             <NavBar />
             <Switch
@@ -20,6 +20,8 @@ function Header({ onThemeChange, accueilRef, aproposRef, projetsRef, contactRef 
                 inputProps={{ 'aria-label': 'controlled' }}
             />
         </div>
+    </>
+
     )
 }
 
