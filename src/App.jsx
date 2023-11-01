@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
 import { Typography } from '@mui/material';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
 
 function App() {
   const [themeStatus, setThemeStatus] = useState('light')
-  const handleThemeToggle = (checked) => {
-    const theme = checked === true ? 'light' : 'dark'
+  const handleThemeToggle = (themeLabel) => {
+    const theme = themeLabel
     setThemeStatus(theme)
   }
 
@@ -16,10 +15,14 @@ function App() {
     <>
       <CustomThemeProvider onThemeChange={themeStatus} >
         <Header onThemeChange={handleThemeToggle} />
-        <Typography variant='h2'>Faniriantsoa</Typography>
         <div>
           <section id="propos"  style={{height: '200px'}} className='mainSection'>
-            Contenu de la section Accueil
+          <Typography variant='h1'>Bonjour je suis un titre H1</Typography>
+          <Typography variant='h2'>Bonjour je suis un titre H2</Typography>
+          <Typography variant='h3'>Bonjour je suis un titre H3</Typography>
+          <Typography>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, accusamus ipsum corrupti hic placeat assumenda, veniam consequatur ab at aspernatur adipisci. Quam, consectetur. Saepe unde rem, repellendus error necessitatibus est!
+          </Typography>
           </section>
           <section id="competences" style={{height: '600px'}} className='mainSection'>
             Contenu de la section À propos

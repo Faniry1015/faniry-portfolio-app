@@ -1,7 +1,12 @@
-.active {
-    color: red;
+header button.active,
+header button:hover {
+    background: #90a4ae;
 }
 
-button.active {
-    background: #808080;
+button.activeMode {
+    background: #90a4ae ;
+}
+
+#root .header {
+    top: 0
 }
