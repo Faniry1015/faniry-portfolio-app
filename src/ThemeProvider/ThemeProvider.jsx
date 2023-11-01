@@ -1,15 +1,15 @@
 import React from 'react'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
-import { orange } from '@mui/material/colors'
+import { blue, orange } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
 
     const theme = createTheme({
         palette: {
             mode: onThemeChange,
-            // primary: {
-            //     main: orange[500]
-            // }
+            primary: {
+                main: blue[900]
+            }
         }
     })
     return (
