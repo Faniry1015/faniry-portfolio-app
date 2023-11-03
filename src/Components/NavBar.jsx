@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/NavBar.css'
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import { AppBar, Menu, Container, Button, ButtonGroup, Typography, IconButton, Toolbar, Box, Avatar, MenuItem } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import MenuItem from '@mui/material/MenuItem';
-import { blueGrey } from '@mui/material/colors';
-import { Switch, FormControlLabel, FormGroup } from '@mui/material';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
+import { blueGrey } from '@mui/material/colors';
 
-function NavBar({ onThemeChange, isDarkMode }) {
-    const [mode, setMode] = useState('light')
+function NavBar({ onThemeChange }) {
 
     const sections = [
         { label: 'A propos', id: 'propos' },
@@ -72,17 +60,16 @@ function NavBar({ onThemeChange, isDarkMode }) {
     const handleThemeToggle = (e) => {
         const activedButton = e.target
         onThemeChange(activedButton.id)
-        const elementActived = document.querySelectorAll('.activeMode')
-        elementActived.forEach(element => element.classList.remove('activeMode'))
+        const elementsActive = document.querySelectorAll('.activeMode')
+        elementsActive.forEach(element => element.classList.remove('activeMode'))
         activedButton.classList.add('activeMode')
-
     }
 
     return (<>
         <AppBar position="sticky">
-            <Container sx={{ height: 100 }} maxWidth="xxl">
-                <Toolbar sx={{ height: '100%' }} disableGutters>
-                    <Box sx={{ mr: 2, flexGrow: 0 }}>
+            <Container sx={{ height: 100 }} maxWidth="xl">
+                <Toolbar sx={{ height: '100%', }} disableGutters>
+                    <Box sx={{ mr: 2, flexGrow: 0, position: 'sticky', top: 0 }}>
                         <IconButton sx={{ p: 2 }}>
                             <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} alt="Faniry R." src="src\assets\images\faniry.png" />
                         </IconButton>
@@ -93,8 +80,8 @@ function NavBar({ onThemeChange, isDarkMode }) {
                         component="a"
                         href="#app-bar-with-responsive-menu"
                         sx={{
-                            mr: 2,
-                            fontFamily: 'monospace',
+                            mr: 1,
+                            fontSize: '0.9em',
                             fontWeight: 700,
                             letterSpacing: '.1rem',
                             color: 'inherit',
@@ -104,7 +91,7 @@ function NavBar({ onThemeChange, isDarkMode }) {
                         Faniriantsoa <br /> RANDRIAHARIMINO
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+                    <Box sx={{ flexGrow: 1, display: {xs: 'flex', sm: 'flex', md: 'flex', lg: 'none' }, justifyContent: 'flex-end'}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -130,23 +117,38 @@ function NavBar({ onThemeChange, isDarkMode }) {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: { md: 'block', lg: 'none' },
                             }}
                         >
                             {sections.map((section) => (
                                 <MenuItem key={section.id} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center"><a href={`#${section.id}`} className="nav-link">{section.label}</a></Typography>
                                 </MenuItem>
+
                             ))}
+                            <MenuItem>
+                                <Box>
+                                    <Typography variant='h6' sx={{ color: 'grey' }}>Mode</Typography>
+                                    <ButtonGroup
+                                        variant="outlined"
+                                        color='success'
+                                        aria-label="outlined primary button group"
+                                        sx={{ height: '50%', margin: 1 }}
+                                    >
+                                        <Button id='light' className='' style={{ color: 'yellow' }} onClick={handleThemeToggle} startIcon={<LightModeOutlined />}>Light</Button>
+                                        <Button id='dark' className='' style={{ color: 'grey' }} onClick={handleThemeToggle} startIcon={<DarkModeOutlined />}>Dark</Button>
+                                    </ButtonGroup>
+                                </Box>
+                            </MenuItem>
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', flexGrow: 1, height: '100%' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
                         {sections.map((section) => (
                             <Button
                                 key={section.id}
                                 onClick={handleCloseNavMenu}
                                 sx={{
-                                    my: 2, px: 5, fontSize: '1em', color: 'white', display: 'block', height: '100%', m: 0, '&:hover': {
+                                    my: 1, px: 2, fontSize: '1em', color: 'white', display: 'block', height: '100%', m: 0, '&:hover': {
                                         backgroundColor: blueGrey[300],
                                     }
                                 }}
@@ -154,18 +156,19 @@ function NavBar({ onThemeChange, isDarkMode }) {
                                 <a href={`#${section.id}`} className="nav-link active">{section.label}</a>
                             </Button>
                         ))}
+                        <Box>
+                            <Typography variant='h6' sx={{textAlign: 'center', color: 'grey', fontSize:'1em' }}>MODE</Typography>
+                            <ButtonGroup
+                                variant="outlined"
+                                color='success'
+                                aria-label="outlined primary button group"
+                                sx={{fontSize: '0.6em', height: '50%', margin: 0.5 }}
+                            >
+                                <Button id='light' className='' style={{ color: 'yellow', fontSize: '1em' }} onClick={handleThemeToggle} startIcon={<LightModeOutlined />}>Light</Button>
+                                <Button id='dark' className='' style={{ color: 'grey', fontSize: '1em' }} onClick={handleThemeToggle} startIcon={<DarkModeOutlined />}>Dark</Button>
+                            </ButtonGroup>
+                        </Box>
                     </Box>
-                    <Box>
-                        <ButtonGroup
-                            disableElevation
-                            variant="outlined"
-                            aria-label="outlined primary button group"
-                        >
-                            <Button id='light' className='activeMode' style={{ color: 'yellow' }}onClick={handleThemeToggle} startIcon={<LightModeOutlined />}>Light</Button>
-                            <Button id='dark' style={{ color: 'grey' }} onClick={handleThemeToggle} startIcon={<DarkModeOutlined />}>Dark</Button>
-                        </ButtonGroup>
-                    </Box>
-
                 </Toolbar>
             </Container>
         </AppBar>
