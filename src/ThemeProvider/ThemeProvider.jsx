@@ -6,24 +6,28 @@ import { blue, purple } from '@mui/material/colors'
 function CustomThemeProvider({ children, onThemeChange }) {
 
     const customTypography = {
-        fontSize: 18,
-        fontWeightRegular: 300,
-        h1: {
-            fontFamily: 'Poppins',
-            textTransform: 'uppercase',
-        },
-        h2: {
-            fontFamily: 'Poppins',
-            fontSize: '3em',
-            textTransform: 'uppercase',
-            fontWeight: 'bold'
-        },
-        h3: {
-            fontFamily: 'Poppins',
-            fontSize: '2em',
-            textTransform: 'uppercase',
-            fontWeight: 'bold'
-        },
+        typography: {
+            fontSize: 18,
+            fontWeightRegular: 300,
+            h1: {
+                fontFamily: 'Poppins',
+                fontSize: '3rem',
+                textTransform: 'uppercase',
+            },
+            h2: {
+                fontFamily: 'Poppins',
+                fontSize: '3em',
+                textTransform: 'uppercase',
+                fontWeight: 'bold'
+            },
+            h3: {
+                fontFamily: 'Poppins',
+                fontSize: '2em',
+                textTransform: 'uppercase',
+                fontWeight: 'bold'
+            },
+        }
+
     }
 
     const ligthTheme = createTheme({
@@ -33,20 +37,20 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 main: '#07418C',
             }
         },
-        typography: customTypography
+        ...customTypography
     })
 
     const darkTheme = createTheme({
         palette: {
             mode: 'dark',
-            secondary: {
+            primary: {
                 main: purple[800],
             }
         },
-        typography: customTypography
+        ...customTypography
     })
 
-    
+
     const [theme, setTheme] = useState(ligthTheme)
 
     useEffect(() => {

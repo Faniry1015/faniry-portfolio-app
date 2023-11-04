@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Typography } from '@mui/material';
+import { Typography  } from '@mui/material';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
 import APropos from './Components/APropos';
@@ -21,6 +21,7 @@ function App() {
           <section id="competences" style={{ height: '600px' }} className='mainSection'>
           <Typography>
           Contenu de la section À propos
+
           </Typography>
             
           </section>
