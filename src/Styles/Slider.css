@@ -70,13 +70,13 @@
   }
 
   .carousel .slides .slide {
-      background: #dadada;
+      background: none;
       display: flex;
       position: relative;
   }
 
   .carousel .slides .slide .slideInner {
-      background: #dadada;
+      background: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -100,7 +100,7 @@
 
   .customSlide {
       flex-direction: row;
-      background: orange;
+      background: grey;
       width: 100%;
       height: 100%;
   }

@@ -59,10 +59,12 @@ function NavBar({ onThemeChange }) {
 
     const handleThemeToggle = (e) => {
         const activedButton = e.target
-        onThemeChange(activedButton.id)
-        const elementsActive = document.querySelectorAll('.activeMode')
-        elementsActive.forEach(element => element.classList.remove('activeMode'))
-        activedButton.classList.add('activeMode')
+        if (e.target.id !== '') {
+            onThemeChange(activedButton.id)
+            const elementsActive = document.querySelectorAll('.activeMode')
+            elementsActive.forEach(element => element.classList.remove('activeMode'))
+            activedButton.classList.add('activeMode')
+        }
     }
 
     return (<>

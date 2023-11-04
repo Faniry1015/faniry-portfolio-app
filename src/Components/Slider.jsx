@@ -18,38 +18,25 @@ function Slider() {
 
   const slides = [
     {
-      title: "Slide #1",
-      content: () => <p>You can add any type of content here!</p>,
-    },
-    {
-      title: "Slide #2 (wrapped in a div)",
-      content: () => (
-        <div className="customSlide">
-          <h3>2</h3>
-          <p>I'm just another slide</p>
-          <p>Wrapped in a <code>div</code>!</p>
-        </div>
-      ),
+        content: () => (
+            <div className="withImage w-100">
+              <img src="src/assets/images/pcCode.jpg" className='w-100'/>
+            </div>
+          ),
     },
     {
       content: () => (
         <div className="withImage w-100">
-          <img src="src/assets/images/responsiveWebsite.jpg" className='w-100'/>
+          <img src="src\assets\images\responsiveWebsite.png" className='w-100'/>
         </div>
       ),
     },
     {
-      title: "Slide #4",
-      content: () => (
-        <>
-          <h2>Style me!</h2>{" "}
-          <small>...in any way you please</small>
-        </>
-      ),
-    },
-    {
-      title: "Slide #5",
-      content: () => <h3>I'm the final slide...</h3>,
+        content: () => (
+            <div className="withImage w-100">
+              <img src="src\assets\images\reactJS.jpg" className='w-100'/>
+            </div>
+          ),
     },
   ];
 
@@ -57,7 +44,7 @@ function Slider() {
     <div className='w-100'>
       <Carousel
         slides={slides}
-        speed={3000}
+        speed={10000}
         slideWidth={windowWidth}
         slideHeight={windowWidth/2}
         autoScroll
@@ -69,7 +56,7 @@ function Slider() {
 const Carousel = ({
   slides = [],
   speed = 4000,
-  transitionSpeed = 500,
+  transitionSpeed = 1000,
   slideWidth = 300,
   slideHeight = 300,
   autoScroll,

@@ -1,15 +1,22 @@
 import React from 'react'
-import { Typography, Box } from '@mui/material'
+import { Typography, Box, Container } from '@mui/material'
 import CarouselWrapper from './Slider'
+import { blueGrey } from '@mui/material/colors'
+
 
 function APropos() {
     return (
-        <Box id="propos" className='mainSection' sx={{width: '100%'}}>
-        <CarouselWrapper />
-        <img className='aProposBg w-100' src="src\assets\images\responsiveWebsite.jpg" alt="responsive web design" />
-
+        <Box>
+            <Box id="propos" className='mainSection' sx={{ width: '100%', position: 'absolute' }}>
+                <CarouselWrapper />
+            </Box>
+            <Box  sx={{color: blueGrey[100], position: 'relative', zIndex: 10 }}>
+                <Typography variant='h1'>
+                    Faniriantsoa RANDRIAHARIMINO
+                </Typography>
+            </Box>
         </Box>
-    )
+                    )
 }
 
 export default APropos
