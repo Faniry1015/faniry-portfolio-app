@@ -28,14 +28,14 @@ function Slider() {
     {
       content: () => (
         <Box className="withImage w-100" sx={{background: theme => theme.palette.background.img}}>
-          <img src="src\assets\images\websiteConcept.jpg" className='w-100' />
+          <img src="src\assets\images\code.png" className='w-100' />
         </Box>
       ),
     },
     {
         content: () => (
             <Box className="withImage w-100">   
-              <img src="src\assets\images\react.jpg" className='w-100'/>
+              <img src="src\assets\images\react.webp" className='w-100'/>
             </Box>
           ),
     },

@@ -9,8 +9,8 @@ function APropos() {
     return (
         <Box>
             <Box className='sliderAndText' sx={{ position: 'relative', height: 'fitContent%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Box id="propos" sx={{height: '50%', width: '50%', p: 5, position: 'absolute', zIndex: 10, borderTop: '20px solid', borderColor: theme => theme.palette.primary.main, background: theme => theme.palette.background.secondary}}>
-                    <Typography className='mainTitle' variant='h1' sx={{color: lime['A200'], textAlign: 'center'}} >
+                <Box id="propos" sx={{height: '100%', width: '100%', p: 5, position: 'absolute', zIndex: 10, background: theme => theme.palette.background.secondary}}>
+                    <Typography className='mainTitle' variant='h1' sx={{textAlign: 'center'}} >
                         Développeur <br/> front-end junior
                     </Typography>
                 </Box>

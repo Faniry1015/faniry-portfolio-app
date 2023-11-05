@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
-import { blueGrey } from '@mui/material/colors'
+import { lime } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
 
@@ -9,10 +9,6 @@ function CustomThemeProvider({ children, onThemeChange }) {
         typography: {
             fontSize: 18,
             fontWeightRegular: 300,
-            h1: {
-                fontFamily: 'Poppins, Roboto, Arial',
-                fontSize: '3em',
-            },
             h2: {
                 fontFamily: 'Poppins, Roboto, Arial',
                 fontSize: '3em',
@@ -32,14 +28,20 @@ function CustomThemeProvider({ children, onThemeChange }) {
         palette: {
             mode: 'light',
             primary: {
-                main: '#07418C',
+                main: '#33658a',
             },
             background: {
-                secondary: '#30bced22',
-                img: blueGrey[900]
+                secondary: '#84cae733',
             },
         },
         ...customTheme,
+        typography: {
+            h1: {
+                fontFamily: 'Poppins, Roboto, Arial',
+                fontSize: '3em',
+                color: 'yellow'
+            },
+        },
     })
 
     const darkTheme = createTheme({
@@ -49,10 +51,17 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 main: '#121212',
             },
             background: {
-                secondary: '#6c698d99'
+                secondary: '#6c698d33'
             },
         },
-        ...customTheme
+        ...customTheme,
+        typography: {
+            h1: {
+                fontFamily: 'Poppins, Roboto, Arial',
+                fontSize: '3em',
+                color: lime[500]
+            },
+        },
     })
 
 
