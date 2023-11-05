@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Box } from '@mui/material'
 import '../Styles/Slider.css'
 
 function Slider() {
@@ -19,29 +20,29 @@ function Slider() {
   const slides = [
     {
         content: () => (
-            <div className="withImage w-100">
+            <Box className="withImage w-100">
               <img src="src/assets/images/pcCode.jpg" className='w-100'/>
-            </div>
+            </Box>
           ),
     },
     {
       content: () => (
-        <div className="withImage w-100">
-          <img src="src\assets\images\responsiveWebsite.png" className='w-100'/>
-        </div>
+        <Box className="withImage w-100" sx={{background: theme => theme.palette.background.img}}>
+          <img src="src\assets\images\websiteConcept.jpg" className='w-100' />
+        </Box>
       ),
     },
     {
         content: () => (
-            <div className="withImage w-100">
-              <img src="src\assets\images\reactJS.jpg" className='w-100'/>
-            </div>
+            <Box className="withImage w-100">   
+              <img src="src\assets\images\react.jpg" className='w-100'/>
+            </Box>
           ),
     },
   ];
 
   return (
-    <div className='w-100'>
+    <Box className='w-100'>
       <Carousel
         slides={slides}
         speed={10000}
@@ -49,7 +50,7 @@ function Slider() {
         slideHeight={windowWidth/2}
         autoScroll
       />
-    </div>
+    </Box>
   );
 }
 
@@ -159,15 +160,15 @@ const Carousel = ({
   };
 
   return (
-    <div className="carousel">
+    <Box className="carousel">
       {!autoScroll && !manualMode && (
-        <div className="controls">
+        <Box className="controls">
           <a onClick={start}>Start</a>
           <a onClick={stop}>Stop</a>
-        </div>
+        </Box>
       )}
 
-      <div className="slidesContainer" style={slideDimensionStyles()}>
+      <Box className="slidesContainer" style={slideDimensionStyles()}>
         {!!manualMode && (
           <>
             <a
@@ -185,35 +186,35 @@ const Carousel = ({
           </>
         )}
 
-        <div className="slideIndicator">
+        <Box className="slideIndicator">
           {stateSlides.map((slide, index) => {
             if (index === 0 || index === stateSlides.length - 1) {
               return null;
             }
             return (
-              <div
+              <Box
                 key={index}
                 onClick={() => setVisibleSlide(index)}
                 className={`dot ${dotIsActive(index) ? "active" : ""}`}
               />
             );
           })}
-        </div>
+        </Box>
 
-        <div
+        <Box
           id="slides"
           className={`slides ${hasTransitionClass ? "transition" : ""}`}
           style={{ left: calculateLeftMargin() }}
         >
           {stateSlides.map((slide, index) => (
-            <div key={index} className="slide" style={slideDimensionStyles()}>
-              {!!slide.title && <div className="title">{slide.title}</div>}
-              <div className="slideInner">{slide.content()}</div>
-            </div>
+            <Box key={index} className="slide" style={slideDimensionStyles()}>
+              {!!slide.title && <Box className="title">{slide.title}</Box>}
+              <Box className="slideInner">{slide.content()}</Box>
+            </Box>
           ))}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

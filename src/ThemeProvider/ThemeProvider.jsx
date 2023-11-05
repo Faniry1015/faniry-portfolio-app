@@ -1,33 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
-import { blue, purple } from '@mui/material/colors'
+import { blueGrey } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
 
-    const customTypography = {
+    const customTheme = {
         typography: {
             fontSize: 18,
             fontWeightRegular: 300,
             h1: {
-                fontFamily: 'Poppins',
-                fontSize: '3rem',
-                textTransform: 'uppercase',
+                fontFamily: 'Poppins, Roboto, Arial',
+                fontSize: '3em',
             },
             h2: {
-                fontFamily: 'Poppins',
+                fontFamily: 'Poppins, Roboto, Arial',
                 fontSize: '3em',
                 textTransform: 'uppercase',
                 fontWeight: 'bold'
             },
             h3: {
-                fontFamily: 'Poppins',
+                fontFamily: 'Poppins, Roboto, Arial',
                 fontSize: '2em',
                 textTransform: 'uppercase',
                 fontWeight: 'bold'
             },
         }
-
     }
 
     const ligthTheme = createTheme({
@@ -35,19 +33,26 @@ function CustomThemeProvider({ children, onThemeChange }) {
             mode: 'light',
             primary: {
                 main: '#07418C',
-            }
+            },
+            background: {
+                secondary: '#30bced22',
+                img: blueGrey[900]
+            },
         },
-        ...customTypography
+        ...customTheme,
     })
 
     const darkTheme = createTheme({
         palette: {
             mode: 'dark',
             primary: {
-                main: purple[800],
-            }
+                main: '#121212',
+            },
+            background: {
+                secondary: '#6c698d99'
+            },
         },
-        ...customTypography
+        ...customTheme
     })
 
 
