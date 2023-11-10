@@ -1,33 +1,15 @@
+import { Box } from '@mui/system'
+import { Typography } from '@mui/material'
 import React from 'react'
-import '../Styles/APropos.css'
-import { Typography, Box, Button } from '@mui/material'
-import CarouselWrapper from './Slider'
-import { blueGrey, amber, lime} from '@mui/material/colors'
-
 
 function APropos() {
     return (
         <Box>
-            <Box className='sliderAndText' sx={{ position: 'relative', height: 'fitContent%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Box id="propos" sx={{height: '100%', width: '100%', p: 5, position: 'absolute', zIndex: 10, background: theme => theme.palette.background.secondary}}>
-                    <Typography className='mainTitle' variant='h1' sx={{textAlign: 'center'}} >
-                        Développeur <br/> front-end junior
-                    </Typography>
-                </Box>
-                <CarouselWrapper />
-            </Box>
-
-            <Box id='propos'>
-                <Box>
-                    <Typography>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, a dignissimos ratione, nemo temporibus doloremque similique deserunt cumque necessitatibus voluptates odit repellat nobis asperiores, eius perspiciatis impedit dolorum dolor? Laborum.
-                    </Typography>
-                    <Button>Test du bouton</Button>
-                </Box>
-            </Box>
-
+        <Typography variant='h3' id='Propos'>
+            A propos de moi
+        </Typography>
+            Bonjour, je suis Faniriantsoa RANDRIAHARIMINO, Ingénieur Agronome de formation, passionné par les nouvelles technologies. Mon expérience en tant que chef de service du système d'information et du suivi-évaluation au Ministère de l'Agriculture et de l'Élevage à Madagascar a considérablement renforcé ma passion pour la tech. Récemment, j'ai saisi l'opportunité d'un programme de formation financé par l'Organisation Internationale de la Francophonie pour évoluer en tant que développeur. Malgré ma récente immersion dans ce domaine, j'ai déjà concrétisé plusieurs projets, que vous pouvez explorer ici. N'hésitez pas à me contacter si mon profil vous intéresse. Je suis ouvert à des collaborations passionnantes.
         </Box>
-
     )
 }
 

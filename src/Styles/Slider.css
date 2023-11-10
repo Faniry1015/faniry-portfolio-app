@@ -30,7 +30,7 @@
   }
 
   .carousel .slidesContainer .slideIndicator .dot.active {
-      background: black;
+      background: rgba(128, 0, 128, 0.5);
   }
 
   .carousel .slidesContainer .scrollLeft,
@@ -107,4 +107,8 @@
 
   .withImage {
       overflow: hidden;
+  }
+
+  .bluredImg {
+    filter: blur(2px)
   }

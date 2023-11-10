@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Typography  } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
+import MainCarousel from './Components/MainCarousel';
 import APropos from './Components/APropos';
 
 function App() {
@@ -16,14 +17,18 @@ function App() {
     <>
       <CustomThemeProvider onThemeChange={themeStatus} >
         <Header onThemeChange={handleThemeToggle} />
+        <MainCarousel />
+        <Box sx={{ mx: 7, textAlign: 'justify' }}>
         <APropos />
+        </Box>
+
         <div>
           <section id="competences" style={{ height: '600px' }} className='mainSection'>
-          <Typography>
-          Contenu de la section À propos
+            <Typography>
+              Contenu de la section À propos
 
-          </Typography>
-            
+            </Typography>
+
           </section>
           <section id="portfolio" style={{ height: '600px' }} className='mainSection'>
             Contenu de la section Projets

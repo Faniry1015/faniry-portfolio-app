@@ -21,13 +21,13 @@ function Slider() {
     {
         content: () => (
             <Box className="withImage w-100">
-              <img src="src/assets/images/pcCode.jpg" className='w-100'/>
+              <img src="src/assets/images/pcCode.jpg" className='w-100 bluredImg'/>
             </Box>
           ),
     },
     {
       content: () => (
-        <Box className="withImage w-100" sx={{background: theme => theme.palette.background.img}}>
+        <Box className="withImage w-100" >
           <img src="src\assets\images\code.png" className='w-100' />
         </Box>
       ),
@@ -45,9 +45,9 @@ function Slider() {
     <Box className='w-100'>
       <Carousel
         slides={slides}
-        speed={10000}
+        speed={5000}
         slideWidth={windowWidth}
-        slideHeight={windowWidth/2}
+        slideHeight={windowWidth/2.5}
         autoScroll
       />
     </Box>
@@ -57,9 +57,9 @@ function Slider() {
 const Carousel = ({
   slides = [],
   speed = 4000,
-  transitionSpeed = 1000,
+  transitionSpeed = 3000,
   slideWidth = 300,
-  slideHeight = 300,
+  slideHeight = 200,
   autoScroll,
   manualMode,
 }) => {

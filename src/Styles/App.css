@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'ConcertOne';
+  src: url('../assets/fonts/Concert_One/ConcertOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Roboto';
   src: url('../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;

@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
-import { lime } from '@mui/material/colors'
+import { lime, teal, purple } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
 
     const customTheme = {
         typography: {
-            fontSize: 18,
+            fontSize: 16,
             fontWeightRegular: 300,
+            fontFamily: 'Poppins, Roboto, Arial',
+            h1: {
+                fontFamily: 'ConcertOne, Roboto, Arial',
+                fontSize: '4em',
+            },
             h2: {
                 fontFamily: 'Poppins, Roboto, Arial',
                 fontSize: '3em',
@@ -21,7 +26,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 textTransform: 'uppercase',
                 fontWeight: 'bold'
             },
-        }
+        },
     }
 
     const ligthTheme = createTheme({
@@ -31,17 +36,27 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 main: '#33658a',
             },
             background: {
-                secondary: '#84cae733',
+                secondary: '#84cae744',
+            },
+        },
+        typography: {
+            h1: {
+                color: 'yellow',
+            },
+        },
+        components: {
+            MuiButton: {
+                styleOverrides: {
+                    root: ({ ownerState }) => ({
+                        ...(ownerState.variant === 'contained' &&
+                            ownerState.color === 'primary' && {
+                            backgroundColor: teal[500],
+                        }),
+                    }),
+                },
             },
         },
         ...customTheme,
-        typography: {
-            h1: {
-                fontFamily: 'Poppins, Roboto, Arial',
-                fontSize: '3em',
-                color: 'yellow'
-            },
-        },
     })
 
     const darkTheme = createTheme({
@@ -51,17 +66,27 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 main: '#121212',
             },
             background: {
-                secondary: '#6c698d33'
+                secondary: '#6c698d44'
+            },
+        },
+        typography: {
+            h1: {
+                color: lime[500],
+            },
+        },
+        components: {
+            MuiButton: {
+                styleOverrides: {
+                    root: ({ ownerState }) => ({
+                        ...(ownerState.variant === 'contained' &&
+                            ownerState.color === 'primary' && {
+                            backgroundColor: purple[600],
+                        }),
+                    }),
+                },
             },
         },
         ...customTheme,
-        typography: {
-            h1: {
-                fontFamily: 'Poppins, Roboto, Arial',
-                fontSize: '3em',
-                color: lime[500]
-            },
-        },
     })
 
 
