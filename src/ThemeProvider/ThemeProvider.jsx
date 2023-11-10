@@ -21,10 +21,13 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 fontWeight: 'bold'
             },
             h3: {
-                fontFamily: 'Poppins, Roboto, Arial',
+                fontFamily: 'Roboto, Roboto, Arial',
                 fontSize: '2em',
+                textAlign: 'center',
                 textTransform: 'uppercase',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                marginTop: '50px',
+                marginBottom: '25px'
             },
         },
     }
