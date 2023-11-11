@@ -9,8 +9,7 @@ import APropos from './Components/APropos';
 function App() {
   const [themeStatus, setThemeStatus] = useState('light')
   const handleThemeToggle = (themeLabel) => {
-    const theme = themeLabel
-    setThemeStatus(theme)
+    setThemeStatus(themeLabel)
   }
 
   return (

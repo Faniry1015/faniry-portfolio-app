@@ -15,7 +15,7 @@ function MainCarousel() {
                         </Typography>
                     </Box>
                     <Box sx={{ m: 7 }}>
-                        <Button variant='contained' href="#propos" sx={{ fontSize: '1.3em' }}>
+                        <Button variant='contained' size='large' href="#propos" >
                             Qui suis-je ?
                         </Button>
                     </Box>

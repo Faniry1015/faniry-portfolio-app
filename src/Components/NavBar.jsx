@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/NavBar.css'
-import { AppBar, Menu, Container, Button, ButtonGroup, Typography, IconButton, Toolbar, Box, Avatar, MenuItem } from '@mui/material'
+import {
+    AppBar,
+    Menu,
+    Container,
+    Button,
+    ButtonGroup,
+    ToggleButtonGroup,
+    ToggleButton,
+    Typography,
+    IconButton,
+    Toolbar,
+    Box,
+    Avatar,
+    MenuItem
+} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { blueGrey } from '@mui/material/colors';
@@ -59,11 +73,11 @@ function NavBar({ onThemeChange }) {
 
     const handleThemeToggle = (e) => {
         const activedButton = e.target
-        if (e.target.id !== '') {
-            onThemeChange(activedButton.id)
-            const elementsActive = document.querySelectorAll('.activeMode')
-            elementsActive.forEach(element => element.classList.remove('activeMode'))
-            activedButton.classList.add('activeMode')
+        if (e.target.value !== '') {
+            onThemeChange(activedButton.value)
+            // const elementsActive = document.querySelectorAll('.activeMode')
+            // elementsActive.forEach(element => element.classList.remove('activeMode'))
+            // activedButton.classList.add('activeMode')
         }
     }
 
@@ -93,7 +107,7 @@ function NavBar({ onThemeChange }) {
                         Faniriantsoa <br /> RANDRIAHARIMINO
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: {xs: 'flex', sm: 'flex', md: 'flex', lg: 'none' }, justifyContent: 'flex-end'}}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -159,16 +173,22 @@ function NavBar({ onThemeChange }) {
                             </Button>
                         ))}
                         <Box>
-                            <Typography variant='h6' sx={{textAlign: 'center', color: 'grey', fontSize:'1em' }}>MODE</Typography>
-                            <ButtonGroup
-                                variant="outlined"
+                            <Typography variant='h6' sx={{ textAlign: 'center', color: 'grey', fontSize: '1em' }}>MODE</Typography>
+                            <ToggleButtonGroup
+                                variant="contained"
                                 color='success'
-                                aria-label="outlined primary button group"
-                                sx={{fontSize: '0.6em', height: '50%', margin: 0.5 }}
+                                aria-label="app mode"
+                                sx={{ fontSize: '0.6em', height: '50%', margin: 0.5 }}
+                                onChange={handleThemeToggle}
+                                exclusive
                             >
-                                <Button id='light' className='' style={{ color: 'yellow', fontSize: '1em' }} onClick={handleThemeToggle} startIcon={<LightModeOutlined />}>Light</Button>
-                                <Button id='dark' className='' style={{ color: 'grey', fontSize: '1em' }} onClick={handleThemeToggle} startIcon={<DarkModeOutlined />}>Dark</Button>
-                            </ButtonGroup>
+                                <ToggleButton value='light' style={{ color: 'yellow', fontSize: '1em' }} startIcon={<LightModeOutlined />}>
+                                    Light
+                                </ToggleButton>
+                                <ToggleButton value='dark' style={{ color: 'grey', fontSize: '1em' }} startIcon={<DarkModeOutlined />}>
+                                    Dark
+                                </ToggleButton>
+                            </ToggleButtonGroup>
                         </Box>
                     </Box>
                 </Toolbar>

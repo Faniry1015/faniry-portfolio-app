@@ -12,7 +12,6 @@ function Header({ onThemeChange}) {
         </Container>
         <NavBar onThemeChange={onThemeChange} />
     </>
-
     )
 }
 
