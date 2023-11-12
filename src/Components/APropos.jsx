@@ -4,7 +4,7 @@ import React from 'react'
 
 function APropos() {
     return (
-        <Box>
+        <Box component='section'>
             <Typography variant='h3' color='secondary' id='Propos'>
                 A propos de moi
             </Typography>

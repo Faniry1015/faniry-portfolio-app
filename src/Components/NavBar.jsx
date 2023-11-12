@@ -145,15 +145,20 @@ function NavBar({ onThemeChange }) {
                             <MenuItem>
                                 <Box>
                                     <Typography variant='h6' sx={{ color: 'grey' }}>Mode</Typography>
-                                    <ButtonGroup
-                                        variant="outlined"
-                                        color='success'
-                                        aria-label="outlined primary button group"
-                                        sx={{ height: '50%', margin: 1 }}
+                                    <ToggleButtonGroup
+                                        variant='contained'
+                                        aria-label="app dark/light mode"
+                                        value={mode}
+                                        onChange={handleThemeToggle}
+                                        exclusive
                                     >
-                                        <Button id='light' className='' style={{ color: 'yellow' }} onClick={handleThemeToggle} startIcon={<LightModeOutlined />}>Light</Button>
-                                        <Button id='dark' className='' style={{ color: 'grey' }} onClick={handleThemeToggle} startIcon={<DarkModeOutlined />}>Dark</Button>
-                                    </ButtonGroup>
+                                        <ToggleButton value='light' aria-label='light mode' style={{ color: 'yellow' }}>
+                                            <LightModeOutlined /> Light
+                                        </ToggleButton>
+                                        <ToggleButton value='dark' aria-label='dark mode' style={{ color: 'grey' }}>
+                                            <DarkModeOutlined /> Dark
+                                        </ToggleButton>
+                                    </ToggleButtonGroup>
                                 </Box>
                             </MenuItem>
                         </Menu>
