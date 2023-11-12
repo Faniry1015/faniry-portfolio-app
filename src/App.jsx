@@ -18,7 +18,7 @@ function App() {
         <Header onThemeChange={handleThemeToggle} />
         <MainCarousel />
         <Box sx={{ mx: 7, textAlign: 'justify' }}>
-        <APropos />
+          <APropos />
         </Box>
 
         <div>

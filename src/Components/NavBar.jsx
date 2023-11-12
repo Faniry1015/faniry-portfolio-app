@@ -94,11 +94,11 @@ function NavBar({ onThemeChange }) {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="#propos"
                         sx={{
                             mr: 1,
-                            fontSize: '0.9em',
-                            fontWeight: 700,
+                            fontSize: '1em',
+                            fontWeight: 800,
                             letterSpacing: '.1rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -173,7 +173,7 @@ function NavBar({ onThemeChange }) {
                             </Button>
                         ))}
                         <Box>
-                            <Typography variant='h6' sx={{ textAlign: 'center', color: 'grey', fontSize: '1em' }}>MODE</Typography>
+                            <Typography variant='h6' sx={{ textAlign: 'center', color: blueGrey[200], fontSize: '1em' }}>MODE</Typography>
                             <ToggleButtonGroup
                                 variant='contained'
                                 aria-label="app dark/light mode"
