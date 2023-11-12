@@ -21,6 +21,8 @@ import { blueGrey } from '@mui/material/colors';
 
 function NavBar({ onThemeChange }) {
 
+    const [mode, setMode] = useState(null)
+
     const sections = [
         { label: 'A propos', id: 'propos' },
         { label: 'Compétences', id: 'competences' },
@@ -75,9 +77,7 @@ function NavBar({ onThemeChange }) {
         const activedButton = e.target
         if (e.target.value !== '') {
             onThemeChange(activedButton.value)
-            // const elementsActive = document.querySelectorAll('.activeMode')
-            // elementsActive.forEach(element => element.classList.remove('activeMode'))
-            // activedButton.classList.add('activeMode')
+            setMode(e.target.value)
         }
     }
 
@@ -175,18 +175,17 @@ function NavBar({ onThemeChange }) {
                         <Box>
                             <Typography variant='h6' sx={{ textAlign: 'center', color: 'grey', fontSize: '1em' }}>MODE</Typography>
                             <ToggleButtonGroup
-                                variant="contained"
-                                color='success'
-                                aria-label="app mode"
-                                sx={{ fontSize: '0.6em', height: '50%', margin: 0.5 }}
+                                variant='contained'
+                                aria-label="app dark/light mode"
+                                value={mode}
                                 onChange={handleThemeToggle}
                                 exclusive
                             >
-                                <ToggleButton value='light' style={{ color: 'yellow', fontSize: '1em' }} startIcon={<LightModeOutlined />}>
-                                    Light
+                                <ToggleButton value='light' aria-label='light mode' style={{ color: 'yellow' }}>
+                                    <LightModeOutlined /> Light
                                 </ToggleButton>
-                                <ToggleButton value='dark' style={{ color: 'grey', fontSize: '1em' }} startIcon={<DarkModeOutlined />}>
-                                    Dark
+                                <ToggleButton value='dark' aria-label='dark mode' style={{ color: 'grey' }}>
+                                    <DarkModeOutlined /> Dark
                                 </ToggleButton>
                             </ToggleButtonGroup>
                         </Box>

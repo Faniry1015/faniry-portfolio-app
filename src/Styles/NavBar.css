@@ -3,9 +3,9 @@ header button:hover {
     background: #90a4ae;
 }
 
-button.activeMode {
+/* button.activeMode {
     background: #90a4ae ;
-}
+} */
 
 #root .header {
     top: 0
