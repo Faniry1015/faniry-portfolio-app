@@ -8,7 +8,7 @@ import { blueGrey, amber, lime } from '@mui/material/colors'
 function MainCarousel() {
     return (
             <Box component='section' className='sliderAndText' sx={{ position: 'relative' }}>
-                <Box id="propos" sx={{ height: '100%', width: '100%', p: 5, position: 'absolute', zIndex: 10, background: theme => theme.palette.background.secondary, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                <Box sx={{ height: '100%', width: '100%', p: 5, position: 'absolute', zIndex: 10, background: theme => theme.palette.background.secondary, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <Box>
                         <Typography className='mainTitle' variant='h1' sx={{ textAlign: 'center', color: 'whitesmoke' }} >
                             Développeur <br /> front-end junior

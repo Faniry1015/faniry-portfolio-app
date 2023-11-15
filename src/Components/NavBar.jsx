@@ -5,7 +5,6 @@ import {
     Menu,
     Container,
     Button,
-    ButtonGroup,
     ToggleButtonGroup,
     ToggleButton,
     Typography,
@@ -17,7 +16,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
-import { blueGrey } from '@mui/material/colors';
+import { blueGrey, teal, lime } from '@mui/material/colors';
 
 function NavBar({ onThemeChange }) {
 
@@ -83,11 +82,11 @@ function NavBar({ onThemeChange }) {
 
     return (<>
         <AppBar position="sticky">
-            <Container sx={{ height: 100 }} maxWidth="xl">
+            <Container sx={{ height: 90 }} maxWidth="xl">
                 <Toolbar sx={{ height: '100%', }} disableGutters>
                     <Box sx={{ mr: 2, flexGrow: 0, position: 'sticky', top: 0 }}>
                         <IconButton sx={{ p: 2 }}>
-                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} alt="Faniry R." src="src\assets\images\faniry.png" />
+                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} src="src\assets\images\faniry.png" alt="Faniry R." aria-label='Faniry R.'  />
                         </IconButton>
                     </Box>
                     <Typography
@@ -147,16 +146,17 @@ function NavBar({ onThemeChange }) {
                                     <Typography variant='h6' sx={{ color: 'grey' }}>Mode</Typography>
                                     <ToggleButtonGroup
                                         variant='contained'
+                                        size='small'
                                         aria-label="app dark/light mode"
                                         value={mode}
                                         onChange={handleThemeToggle}
                                         exclusive
                                     >
-                                        <ToggleButton value='light' aria-label='light mode' style={{ color: 'yellow' }}>
-                                            <LightModeOutlined /> Light
+                                        <ToggleButton value='light' aria-label='light mode' sx={{ color: teal[300], '&.Mui-selected': { color: teal[500] } }}>
+                                            <LightModeOutlined fontSize='small'/> Light
                                         </ToggleButton>
-                                        <ToggleButton value='dark' aria-label='dark mode' style={{ color: 'grey' }}>
-                                            <DarkModeOutlined /> Dark
+                                        <ToggleButton value='dark' aria-label='dark mode' sx={{ color: 'grey' }}>
+                                            <DarkModeOutlined fontSize='small'/> Dark
                                         </ToggleButton>
                                     </ToggleButtonGroup>
                                 </Box>
@@ -181,16 +181,17 @@ function NavBar({ onThemeChange }) {
                             <Typography variant='h6' sx={{ textAlign: 'center', color: blueGrey[200], fontSize: '1em' }}>MODE</Typography>
                             <ToggleButtonGroup
                                 variant='contained'
+                                size='small'
                                 aria-label="app dark/light mode"
                                 value={mode}
                                 onChange={handleThemeToggle}
                                 exclusive
                             >
-                                <ToggleButton value='light' aria-label='light mode' style={{ color: 'yellow' }}>
-                                    <LightModeOutlined /> Light
+                                <ToggleButton value='light' aria-label='light mode' sx={{ color: lime[300], '&.Mui-selected': { color: lime[500] } }}>
+                                    <LightModeOutlined fontSize='small' /> Light
                                 </ToggleButton>
                                 <ToggleButton value='dark' aria-label='dark mode' style={{ color: 'grey' }}>
-                                    <DarkModeOutlined /> Dark
+                                    <DarkModeOutlined fontSize='small' /> Dark
                                 </ToggleButton>
                             </ToggleButtonGroup>
                         </Box>

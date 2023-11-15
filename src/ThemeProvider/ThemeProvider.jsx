@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
-import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
+import { createTheme, ThemeProvider, CssBaseline, useMediaQuery } from '@mui/material';
 import { lime, teal, purple } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
@@ -32,7 +32,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
         },
     }
 
-    const ligthTheme = createTheme({
+    const lightTheme = createTheme({
         palette: {
             mode: 'light',
             primary: {
@@ -54,6 +54,9 @@ function CustomThemeProvider({ children, onThemeChange }) {
                         ...(ownerState.variant === 'contained' &&
                             ownerState.color === 'primary' && {
                             backgroundColor: teal[500],
+                            '&:hover': {
+                                background: teal[600]
+                            } 
                         }),
                     }),
                 },
@@ -84,6 +87,9 @@ function CustomThemeProvider({ children, onThemeChange }) {
                         ...(ownerState.variant === 'contained' &&
                             ownerState.color === 'primary' && {
                             backgroundColor: purple[600],
+                            '&:hover': {
+                                backgroundColor: purple[800],
+                            }
                         }),
                     }),
                 },
@@ -93,11 +99,15 @@ function CustomThemeProvider({ children, onThemeChange }) {
     })
 
 
-    const [theme, setTheme] = useState(ligthTheme)
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    console.log(prefersDarkMode)
+    const [theme, setTheme] = useState(prefersDarkMode ? darkTheme : lightTheme);
 
     useEffect(() => {
-        const currentTheme = onThemeChange === 'light' ? ligthTheme : darkTheme
-        setTheme(currentTheme)
+        if (onThemeChange !== '') {
+            const currentTheme = onThemeChange === 'light' ? lightTheme : darkTheme
+            setTheme(currentTheme)
+        }
     }, [onThemeChange])
 
 

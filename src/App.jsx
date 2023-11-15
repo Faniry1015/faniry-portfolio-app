@@ -7,7 +7,7 @@ import MainCarousel from './Components/MainCarousel';
 import APropos from './Components/APropos';
 
 function App() {
-  const [themeStatus, setThemeStatus] = useState('light')
+  const [themeStatus, setThemeStatus] = useState('')
   const handleThemeToggle = (themeLabel) => {
     setThemeStatus(themeLabel)
   }
