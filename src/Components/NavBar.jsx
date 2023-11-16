@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { scrollTo } from './scrollTo';
 import '../Styles/NavBar.css'
 import {
     AppBar,
@@ -35,16 +36,6 @@ function NavBar({ onThemeChange }) {
         { label: 'Compétences', id: 'competences' },
         { label: 'Portfolio', id: 'portfolio' },
         { label: 'Contact', id: 'contact' }];
-
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId)
-        if (section) {
-            window.scrollTo({
-                top: section.offsetTop - 100,
-                behavior: 'smooth'
-            })
-        }
-    }
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
@@ -148,7 +139,7 @@ function NavBar({ onThemeChange }) {
                             {sections.map((section) => (
                                 <MenuItem key={section.id} onClick={
                                     () => {
-                                        scrollToSection(section.id)
+                                        scrollTo(section.id)
                                         handleCloseNavMenu
                                     }
                                 }>
@@ -183,7 +174,7 @@ function NavBar({ onThemeChange }) {
                             <Button
                                 key={section.id}
                                 onClick={() => {
-                                    scrollToSection(section.id)
+                                    scrollTo(section.id)
                                 }}
                                 sx={{
                                     my: 1, px: 2, fontSize: '1em', color: 'white', display: 'block', height: '100%', m: 0, '&:hover': {

@@ -33,6 +33,10 @@
   font-style: normal;
 }
 
+section {
+  margin-top: 75px;
+}
+
 /* 
 #root {
   max-width: 1280px;

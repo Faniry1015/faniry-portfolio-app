@@ -61,7 +61,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 textAlign: 'center',
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
-                marginTop: '75px',
+                marginTop: '25px',
                 marginBottom: '25px'
             },
         },
@@ -71,9 +71,6 @@ function CustomThemeProvider({ children, onThemeChange }) {
     return (
         <ThemeProvider theme={customTheme}>
             <CssBaseline />
-            {JSON.stringify({darkMode})}
-            {JSON.stringify({prefersDarkMode})}
-            {JSON.stringify({onThemeChange})}
             {children}
         </ThemeProvider>
     )
