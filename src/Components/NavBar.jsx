@@ -28,6 +28,20 @@ function NavBar({ onThemeChange }) {
         { label: 'Portfolio', id: 'portfolio' },
         { label: 'Contact', id: 'contact' }];
 
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId)
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop - 100,
+                behavior: 'smooth'
+            })
+        }
+    }
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
     useEffect(() => {
         const ratio = 0.6;
         const windowHeight = window.innerHeight;
@@ -68,10 +82,6 @@ function NavBar({ onThemeChange }) {
         setAnchorElNav(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
     const handleThemeToggle = (e) => {
         const activedButton = e.target
         if (e.target.value !== '') {
@@ -86,7 +96,7 @@ function NavBar({ onThemeChange }) {
                 <Toolbar sx={{ height: '100%', }} disableGutters>
                     <Box sx={{ mr: 2, flexGrow: 0, position: 'sticky', top: 0 }}>
                         <IconButton sx={{ p: 2 }}>
-                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} src="src\assets\images\faniry.png" alt="Faniry R." aria-label='Faniry R.'  />
+                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} src="src\assets\images\faniry.png" alt="Faniry R." aria-label='Faniry R.' />
                         </IconButton>
                     </Box>
                     <Typography
@@ -136,8 +146,13 @@ function NavBar({ onThemeChange }) {
                             }}
                         >
                             {sections.map((section) => (
-                                <MenuItem key={section.id} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center"><a href={`#${section.id}`} className="nav-link">{section.label}</a></Typography>
+                                <MenuItem key={section.id} onClick={
+                                    () => {
+                                        scrollToSection(section.id)
+                                        handleCloseNavMenu
+                                    }
+                                }>
+                                    <Typography component='a' textAlign="center" className="nav-link">{section.label}</Typography>
                                 </MenuItem>
 
                             ))}
@@ -153,10 +168,10 @@ function NavBar({ onThemeChange }) {
                                         exclusive
                                     >
                                         <ToggleButton value='light' aria-label='light mode' sx={{ color: teal[300], '&.Mui-selected': { color: teal[500] } }}>
-                                            <LightModeOutlined fontSize='small'/> Light
+                                            <LightModeOutlined fontSize='small' /> Light
                                         </ToggleButton>
                                         <ToggleButton value='dark' aria-label='dark mode' sx={{ color: 'grey' }}>
-                                            <DarkModeOutlined fontSize='small'/> Dark
+                                            <DarkModeOutlined fontSize='small' /> Dark
                                         </ToggleButton>
                                     </ToggleButtonGroup>
                                 </Box>
@@ -167,14 +182,16 @@ function NavBar({ onThemeChange }) {
                         {sections.map((section) => (
                             <Button
                                 key={section.id}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => {
+                                    scrollToSection(section.id)
+                                }}
                                 sx={{
                                     my: 1, px: 2, fontSize: '1em', color: 'white', display: 'block', height: '100%', m: 0, '&:hover': {
                                         backgroundColor: blueGrey[300],
                                     }
                                 }}
                             >
-                                <a href={`#${section.id}`} className="nav-link active">{section.label}</a>
+                                <Typography component='a' className="nav-link active">{section.label}</Typography>
                             </Button>
                         ))}
                         <Box>
@@ -198,7 +215,7 @@ function NavBar({ onThemeChange }) {
                     </Box>
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar >
     </>
     );
 }

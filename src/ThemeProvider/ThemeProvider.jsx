@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
-import { createTheme, ThemeProvider, CssBaseline, useMediaQuery } from '@mui/material';
+import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
 import { lime, teal, purple } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
+    const mytheme = useTheme();
 
     const customTheme = {
         typography: {
@@ -22,11 +23,12 @@ function CustomThemeProvider({ children, onThemeChange }) {
             },
             h3: {
                 fontFamily: 'Roboto, Roboto, Arial',
+                color: mytheme.palette.secondary.main,
                 fontSize: '2em',
                 textAlign: 'center',
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
-                marginTop: '50px',
+                marginTop: '75px',
                 marginBottom: '25px'
             },
         },
@@ -40,11 +42,6 @@ function CustomThemeProvider({ children, onThemeChange }) {
             },
             background: {
                 secondary: '#84cae744',
-            },
-        },
-        typography: {
-            h1: {
-                color: 'yellow',
             },
         },
         components: {
@@ -75,11 +72,6 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 secondary: '#6c698d44'
             },
         },
-        typography: {
-            h1: {
-                color: lime[500],
-            },
-        },
         components: {
             MuiButton: {
                 styleOverrides: {
@@ -100,7 +92,6 @@ function CustomThemeProvider({ children, onThemeChange }) {
 
 
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    console.log(prefersDarkMode)
     const [theme, setTheme] = useState(prefersDarkMode ? darkTheme : lightTheme);
 
     useEffect(() => {
