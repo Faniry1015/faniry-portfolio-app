@@ -1,14 +1,13 @@
 import React from 'react'
 import { Box, Stack } from '@mui/system'
-import { Typography, Grid, Paper, IconButton } from '@mui/material'
+import { Typography, Grid, Paper, IconButton, useTheme } from '@mui/material'
 import { GitHub, LinkedIn } from '@mui/icons-material'
-import { useTheme } from '@mui/material'
 
 function APropos() {
     const theme = useTheme()
     return (
         <Box component='section'>
-            <Paper elevation={4} sx={{p:3, bgcolor: theme.palette.background.secondary}}>
+            <Paper elevation={4} sx={{p:4, bgcolor: theme.palette.background.secondary}}>
                 <Typography variant='h3' id='propos'>
                     A propos de moi
                 </Typography>

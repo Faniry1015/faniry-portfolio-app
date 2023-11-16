@@ -13,13 +13,15 @@ import {
     Toolbar,
     Box,
     Avatar,
-    MenuItem
+    MenuItem,
+    useTheme
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { blueGrey, teal, lime } from '@mui/material/colors';
 
 function NavBar({ onThemeChange }) {
+    const theme = useTheme()
 
     const [mode, setMode] = useState(null)
 
