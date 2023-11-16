@@ -22,6 +22,14 @@ function NavBar({ onThemeChange }) {
 
     const [mode, setMode] = useState(null)
 
+    const handleThemeToggle = (e) => {
+        const activedButton = e.target
+        if (e.target.value !== '') {
+            onThemeChange(activedButton.value)
+            setMode(e.target.value)
+        }
+    }
+
     const sections = [
         { label: 'A propos', id: 'propos' },
         { label: 'Compétences', id: 'competences' },
@@ -81,14 +89,6 @@ function NavBar({ onThemeChange }) {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-
-    const handleThemeToggle = (e) => {
-        const activedButton = e.target
-        if (e.target.value !== '') {
-            onThemeChange(activedButton.value)
-            setMode(e.target.value)
-        }
-    }
 
     return (<>
         <AppBar position="sticky">

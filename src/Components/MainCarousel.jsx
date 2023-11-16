@@ -2,7 +2,6 @@ import React from 'react'
 import '../Styles/APropos.css'
 import { Typography, Box, Button } from '@mui/material'
 import CarouselWrapper from './Slider'
-import { blueGrey, amber, lime } from '@mui/material/colors'
 
 
 function MainCarousel() {

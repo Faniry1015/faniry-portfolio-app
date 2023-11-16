@@ -7,7 +7,7 @@ import '../Styles/Header.css'
 function Header({ onThemeChange }) {
 
     return (<>
-        <Container maxWidth="xxl" sx={{ display: { xs: 'none', sm: 'none', md: 'block' }, margin: '5px 5px 5px 0px', textAlign: 'right' }}>
+        <Container maxWidth="xxl" sx={{margin: '5px 5px 5px 0px', textAlign: 'right' }}>
             <Typography variant='body2'>
                 <Mail /> <a href="mailto:frandriaharimino@yahoo.com">frandriaharimino@yahoo.com</a>  <Phone /> +261 34 08 717 66
             </Typography>

@@ -1,12 +1,45 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
 import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
-import { lime, teal, purple } from '@mui/material/colors'
+import { teal, purple } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
-    const mytheme = useTheme();
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const [darkMode, setDarkMode] = useState(prefersDarkMode)
 
-    const customTheme = {
+    
+    useEffect(() => {
+        if (onThemeChange !== '') {
+            const theme = onThemeChange === 'dark'
+            setDarkMode(theme)
+        }
+    }, [onThemeChange])
+
+    const customTheme = createTheme({
+        palette: {
+            mode: darkMode ? 'dark': 'light',
+            primary: {
+                main: darkMode ? '#121212' : '#33658a',
+            },
+            background: {
+                secondary: darkMode ?  '#6c698d44' : '#84cae744',
+            },
+        },
+        components: {
+            MuiButton: {
+                styleOverrides: {
+                    root: ({ ownerState }) => ({
+                        ...(ownerState.variant === 'contained' &&
+                            ownerState.color === 'primary' && {
+                            backgroundColor:darkMode ? purple[600] : teal[500],
+                            '&:hover': {
+                                background: darkMode ? purple[600] : teal[600],
+                            } 
+                        }),
+                    }),
+                },
+            },
+        },
         typography: {
             fontSize: 16,
             fontWeightRegular: 300,
@@ -23,7 +56,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
             },
             h3: {
                 fontFamily: 'Roboto, Roboto, Arial',
-                color: mytheme.palette.secondary.main,
+                color: darkMode ? purple[300] : teal[500],
                 fontSize: '2em',
                 textAlign: 'center',
                 textTransform: 'uppercase',
@@ -32,79 +65,15 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 marginBottom: '25px'
             },
         },
-    }
-
-    const lightTheme = createTheme({
-        palette: {
-            mode: 'light',
-            primary: {
-                main: '#33658a',
-            },
-            background: {
-                secondary: '#84cae744',
-            },
-        },
-        components: {
-            MuiButton: {
-                styleOverrides: {
-                    root: ({ ownerState }) => ({
-                        ...(ownerState.variant === 'contained' &&
-                            ownerState.color === 'primary' && {
-                            backgroundColor: teal[500],
-                            '&:hover': {
-                                background: teal[600]
-                            } 
-                        }),
-                    }),
-                },
-            },
-        },
-        ...customTheme,
     })
-
-    const darkTheme = createTheme({
-        palette: {
-            mode: 'dark',
-            primary: {
-                main: '#121212',
-            },
-            background: {
-                secondary: '#6c698d44'
-            },
-        },
-        components: {
-            MuiButton: {
-                styleOverrides: {
-                    root: ({ ownerState }) => ({
-                        ...(ownerState.variant === 'contained' &&
-                            ownerState.color === 'primary' && {
-                            backgroundColor: purple[600],
-                            '&:hover': {
-                                backgroundColor: purple[800],
-                            }
-                        }),
-                    }),
-                },
-            },
-        },
-        ...customTheme,
-    })
-
-
-    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    const [theme, setTheme] = useState(prefersDarkMode ? darkTheme : lightTheme);
-
-    useEffect(() => {
-        if (onThemeChange !== '') {
-            const currentTheme = onThemeChange === 'light' ? lightTheme : darkTheme
-            setTheme(currentTheme)
-        }
-    }, [onThemeChange])
 
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={customTheme}>
             <CssBaseline />
+            {JSON.stringify({darkMode})}
+            {JSON.stringify({prefersDarkMode})}
+            {JSON.stringify({onThemeChange})}
             {children}
         </ThemeProvider>
     )
