@@ -1,0 +1,9 @@
+.competIcon {
+    height: 50px;
+    width: auto;
+    transition: transform 0.4s ease-in-out;
+}
+
+.competIcon:hover {
+    transform: scale(1.2)
+}

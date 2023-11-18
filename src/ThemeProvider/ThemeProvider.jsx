@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
 import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
-import { teal, purple } from '@mui/material/colors'
+import { teal, purple, lime, indigo } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -19,7 +19,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
         palette: {
             mode: darkMode ? 'dark': 'light',
             primary: {
-                main: darkMode ? '#121212' : '#33658a',
+                main: darkMode ? '#121212' : '#33658aef',
             },
             background: {
                 secondary: darkMode ?  '#6c698d44' : '#84cae744',
@@ -31,9 +31,9 @@ function CustomThemeProvider({ children, onThemeChange }) {
                     root: ({ ownerState }) => ({
                         ...(ownerState.variant === 'contained' &&
                             ownerState.color === 'primary' && {
-                            backgroundColor:darkMode ? purple[600] : teal[500],
+                            backgroundColor:darkMode ? purple[600] : teal[400],
                             '&:hover': {
-                                background: darkMode ? purple[600] : teal[600],
+                                background: darkMode ? purple[400] : teal['A700'],
                             } 
                         }),
                     }),
@@ -56,7 +56,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
             },
             h3: {
                 fontFamily: 'Roboto, Roboto, Arial',
-                color: darkMode ? purple[300] : teal[500],
+                color: darkMode ? purple[400] : teal['A700'],
                 fontSize: '2em',
                 textAlign: 'center',
                 textTransform: 'uppercase',
@@ -66,13 +66,12 @@ function CustomThemeProvider({ children, onThemeChange }) {
             },
             h4: {
                 fontFamily: 'Roboto, Roboto, Arial',
-                color: darkMode ? purple[300] : teal[500],
-                fontSize: '1.2em',
+                color: darkMode ? lime[400] : indigo['A700'],
+                fontSize: '1em',
                 textAlign: 'center',
-                textTransform: 'uppercase',
                 fontWeight: 'bold',
-                marginTop: '25px',
-                marginBottom: '25px'
+                marginTop: '15px',
+                marginBottom: '15px'
             },
         },
     })
