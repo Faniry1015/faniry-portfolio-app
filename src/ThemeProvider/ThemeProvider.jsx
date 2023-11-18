@@ -64,6 +64,16 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 marginTop: '25px',
                 marginBottom: '25px'
             },
+            h4: {
+                fontFamily: 'Roboto, Roboto, Arial',
+                color: darkMode ? purple[300] : teal[500],
+                fontSize: '1.2em',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                fontWeight: 'bold',
+                marginTop: '25px',
+                marginBottom: '25px'
+            },
         },
     })
 
