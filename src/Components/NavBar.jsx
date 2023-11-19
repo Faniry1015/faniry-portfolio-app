@@ -45,6 +45,8 @@ function NavBar({ onThemeChange }) {
     useEffect(() => {
         const ratio = 0.5;
         const mainSections = document.querySelectorAll('.mainSection');
+        let windowHeight = window.innerHeight;
+        const y = Math.round(windowHeight * ratio);
 
         const callback = (entries) => {
             entries.forEach((entry) => {
@@ -64,8 +66,6 @@ function NavBar({ onThemeChange }) {
         }
 
         let observe = function (elements) {
-            const windowHeight = window.innerHeight;
-            const y = Math.round(windowHeight * ratio);
 
             const options = { rootMargin: `-${windowHeight - y - 100}px 0px -${y}px 0px` } // en lecture seule donc ne se met pas à jour quand on redimmentionne la fenêtre
             const observer = new IntersectionObserver(callback, options);
@@ -92,9 +92,9 @@ function NavBar({ onThemeChange }) {
         if (mainSections.length > 0) {
             observe(mainSections)
             window.addEventListener("resize", debounce(function () {
-                if (window.innerHeight !== windowH) {
+                if (window.innerHeight !== windowHeight) {
                     observe(mainSections)
-                    windowH = window.innerHeight
+                    windowHeight = window.innerHeight
                 }
             }), 500)
         }

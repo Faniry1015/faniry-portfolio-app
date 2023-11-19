@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import MainCarousel from './Components/MainCarousel';
 import APropos from './Components/APropos';
 import Competences from './Components/Competences';
+import Portfolio from './Components/Portfolio';
 
 function App() {
   const [themeStatus, setThemeStatus] = useState('')
@@ -21,12 +22,10 @@ function App() {
         <Box sx={{ mx: 7, textAlign: 'justify' }}>
           <APropos />
           <Competences />
+          <Portfolio />
         </Box>
 
         <div>
-          <section id="portfolio" style={{ height: '600px' }} className='mainSection'>
-            Contenu de la section Projets
-          </section>
           <section id="contact" style={{ height: '600px' }} className='mainSection'>
             Contenu de la section Contact
           </section>

@@ -40,7 +40,7 @@ CircularProgressWithLabel.propTypes = {
 };
 
 export default function CircularWithValueLabel({ maxValue }) {
-    const [progress, setProgress] = useState(20);
+    const [progress, setProgress] = useState(10);
 
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -61,7 +61,7 @@ export default function CircularWithValueLabel({ maxValue }) {
 
                     return newProgress;
                 });
-            }, 40);
+            }, 50);
         }
 
         return () => {

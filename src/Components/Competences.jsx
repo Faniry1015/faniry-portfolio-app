@@ -8,14 +8,13 @@ import CircularWithValueLabel from './CompetCircularProgress'
 function Competences() {
     const theme = useTheme()
 
-    const competPaper = { bgcolor: theme.palette.mode === 'dark' ? blueGrey[800] : grey[100], p: 3 }
+    const competPaper = { bgcolor: theme.palette.mode === 'dark' ? blueGrey[800] : grey[100], p: 3, height: '100%' }
 
     const competIconStyle = { width: '75px', height: '75px' }
 
     return (
         <Box component='section' className='mainSection' id='competences'>
-
-            <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
+            <Paper elevation={4} sx={{ px: 3, py: 4, bgcolor: theme.palette.background.secondary }}>
                 <Typography variant='h3'>
                     Mes Compétences
                 </Typography>
@@ -24,7 +23,7 @@ function Competences() {
                         <Grid item xs={12} md={6}>
                             <Paper sx={competPaper}>
                                 <Typography variant='h4'>
-                                    Langages de base :
+                                    Langages de base
                                 </Typography>
                                 <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
@@ -33,7 +32,7 @@ function Competences() {
                                                 <img className='competIcon' src="src\assets\icons\html-5.svg" alt="HTML" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel className='competValue' maxValue={80} />
+                                        <CircularWithValueLabel  maxValue={80} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='CSS'>
@@ -41,7 +40,7 @@ function Competences() {
                                                 <img className='competIcon' src="src\assets\icons\css-3.svg" alt="CSS" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel className='competValue' maxValue={75} />
+                                        <CircularWithValueLabel  maxValue={75} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='Javascript'>
@@ -49,7 +48,7 @@ function Competences() {
                                                 <img className='competIcon' src="src\assets\icons\javascript.svg" alt="Javascript" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel className='competValue' maxValue={70} />
+                                        <CircularWithValueLabel  maxValue={65} />
                                     </Box>
                                 </Stack>
                             </Paper>
@@ -57,73 +56,107 @@ function Competences() {
                         <Grid item xs={12} md={6}>
                             <Paper sx={competPaper}>
                                 <Typography variant='h4'>
-                                    Frameworks et bibliothèques front-end :
+                                    Frameworks et bibliothèques front-end
                                 </Typography>
-                                <Stack direction='row' spacing={1} justifyContent="center" useFlexGap flexWrap="wrap">
-                                    <Tooltip title='React.js'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\reactjs.svg" alt="React.js" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title='Material UI'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\mui.svg" alt="Material UI" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title='Bootstrap'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\bootstrap-5.svg" alt="Bootstrap" />
-                                        </IconButton>
-                                    </Tooltip>
-                                </Stack>
-                            </Paper>
-                        </Grid>
-
-                        <Grid item xs={12} md={6}>
-                            <Paper sx={competPaper}>
-                                <Typography variant='h4'>
-                                    Langages de base :
-                                </Typography>
-                                <Stack direction='row' spacing={1} justifyContent="center" useFlexGap flexWrap="wrap">
-                                    <Tooltip title='HTML'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\html-5.svg" alt="HTML" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title='CSS'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\css-3.svg" alt="CSS" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title='Javascript'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\javascript.svg" alt="Javascript" />
-                                        </IconButton>
-                                    </Tooltip>
+                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                    <Box position='relative'>
+                                        <Tooltip title='React.js'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\reactjs.svg" alt="React.js" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={65   } />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='Material UI'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\mui.svg" alt="Material UI" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={65} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='Bootstrap'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\bootstrap-5.svg" alt="Bootstrap" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={75} />
+                                    </Box>
                                 </Stack>
                             </Paper>
                         </Grid>
                         <Grid item xs={12} md={6}>
                             <Paper sx={competPaper}>
                                 <Typography variant='h4'>
-                                    Frameworks et bibliothèques front-end :
+                                Contrôle de Version
                                 </Typography>
-                                <Stack direction='row' spacing={1} justifyContent="center" useFlexGap flexWrap="wrap">
-                                    <Tooltip title='React.js'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\reactjs.svg" alt="React.js" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title='Material UI'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\mui.svg" alt="Material UI" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title='Bootstrap'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\bootstrap-5.svg" alt="Bootstrap" />
-                                        </IconButton>
-                                    </Tooltip>
+                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                    <Box position='relative'>
+                                        <Tooltip title='Git'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\git.svg" alt="Git" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={55} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='GitHub'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\github.svg" alt="GitHub" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={70} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='GitLab'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\gitlab.svg" alt="GitLab" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={40} />
+                                    </Box>
+                                </Stack>
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Paper sx={competPaper}>
+                                <Typography variant='h4'>
+                                CMS et Outils de conception
+                                </Typography>
+                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                    <Box position='relative'>
+                                        <Tooltip title='Photoshop'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\photoshop.svg" alt="Photoshop" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={60} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='InDesign'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\indesign.svg" alt="InDesign" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={50} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='Figma'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\figma.svg" alt="Figma" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={65} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='Wordpress'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\wordpress.svg" alt="Wordpress" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel  maxValue={40} />
+                                    </Box>
                                 </Stack>
                             </Paper>
                         </Grid>

@@ -62,16 +62,16 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
                 marginTop: '25px',
-                marginBottom: '25px'
+                marginBottom: '15px'
             },
             h4: {
                 fontFamily: 'Roboto, Roboto, Arial',
-                color: darkMode ? lime[400] : indigo['A700'],
+                color: darkMode ? lime[400] : '#33658a',
                 fontSize: '1em',
                 textAlign: 'center',
                 fontWeight: 'bold',
                 marginTop: '15px',
-                marginBottom: '15px'
+                marginBottom: '10px'
             },
         },
     })
