@@ -21,8 +21,6 @@ import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { blueGrey, teal, lime } from '@mui/material/colors';
 
 function NavBar({ onThemeChange }) {
-    const theme = useTheme()
-
     const [mode, setMode] = useState(null)
 
     const handleThemeToggle = (e) => {
@@ -33,31 +31,32 @@ function NavBar({ onThemeChange }) {
         }
     }
 
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    //Scroll spy pour les sections
     const sections = [
         { label: 'A propos', id: 'propos' },
         { label: 'Compétences', id: 'competences' },
         { label: 'Portfolio', id: 'portfolio' },
         { label: 'Contact', id: 'contact' }];
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
     useEffect(() => {
+        const ratio = 0.5;
+        const mainSections = document.querySelectorAll('.mainSection');
+
         const callback = (entries) => {
             entries.forEach((entry) => {
-                // console.log(entry.target)
                 console.log(entry.isIntersecting)
                 if (entry.isIntersecting) {
-                    // console.log({entry})
                     const sectionId = entry.target.id;
                     const navLinks = document.querySelectorAll('.nav-link');
-                    console.log({navLinks})
                     navLinks.forEach((link) => {
                         link.classList.remove('active');
                         link.parentNode.classList.remove('active');
                         if (link.id.slice(2) === sectionId) {
-                            console.log({sectionId})
+                            console.log({ sectionId })
                             link.classList.add('active');
                             link.parentNode.classList.add('active');
                         }
@@ -66,21 +65,44 @@ function NavBar({ onThemeChange }) {
             });
         }
 
-        const ratio = 0.5;
-        const windowHeight = window.innerHeight;
-        const y = Math.round(windowHeight * ratio);
-        
-        const options = { rootMargin: `-${windowHeight - y - 100}px 0px -${y}px 0px` }
-        console.log(options.rootMargin)
-        const observer = new IntersectionObserver(callback, options);
-        const mainSections = document.querySelectorAll('.mainSection');
+        let observe = function (elements) {
+            const windowHeight = window.innerHeight;
+            const y = Math.round(windowHeight * ratio);
 
-        mainSections.forEach((section) => {
-            observer.observe(section);
-        });
+            const options = { rootMargin: `-${windowHeight - y - 100}px 0px -${y}px 0px` } // en lecture seule donc ne se met pas à jour quand on redimmentionne la fenêtre
+            const observer = new IntersectionObserver(callback, options);
+
+            mainSections.forEach((section) => {
+                observer.observe(section);
+            });
+        }
+
+
+// Permet de ne pas appelé la fonction trop de fois (ex: listener "resize")
+        const debounce = function (callback, delay) {
+            let timer;
+            return function () {
+                let args = arguments;
+                let context = this;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    callback.apply(context, args);
+                }, delay)
+            }
+        }
+
+        if (mainSections.length > 0) {
+            observe(mainSections)
+            window.addEventListener("resize", debounce(function () {
+                if (window.innerHeight !== windowH) {
+                    observe(mainSections)
+                    windowH = window.innerHeight
+                }
+            }), 500)
+        }
 
         return () => {
-            observer.disconnect();
+            observe = null
         };
     }, []);
 
