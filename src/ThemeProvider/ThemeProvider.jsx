@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
-import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
-import { teal, purple, lime, indigo } from '@mui/material/colors'
+import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme, alpha } from '@mui/material';
+import { teal, purple, lime, blueGrey, grey } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -20,9 +20,14 @@ function CustomThemeProvider({ children, onThemeChange }) {
             mode: darkMode ? 'dark': 'light',
             primary: {
                 main: darkMode ? '#121212' : '#33658aef',
+                light: darkMode ? '#6c698d33':'#84cae733'
             },
             background: {
-                secondary: darkMode ?  '#6c698d44' : '#84cae744',
+                primary: darkMode ?  '#121212' : '#33658aef',
+                secondary: darkMode ?  '#6c698d33':'#84cae799',
+            },
+            info: {
+                main: darkMode ? alpha(blueGrey[800], 0.9) : alpha(grey[100], 0.9) ,
             },
         },
         components: {

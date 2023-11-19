@@ -8,7 +8,7 @@ import CircularWithValueLabel from './CompetCircularProgress'
 function Competences() {
     const theme = useTheme()
 
-    const competPaper = { bgcolor: theme.palette.mode === 'dark' ? blueGrey[800] : grey[100], p: 3, height: '100%' }
+    const competPaper = { bgcolor: theme.palette.info.main, p: 3, height: '100%' }
 
     const competIconStyle = { width: '75px', height: '75px' }
 
@@ -27,7 +27,7 @@ function Competences() {
                                 </Typography>
                                 <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
-                                        <Tooltip title='HTML'>
+                                        <Tooltip title='HTML' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\html-5.svg" alt="HTML" />
                                             </IconButton>
@@ -35,7 +35,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={80} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='CSS'>
+                                        <Tooltip title='CSS' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\css-3.svg" alt="CSS" />
                                             </IconButton>
@@ -43,7 +43,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={75} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Javascript'>
+                                        <Tooltip title='Javascript' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\javascript.svg" alt="Javascript" />
                                             </IconButton>
@@ -60,7 +60,7 @@ function Competences() {
                                 </Typography>
                                 <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
-                                        <Tooltip title='React.js'>
+                                        <Tooltip title='React.js' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\reactjs.svg" alt="React.js" />
                                             </IconButton>
@@ -68,7 +68,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={65   } />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Material UI'>
+                                        <Tooltip title='Material UI' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\mui.svg" alt="Material UI" />
                                             </IconButton>
@@ -76,7 +76,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={65} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Bootstrap'>
+                                        <Tooltip title='Bootstrap' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\bootstrap-5.svg" alt="Bootstrap" />
                                             </IconButton>
@@ -93,7 +93,7 @@ function Competences() {
                                 </Typography>
                                 <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
-                                        <Tooltip title='Git'>
+                                        <Tooltip title='Git' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\git.svg" alt="Git" />
                                             </IconButton>
@@ -101,7 +101,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={55} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='GitHub'>
+                                        <Tooltip title='GitHub' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\github.svg" alt="GitHub" />
                                             </IconButton>
@@ -109,7 +109,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={70} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='GitLab'>
+                                        <Tooltip title='GitLab' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\gitlab.svg" alt="GitLab" />
                                             </IconButton>
@@ -126,7 +126,7 @@ function Competences() {
                                 </Typography>
                                 <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
-                                        <Tooltip title='Photoshop'>
+                                        <Tooltip title='Photoshop' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\photoshop.svg" alt="Photoshop" />
                                             </IconButton>
@@ -134,7 +134,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={60} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='InDesign'>
+                                        <Tooltip title='InDesign' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\indesign.svg" alt="InDesign" />
                                             </IconButton>
@@ -142,7 +142,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={50} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Figma'>
+                                        <Tooltip title='Figma' arrow> 
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\figma.svg" alt="Figma" />
                                             </IconButton>
@@ -150,7 +150,7 @@ function Competences() {
                                         <CircularWithValueLabel  maxValue={65} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Wordpress'>
+                                        <Tooltip title='Wordpress' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src="src\assets\icons\wordpress.svg" alt="Wordpress" />
                                             </IconButton>
