@@ -44,19 +44,20 @@ function NavBar({ onThemeChange }) {
     };
 
     useEffect(() => {
-        const ratio = 0.6;
-        const windowHeight = window.innerHeight;
-        const y = Math.round(windowHeight * ratio);
-
         const callback = (entries) => {
             entries.forEach((entry) => {
+                // console.log(entry.target)
+                console.log(entry.isIntersecting)
                 if (entry.isIntersecting) {
+                    // console.log({entry})
                     const sectionId = entry.target.id;
                     const navLinks = document.querySelectorAll('.nav-link');
+                    console.log({navLinks})
                     navLinks.forEach((link) => {
                         link.classList.remove('active');
                         link.parentNode.classList.remove('active');
-                        if (link.getAttribute('href').slice(1) === sectionId) {
+                        if (link.id.slice(2) === sectionId) {
+                            console.log({sectionId})
                             link.classList.add('active');
                             link.parentNode.classList.add('active');
                         }
@@ -64,11 +65,17 @@ function NavBar({ onThemeChange }) {
                 }
             });
         }
-        const options = { rootMargin: `-${windowHeight - y - 1}px 0px -${y}px 0px` }
-        const observer = new IntersectionObserver(callback, options);
-        const sections = document.querySelectorAll('.mainSection');
 
-        sections.forEach((section) => {
+        const ratio = 0.5;
+        const windowHeight = window.innerHeight;
+        const y = Math.round(windowHeight * ratio);
+        
+        const options = { rootMargin: `-${windowHeight - y - 100}px 0px -${y}px 0px` }
+        console.log(options.rootMargin)
+        const observer = new IntersectionObserver(callback, options);
+        const mainSections = document.querySelectorAll('.mainSection');
+
+        mainSections.forEach((section) => {
             observer.observe(section);
         });
 
@@ -109,7 +116,7 @@ function NavBar({ onThemeChange }) {
                         Faniriantsoa <br /> RANDRIAHARIMINO
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'none' }, justifyContent: 'flex-end' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -171,7 +178,7 @@ function NavBar({ onThemeChange }) {
                             </MenuItem>
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
                         {sections.map((section) => (
                             <Button
                                 key={section.id}
@@ -184,7 +191,7 @@ function NavBar({ onThemeChange }) {
                                     }
                                 }}
                             >
-                                <Typography component='a' className="nav-link active">{section.label}</Typography>
+                                <Typography component='a' className="nav-link active" id={`my${section.id}`}  >{section.label}</Typography>
                             </Button>
                         ))}
                         <Box>

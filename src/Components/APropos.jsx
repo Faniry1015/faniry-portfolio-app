@@ -6,9 +6,9 @@ import { GitHub, LinkedIn } from '@mui/icons-material'
 function APropos() {
     const theme = useTheme()
     return (
-        <Box component='section'>
+        <Box component='section'  className='mainSection' id='propos'>
             <Paper elevation={4} sx={{p:4, bgcolor: theme.palette.background.secondary}}>
-                <Typography variant='h3' id='propos'>
+                <Typography variant='h3'>
                     A propos de moi
                 </Typography>
                 <Grid container spacing={0} sx={{ alignItems: 'center' }}>
