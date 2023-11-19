@@ -48,7 +48,6 @@ function NavBar({ onThemeChange }) {
 
         const callback = (entries) => {
             entries.forEach((entry) => {
-                console.log(entry.isIntersecting)
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.id;
                     const navLinks = document.querySelectorAll('.nav-link');
@@ -56,7 +55,6 @@ function NavBar({ onThemeChange }) {
                         link.classList.remove('active');
                         link.parentNode.classList.remove('active');
                         if (link.id.slice(2) === sectionId) {
-                            console.log({ sectionId })
                             link.classList.add('active');
                             link.parentNode.classList.add('active');
                         }

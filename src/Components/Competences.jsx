@@ -1,12 +1,11 @@
+import React from 'react'
 import { Box } from '@mui/system'
 import { Typography, Grid, Paper, Stack, useTheme, Card, CardActions, CardContent, Button, IconButton, Tooltip } from '@mui/material'
-import React from 'react'
 import { blueGrey, grey } from '@mui/material/colors'
 import '../Styles/Competences.css'
 import CircularWithValueLabel from './CompetCircularProgress'
 
 function Competences() {
-
     const theme = useTheme()
 
     const competPaper = { bgcolor: theme.palette.mode === 'dark' ? blueGrey[800] : grey[100], p: 3 }
@@ -14,8 +13,8 @@ function Competences() {
     const competIconStyle = { width: '75px', height: '75px' }
 
     return (
-        <Box component='section' className='mainSection'  id='competences'>
-                                            
+        <Box component='section' className='mainSection' id='competences'>
+
             <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
                 <Typography variant='h3'>
                     Mes Compétences
@@ -37,20 +36,20 @@ function Competences() {
                                         <CircularWithValueLabel className='competValue' maxValue={80} />
                                     </Box>
                                     <Box position='relative'>
-                                    <Tooltip title='CSS'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\css-3.svg" alt="CSS" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <CircularWithValueLabel className='competValue' maxValue={75} />
+                                        <Tooltip title='CSS'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\css-3.svg" alt="CSS" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel className='competValue' maxValue={75} />
                                     </Box>
                                     <Box position='relative'>
-                                    <Tooltip title='Javascript'>
-                                        <IconButton sx={competIconStyle}>
-                                            <img className='competIcon' src="src\assets\icons\javascript.svg" alt="Javascript" />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <CircularWithValueLabel className='competValue' maxValue={70} />
+                                        <Tooltip title='Javascript'>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src="src\assets\icons\javascript.svg" alt="Javascript" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel className='competValue' maxValue={70} />
                                     </Box>
                                 </Stack>
                             </Paper>
