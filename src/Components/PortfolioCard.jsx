@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import { Box, Paper } from '@mui/material';
+import { Box, Link, Paper, Stack, Chip } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { TimeToLeave } from '@mui/icons-material';
+import LinkIcon from '@mui/icons-material/Link';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -27,7 +22,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-function PortfolioCard({ title, category, link, githubRepo, img, description }) {
+function PortfolioCard({ title, category, techs, link, githubRepo, img, description }) {
     const theme = useTheme()
     const [expanded, setExpanded] = useState(false);
 
@@ -38,11 +33,22 @@ function PortfolioCard({ title, category, link, githubRepo, img, description }) 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <Box position='relative' sx={{ overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Paper sx={{ position: 'absolute', zIndex: 10, width: 'calc(100% - 5px)', height: 'calc(100% - 5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: theme.palette.info.main}}>
-                    <CardContent >
-                        <Typography variant="body2" textAlign='center'>
-                            Projet de formation React.js
-                        </Typography>
+                <Paper sx={{ position: 'absolute', zIndex: 10, width: 'calc(100% - 5px)', height: 'calc(100% - 5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: theme.palette.info.main }}>
+                    <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <Box>
+                            <Link variant='body1' textAlign='center' underline='none' sx={{ color: theme.palette.text.secondary }} href={link}>
+                                <LinkIcon fontSize='small' color='secondary' />{title}
+                            </Link>
+                        </Box>
+                        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                            {techs.map((tech) => {
+                                return <Chip key={techs.indexOf(tech)} label={tech} size='small' sx={{
+                                    m: '5px', bgcolor: theme.palette.success.main, color: theme.palette.text.secondary, fontSize: '0.8em', '&:hover': {
+                                        transform: 'scale(1.2)',
+                                    },
+                                }} />
+                            })}
+                        </Box>
                     </CardContent>
                 </Paper>
                 <CardMedia
@@ -53,12 +59,6 @@ function PortfolioCard({ title, category, link, githubRepo, img, description }) 
                 />
             </Box>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
                 <ExpandMore
                     expand={expanded}
                     onClick={handleExpandClick}

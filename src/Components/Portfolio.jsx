@@ -8,6 +8,7 @@ function Portfolio() {
             id: 1,
             title: 'Superman React',
             category: 'front',
+            techs: ['react.js','bootstrap','firebase'],
             link: 'https://sayna-react-superman-base.web.app/',
             githubRepo: 'https://github.com/Faniry1015/SAYNA-REACT-SUPERMAN-112022',
             img: 'src/assets/images/superman-eshop.jpg',
@@ -17,6 +18,7 @@ function Portfolio() {
             id: 2,
             title: 'Batman React',
             category: 'front',
+            techs: ['react.js','bootstrap','firebase'],
             link: 'https://batman-sayna-react-app.web.app/',
             githubRepo: 'https://github.com/Faniry1015/SAYNA-REACTJS-BATMANREACT',
             img: 'src/assets/images/batman-header.jpg',
@@ -37,6 +39,7 @@ function Portfolio() {
                             <PortfolioCard
                                 title={project.title}
                                 category={project.category}
+                                techs={project.techs}
                                 link={project.link}
                                 githubRepo={project.githubRepo}
                                 img={project.img}

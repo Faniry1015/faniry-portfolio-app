@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
 import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme, alpha } from '@mui/material';
-import { teal, purple, lime, blueGrey, grey } from '@mui/material/colors'
+import { teal, purple, lime, blueGrey, grey, lightGreen } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -23,11 +23,13 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 light: darkMode ? '#6c698d33':'#84cae733'
             },
             background: {
-                primary: darkMode ?  '#121212' : '#33658aef',
                 secondary: darkMode ?  '#6c698d33':'#84cae799',
             },
             info: {
                 main: darkMode ? alpha(blueGrey[800], 0.9) : alpha(grey[100], 0.9) ,
+            },
+            success: {
+                main: darkMode ? alpha(lightGreen[500], 0.9) : alpha('#33658a', 0.8) ,
             },
         },
         components: {
@@ -71,7 +73,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
             },
             h4: {
                 fontFamily: 'Roboto, Roboto, Arial',
-                color: darkMode ? lime[400] : '#33658a',
+                color: darkMode ? lightGreen[500] : '#33658a',
                 fontSize: '1em',
                 textAlign: 'center',
                 fontWeight: 'bold',
