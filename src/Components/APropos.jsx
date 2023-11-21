@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/system'
 import { Typography, Grid, Paper, useTheme } from '@mui/material'
-import SocialLinkIcons from './SocialLinkIcons'
+import {aproposImg} from '../assets/images/webdevVector.png'
 
 function APropos() {
     const theme = useTheme()
@@ -13,7 +13,7 @@ function APropos() {
                 </Typography>
                 <Grid container spacing={1} sx={{ alignItems: 'center' }}>
                     <Grid item xs={12} md={5} display={{ xs: 'none', md: 'block' }}>
-                        <Box><img src="src\assets\images\webdevVector.png" alt="web developer" style={{ maxWidth: '100%' }} /></Box>
+                        <Box><img src={aproposImg} alt="web developer" style={{ maxWidth: '100%' }} /></Box>
                     </Grid>
 
                     <Grid item xs={12} md={7}>

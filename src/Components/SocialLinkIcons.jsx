@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Box, Stack, Link, SvgIcon } from '@mui/material'
+import { Stack, Link, SvgIcon } from '@mui/material'
 import { GitHub, LinkedIn } from '@mui/icons-material'
 import { blue } from '@mui/material/colors'
 

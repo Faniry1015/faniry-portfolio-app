@@ -13,8 +13,7 @@ import {
     Toolbar,
     Box,
     Avatar,
-    MenuItem,
-    useTheme
+    MenuItem
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
