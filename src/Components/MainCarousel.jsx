@@ -2,7 +2,7 @@ import React from 'react'
 import { scrollTo } from './scrollTo'
 import '../Styles/APropos.css'
 import { Typography, Box, Button, useTheme } from '@mui/material'
-import CarouselWrapper from './Slider'
+import MainSlider from './MainSlider'
 
 
 function MainCarousel() {
@@ -21,7 +21,7 @@ function MainCarousel() {
                         </Button>
                     </Box>
                 </Box>
-                <CarouselWrapper />
+                <MainSlider />
             </Box>
     )
 }
