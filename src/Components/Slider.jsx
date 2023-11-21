@@ -88,7 +88,6 @@ export const Slider = ({
   };
 
   const slideDimensionStyles = () => {
-    console.log({ width: slideWidth + "px", height: !isNaN(slideHeight) ? slideHeight + "px" : slideHeight })
     return { width: slideWidth + "px", height: !isNaN(slideHeight) ? slideHeight + "px" : slideHeight };
   };
 

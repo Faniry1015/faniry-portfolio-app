@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/system'
-import { Typography, Grid, Paper, Stack, useTheme, Card, CardActions, CardContent, Button, IconButton, Tooltip } from '@mui/material'
+import { Typography, Grid, Paper, Stack, useTheme, IconButton, Tooltip } from '@mui/material'
 import { blueGrey, grey } from '@mui/material/colors'
 import '../Styles/Competences.css'
 import CircularWithValueLabel from './CompetCircularProgress'

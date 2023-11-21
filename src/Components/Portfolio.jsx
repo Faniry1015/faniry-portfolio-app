@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PortfolioSlider from './PortFolioSlider'
 import PortfolioCard from './PortfolioCard'
 import { Box, Grid, Paper, Typography, useTheme, ToggleButtonGroup, ToggleButton } from '@mui/material'
 const projects = [
@@ -94,7 +93,6 @@ function Portfolio() {
     return (
         <Box component='section' className='mainSection' id='portfolio'>
             <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
-            {/* <PortfolioSlider /> */}
                 <Typography variant='h3'>
                     Portfolio
                 </Typography>

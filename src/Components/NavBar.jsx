@@ -214,7 +214,7 @@ function NavBar({ onThemeChange }) {
                                 <Typography component='a' className="nav-link active" id={`my${section.id}`}  >{section.label}</Typography>
                             </Button>
                         ))}
-                        <Box>
+                        <Box sx={{mx: 1}}>
                             <Typography variant='h6' sx={{ textAlign: 'center', color: blueGrey[200], fontSize: '1em' }}>MODE</Typography>
                             <ToggleButtonGroup
                                 variant='contained'
