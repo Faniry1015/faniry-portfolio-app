@@ -14,9 +14,6 @@ function APropos() {
                 <Grid container spacing={1} sx={{ alignItems: 'center' }}>
                     <Grid item xs={12} md={5} display={{ xs: 'none', md: 'block' }}>
                         <Box><img src="src\assets\images\webdevVector.png" alt="web developer" style={{ maxWidth: '100%' }} /></Box>
-                        <Box sx={{ marginRight: '20px' }}>
-                            <SocialLinkIcons />
-                        </Box>
                     </Grid>
 
                     <Grid item xs={12} md={7}>

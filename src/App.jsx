@@ -9,6 +9,7 @@ import APropos from './Components/APropos';
 import Competences from './Components/Competences';
 import Portfolio from './Components/Portfolio';
 import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 function App() {
   const [themeStatus, setThemeStatus] = useState('')
@@ -47,6 +48,7 @@ function App() {
           <Portfolio />
           <Contact />
         </Box>
+        <Footer />
       </CustomThemeProvider>
     </>
   )

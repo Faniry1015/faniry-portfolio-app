@@ -17,13 +17,13 @@ function Contact() {
     };
 
     return (
-        <Box component='section' className='mainSection' id='competences'>
+        <Box component='section' className='mainSection' id='contact'>
             <Paper elevation={4} sx={{ px: 3, py: 4, bgcolor: theme.palette.background.secondary }}>
                 <Typography variant='h3'>
                     Me contacter
                 </Typography>
-                <Container component="main">
-                    <Grid container spacing={3}>
+                <Container component="main" maxWidth='md'>
+                    <Grid container spacing={5}>
                         <Grid item xs={12} md={6} component="form" noValidate onSubmit={handleSubmit}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
@@ -105,7 +105,6 @@ function Contact() {
                             </Grid>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Divider sx={{ my: 1 }} />
                             <Typography variant='subtitle2' align='center'>Vous pouvez également me retrouver sur :</Typography>
                             <Box sx={{ m: 2, display: 'flex', justifyContent: 'center' }}>
                                 <SocialLinkIcons />
@@ -113,24 +112,21 @@ function Contact() {
                             <Divider variant='middle' sx={{ bgcolor: purple[200], my: 1 }} />
                             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                 <List>
-                                    <ListItem disablePadding>
-                                        <ListItemButton>
+                                    <ListItem>
                                             <ListItemIcon>
                                                 <Mail />
                                             </ListItemIcon>
                                             <ListItemText primary="frandriaharimino@yahoo.com" />
-                                        </ListItemButton>
                                     </ListItem>
-                                    <ListItem disablePadding>
-                                        <ListItemButton>
+                                    <ListItem>
                                             <ListItemIcon>
                                                 <PhoneAndroid />
                                             </ListItemIcon>
                                             <ListItemText primary="+261 34 08 717 66" />
-                                        </ListItemButton>
                                     </ListItem>
                                 </List>
                             </Box>
+
                         </Grid>
                     </Grid>
                 </Container>
