@@ -80,6 +80,15 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 marginTop: '15px',
                 marginBottom: '10px'
             },
+            subtitle2: {
+                textAlign: 'left',
+                fontWeight: 'bold'
+            },
+            body2: {
+                fontSize: '0.7em',
+                textAlign: 'left',
+                marginBottom: '5px'
+            },
         },
     })
 
