@@ -13,7 +13,7 @@ function Portfolio() {
             link: 'https://sayna-react-superman-base.web.app/',
             githubRepo: 'https://github.com/Faniry1015/SAYNA-REACT-SUPERMAN-112022',
             img: 'src/assets/images/superman-eshop.jpg',
-            description: 'site vitrine et e-commerce'
+            description: 'site vitrine et e-commerce sur le thème de l\'univers de Superman'
         },
         {
             id: 2,
@@ -24,7 +24,7 @@ function Portfolio() {
             link: 'https://batman-sayna-react-app.web.app/',
             githubRepo: 'https://github.com/Faniry1015/SAYNA-REACTJS-BATMANREACT',
             img: 'src/assets/images/batman-header.jpg',
-            description: 'site vitrine, e-commerce et quizz'
+            description: 'site vitrine, e-commerce et quizz sur le thème de l\'univers de Batman'
         },
         {
             id: 3,
@@ -32,10 +32,32 @@ function Portfolio() {
             category: 'front',
             context: 'évaluation dans le cadre de ma formation vanilla javascript',
             techs: ['javascript','html','css'],
-            link: 'https://batman-sayna-react-app.web.app/',
-            githubRepo: 'https://github.com/Faniry1015/SAYNA-REACTJS-BATMANREACT',
-            img: 'src/assets/images/batman-header.jpg',
-            description: 'site vitrine et quizz'
+            link: '',
+            githubRepo: 'https://github.com/Faniry1015/SAYNA-JSTSCANVAS-PANTHER-072022',
+            img: 'src/assets/images/black-panther-header.jpg',
+            description: 'création d\'un site vitrine et quizz à partir du prototype créé dans le projet Black Panther UX/UI'
+        },
+        {
+            id: 4,
+            title: 'Sayna Mobile UX/UI',
+            category: 'design',
+            context: 'projet réalisé dans le cadre de mon initiation au design UX/UI',
+            techs: ['figma'],
+            link: 'https://www.figma.com/proto/l2eRUHlLil3XyJIE1xoTKR/SAYNA-UXUI-DESIGNMOBILE?type=design&node-id=8-3&t=beG9jSuPWiYgfgtL-1&scaling=scale-down&page-id=0%3A1&mode=design',
+            githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
+            img: 'src/assets/images/sayna-mobile.jpg',
+            description: 'reproduction d\'une maquette mobile sur figma'
+        },
+        {
+            id: 5,
+            title: 'Black Panther UX/UI',
+            category: 'design',
+            context: 'évaluation dans le cadre de ma formation au design UX/UI',
+            techs: ['figma'],
+            link: 'https://www.figma.com/proto/RMqxHCO54BVhwlcbwyTIIv/SAYNA-UXUI-DESIGNPANTHER?type=design&node-id=96-371&t=YnZTGLIyUmPyKQan-1&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=34%3A97&mode=design',
+            githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
+            img: 'src/assets/images/black-panther-footer.jpg',
+            description: 'reproduction d\'un prototype d\'une site vitrine sur l\'univers de black panther'
         },
     ]
     const theme = useTheme()

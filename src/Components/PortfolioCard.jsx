@@ -90,7 +90,7 @@ function PortfolioCard({ title, category, context, techs, link, githubRepo, img,
                         <strong>Desciption :</strong> {description}
                     </Typography>
                     <Button href={link} variant='contained' size='small' sx={{my: 1}}>
-                        visiter
+                        { category === 'front' ? 'visiter' : 'voir'}
                     </Button>
                 </Stack>
                 </CardContent>
