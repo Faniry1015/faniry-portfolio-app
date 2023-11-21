@@ -24,6 +24,16 @@ function Portfolio() {
             img: 'src/assets/images/batman-header.jpg',
             description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis nesciunt doloribus facere dolor aspernatur a. Ad recusandae, odit adipisci voluptatibus obcaecati qui dolorem totam commodi quas, provident maxime maiores voluptatum?'
         },
+        {
+            id: 3,
+            title: 'Black Panther JS',
+            category: 'front',
+            techs: ['javascript','html','css'],
+            link: 'https://batman-sayna-react-app.web.app/',
+            githubRepo: 'https://github.com/Faniry1015/SAYNA-REACTJS-BATMANREACT',
+            img: 'src/assets/images/batman-header.jpg',
+            description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis nesciunt doloribus facere dolor aspernatur a. Ad recusandae, odit adipisci voluptatibus obcaecati qui dolorem totam commodi quas, provident maxime maiores voluptatum?'
+        },
     ]
     const theme = useTheme()
     return (
@@ -35,12 +45,12 @@ function Portfolio() {
                 <Grid container spacing={2}>
 
                     {projects.map((project) => {
-                        return <Grid item xs={6} md={4} key={project.id}>
+                        return <Grid item xs={12} sm={6} md={4} key={project.id}>
                             <PortfolioCard
                                 title={project.title}
                                 category={project.category}
                                 techs={project.techs}
-                                link={project.link}
+                                link={project.link} 
                                 githubRepo={project.githubRepo}
                                 img={project.img}
                                 description={project.description}

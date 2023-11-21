@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box} from '@mui/material';
+import { useTheme } from '@mui/system';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
 import MainCarousel from './Components/MainCarousel';
@@ -14,12 +15,32 @@ function App() {
     setThemeStatus(themeLabel)
   }
 
+  const theme = useTheme()
+
+  const margins = {
+    [theme.breakpoints.down('xs')]: {
+      mx: 2,
+    },
+    [theme.breakpoints.up('sm')]: {
+      mx: 4,
+    },
+    [theme.breakpoints.up('md')]: {
+      mx: 6,
+    },
+    [theme.breakpoints.up('lg')]: {
+      mx: 8,
+    },
+    [theme.breakpoints.up('xl')]: {
+      mx: 10,
+    },
+  };
+
   return (
     <>
       <CustomThemeProvider onThemeChange={themeStatus} >
         <Header onThemeChange={handleThemeToggle} />
         <MainCarousel />
-        <Box sx={{ mx: 7, textAlign: 'justify' }}>
+        <Box sx={{ ...margins, textAlign: 'justify' }}>
           <APropos />
           <Competences />
           <Portfolio />

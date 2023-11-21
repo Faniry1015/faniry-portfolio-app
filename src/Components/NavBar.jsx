@@ -136,7 +136,7 @@ function NavBar({ onThemeChange }) {
                         Faniriantsoa <br /> RANDRIAHARIMINO
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none' }, justifyContent: 'flex-end' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex', lg: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -198,7 +198,7 @@ function NavBar({ onThemeChange }) {
                             </MenuItem>
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
                         {sections.map((section) => (
                             <Button
                                 key={section.id}

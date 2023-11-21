@@ -33,18 +33,18 @@ function PortfolioCard({ title, category, techs, link, githubRepo, img, descript
     return (
         <Card sx={{ maxWidth: 345 }}>
             <Box position='relative' sx={{ overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Paper sx={{ position: 'absolute', zIndex: 10, width: 'calc(100% - 5px)', height: 'calc(100% - 5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: theme.palette.info.main }}>
-                    <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                        <Box>
-                            <Link variant='body1' textAlign='center' underline='none' sx={{ color: theme.palette.text.secondary }} href={link}>
-                                <LinkIcon fontSize='small' color='secondary' />{title}
+                <Paper sx={{opacity: 0,'&:hover': {opacity: 0.9, transition: 'opacity 0.4s ease-in-out'}, position: 'absolute', zIndex: 10, width: 'calc(100% - 5px)', height: 'calc(100% - 5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: theme.palette.info.main }}>
+                    <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',  }}>
+                        <Box sx={{'&:hover': {transform:'scale(1.2)'}}}>
+                            <Link variant='body1' textAlign='center' underline='none' sx={{ color: theme.palette.text.secondary, }} href={link}>
+                                <LinkIcon fontSize='small' color='secondary' sx={{mx: 1}} />{title}
                             </Link>
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', marginTop: '10px'}}>
                             {techs.map((tech) => {
                                 return <Chip key={techs.indexOf(tech)} label={tech} size='small' sx={{
                                     m: '5px', bgcolor: theme.palette.success.main, color: theme.palette.text.secondary, fontSize: '0.8em', '&:hover': {
-                                        transform: 'scale(1.2)',
+                                        transform: 'scale(1.1)',
                                     },
                                 }} />
                             })}
