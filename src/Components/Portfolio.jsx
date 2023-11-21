@@ -58,6 +58,17 @@ const projects = [
         img: 'src/assets/images/black-panther-footer.jpg',
         description: 'reproduction d\'un prototype d\'une site vitrine sur l\'univers de black panther'
     },
+    {
+        id: 6,
+        title: 'Mon Portfolio MUI',
+        category: 'front',
+        context: 'Mon premier projet personnel post formation',
+        techs: ['material ui', 'react.js', 'vite'],
+        link: '#',
+        githubRepo: 'https://github.com/Faniry1015/faniry-portfolio-app',
+        img: 'src/assets/images/mon-portfolio.jpg',
+        description: 'vous y êtes'
+    },
 ]
 
 function Portfolio() {
@@ -82,8 +93,8 @@ function Portfolio() {
 
     return (
         <Box component='section' className='mainSection' id='portfolio'>
-            {category}
             <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
+            {/* <PortfolioSlider /> */}
                 <Typography variant='h3'>
                     Portfolio
                 </Typography>
@@ -106,9 +117,7 @@ function Portfolio() {
                         </ToggleButton>
                     </ToggleButtonGroup>
                 </Box>
-                <PortfolioSlider/>
-
-                <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center'}}>
                     {visibleProjects.map((project) => {
                         return <Grid item sx={{ display: 'flex', justifyContent: 'center' }} xs={12} sm={6} md={4} key={project.id}>
                             <PortfolioCard
@@ -123,7 +132,6 @@ function Portfolio() {
                             />
                         </Grid>
                     })}
-
                 </Grid>
             </Paper>
         </Box>
