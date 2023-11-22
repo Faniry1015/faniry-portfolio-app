@@ -7,23 +7,25 @@ import InputMask from 'react-input-mask';
 
 function Contact() {
     const [values, setValues] = useState({
-        firstname: { value: '', error: false },
-        lastname: { value: '', error: false },
-        email: { value: '', error: false },
-        phone: { value: '', error: false },
-        subject: { value: '', error: false },
-        message: { value: '', error: false },
-        consent: false
+        firstname: { value: '', empty: false, required: false },
+        lastname: { value: '', empty: false, required: true },
+        email: { value: '', empty: false, required: true },
+        phone: { value: '', empty: false, required: false },
+        subject: { value: '', empty: false, required: true },
+        message: { value: '', empty: false, required: true },
+        consent: { checked: false, helpIsVisible: false }
     })
 
     const requiredTextHelper = 'Champ obligatoire'
 
     const handleChange = (e) => {
         if (e.target.name === 'consent') {
-            setValues({ ...values, consent: !consent })
+            const consentStatus = e.target.checked
+            const currentConsentData = { consent: { checked: consentStatus, helpIsVisible: !consentStatus } }
+            setValues({ ...values, ...currentConsentData })
         } else {
-            const error = e.target.value !== '' ? false : true
-            const change = { [e.target.name]: { value: e.target.value, error: error } }
+            const empty = e.target.value !== '' ? false : true
+            const change = { [e.target.name]: {value: e.target.value, empty: empty, required: values[e.target.name].required  } }
             setValues({ ...values, ...change })
         }
         console.log(values)
@@ -33,12 +35,30 @@ function Contact() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (values.consent) {
-            let valuesArray = Object.values(values).map(entry => entry.value)
-            valuesArray.pop()
-            console.log(valuesArray)
-        }
+        let currentValues = { ...values }
+        updateEmptyStatus(currentValues);
+        console.log(currentValues)
+        setValues(currentValues)
+    }
 
+    function updateEmptyStatus(fields) {
+        for (const fieldName in fields) {
+            if (fields.hasOwnProperty(fieldName)) {
+                const field = fields[fieldName];
+    
+                if (field.required && field.value === "") {
+                    fields[fieldName].empty = true;
+                } else {
+                    fields[fieldName].empty = false;
+                }
+                
+                if(!field.checked) {
+                    fields[fieldName].helpIsVisible = true
+                } else {
+                    fields[fieldName].helpIsVisible = false;
+                }
+            }
+        }
     }
 
     const { firstname, lastname, email, phone, subject, message, consent } = values
@@ -57,15 +77,11 @@ function Contact() {
                                     <TextField
                                         autoComplete="given-name"
                                         name="firstname"
-                                        required
                                         fullWidth
                                         id="firstname"
                                         label="Prénom"
-                                        autoFocus
                                         value={firstname.value}
                                         onChange={handleChange}
-                                        error={firstname.error}
-                                        helperText={firstname.error ? requiredTextHelper : null}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
@@ -78,8 +94,8 @@ function Contact() {
                                         autoComplete="family-name"
                                         value={lastname.value}
                                         onChange={handleChange}
-                                        error={lastname.error}
-                                        helperText={lastname.error ? requiredTextHelper : null}
+                                        error={lastname.empty}
+                                        helperText={lastname.empty ? requiredTextHelper : null}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
@@ -92,23 +108,19 @@ function Contact() {
                                         autoComplete="email"
                                         value={email.value}
                                         onChange={handleChange}
-                                        error={email.error}
-                                        helperText={email.error ? requiredTextHelper : null}
+                                        error={email.empty}
+                                        helperText={email.empty ? requiredTextHelper : null}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <InputMask mask="+999 99 99 999 99" maskChar="_" value={phone.value} onChange={handleChange}>
                                         {() => (
                                             <TextField
-                                                required
                                                 fullWidth
                                                 id="phone"
                                                 label="Téléphone"
                                                 name="phone"
                                                 autoComplete="phone"
-                                                error={phone.error}
-                                                helperText={phone.error ? requiredTextHelper : null}
-                                                placeholder="+1 (123) 456-7890"
                                             />
                                         )}
                                     </InputMask>
@@ -123,8 +135,8 @@ function Contact() {
                                         autoComplete="subject"
                                         value={subject.value}
                                         onChange={handleChange}
-                                        error={subject.error}
-                                        helperText={subject.error ? requiredTextHelper : null}
+                                        error={subject.empty}
+                                        helperText={subject.empty ? requiredTextHelper : null}
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
@@ -140,13 +152,13 @@ function Contact() {
                                             rows={5}
                                             value={message.value}
                                             onChange={handleChange}
-                                            error={message.error}
-                                            helperText={message.error ? requiredTextHelper : null}
+                                            error={message.empty}
+                                            helperText={message.empty ? requiredTextHelper : null}
                                         />
                                     </Grid>
                                     <Grid item xs={12}>
                                         <FormControlLabel
-                                            control={<Checkbox name='consent' checked={consent} onChange={handleChange} color="primary" />}
+                                            control={<Checkbox name='consent' checked={consent.checked} required onChange={handleChange} color="primary" />}
                                             label="En soumettant ce formulaire, j'accepte que mes données personnelles soient utilisées pour me recontacter. Aucun autre traitement ne sera effectué avec mes informations."
                                             sx={{
                                                 my: 1,
@@ -155,6 +167,7 @@ function Contact() {
                                                 }
                                             }}
                                         />
+                                        {consent.helpIsVisible && <Box><Typography variant='caption' color='red' sx={{ position: 'absolute' }} >Cochez la case pour donner votre consentement.</Typography></Box>}
                                     </Grid>
                                 </Grid>
                                 <Box style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
