@@ -18,6 +18,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { blueGrey, teal, lime } from '@mui/material/colors';
+import faniry from "../assets/images/faniry.png"
 
 function NavBar({ onThemeChange }) {
     const [mode, setMode] = useState(null)
@@ -115,7 +116,7 @@ function NavBar({ onThemeChange }) {
                 <Toolbar sx={{ height: '100%', }} disableGutters>
                     <Box sx={{ mr: 2, flexGrow: 0, position: 'sticky', top: 0 }}>
                         <IconButton sx={{ p: 2 }}>
-                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} src="src\assets\images\faniry.png" alt="Faniry R." aria-label='Faniry R.' />
+                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} src={faniry} alt="Faniry R." aria-label='Faniry R.' />
                         </IconButton>
                     </Box>
                     <Typography

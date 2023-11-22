@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import PortfolioCard from './PortfolioCard'
 import { Box, Grid, Paper, Typography, useTheme, ToggleButtonGroup, ToggleButton } from '@mui/material'
+import supermanreact from '../assets/images/superman-eshop.jpg'
+import saynamobile from '../assets/images/sayna-mobile.jpg'
+import batmanreact from '../assets/images/batman-header.jpg'
+import blackpantherjs from '../assets/images/black-panther-header.jpg'
+import blackpantheruxui from '../assets/images/black-panther-footer.jpg'
+import monportfolio from '../assets/images/mon-portfolio.jpg'
+
+
 const projects = [
     {
         id: 1,
@@ -10,7 +18,7 @@ const projects = [
         techs: ['react.js', 'bootstrap', 'firebase'],
         link: 'https://sayna-react-superman-base.web.app/',
         githubRepo: 'https://github.com/Faniry1015/SAYNA-REACT-SUPERMAN-112022',
-        img: 'src/assets/images/superman-eshop.jpg',
+        img: supermanreact,
         description: 'site vitrine et e-commerce sur le thème de l\'univers de Superman'
     },
     {
@@ -21,7 +29,7 @@ const projects = [
         techs: ['figma'],
         link: 'https://www.figma.com/proto/l2eRUHlLil3XyJIE1xoTKR/SAYNA-UXUI-DESIGNMOBILE?type=design&node-id=8-3&t=beG9jSuPWiYgfgtL-1&scaling=scale-down&page-id=0%3A1&mode=design',
         githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
-        img: 'src/assets/images/sayna-mobile.jpg',
+        img: saynamobile,
         description: 'reproduction d\'une maquette mobile sur figma'
     },
     {
@@ -32,7 +40,7 @@ const projects = [
         techs: ['react.js', 'bootstrap', 'firebase'],
         link: 'https://batman-sayna-react-app.web.app/',
         githubRepo: 'https://github.com/Faniry1015/SAYNA-REACTJS-BATMANREACT',
-        img: 'src/assets/images/batman-header.jpg',
+        img: batmanreact,
         description: 'site vitrine, e-commerce et quizz sur le thème de l\'univers de Batman'
     },
     {
@@ -43,7 +51,7 @@ const projects = [
         techs: ['javascript', 'html', 'css'],
         link: '',
         githubRepo: 'https://github.com/Faniry1015/SAYNA-JSTSCANVAS-PANTHER-072022',
-        img: 'src/assets/images/black-panther-header.jpg',
+        img: blackpantherjs,
         description: 'création d\'un site vitrine et quizz à partir du prototype créé dans le projet Black Panther UX/UI'
     },
     {
@@ -54,7 +62,7 @@ const projects = [
         techs: ['figma'],
         link: 'https://www.figma.com/proto/RMqxHCO54BVhwlcbwyTIIv/SAYNA-UXUI-DESIGNPANTHER?type=design&node-id=96-371&t=YnZTGLIyUmPyKQan-1&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=34%3A97&mode=design',
         githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
-        img: 'src/assets/images/black-panther-footer.jpg',
+        img: blackpantheruxui,
         description: 'reproduction d\'un prototype d\'une site vitrine sur l\'univers de black panther'
     },
     {
@@ -65,7 +73,7 @@ const projects = [
         techs: ['material ui', 'react.js', 'vite'],
         link: '#',
         githubRepo: 'https://github.com/Faniry1015/faniry-portfolio-app',
-        img: 'src/assets/images/mon-portfolio.jpg',
+        img: monportfolio,
         description: 'vous y êtes'
     },
 ]

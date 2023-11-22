@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/system'
 import { Typography, Grid, Paper, useTheme } from '@mui/material'
-import {aproposImg} from '../assets/images/webdevVector.png'
+import aproposImg from '../assets/images/webdevVector.png'
 
 function APropos() {
     const theme = useTheme()
