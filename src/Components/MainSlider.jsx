@@ -51,7 +51,7 @@ function MainSlider() {
         slides={slides}
         speed={5000}
         slideWidth={windowWidth}
-        slideHeight={windowWidth/2.5}
+        slideHeight={windowWidth/2}
         autoScroll
       />
     </Box>

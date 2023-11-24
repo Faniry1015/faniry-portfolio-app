@@ -13,7 +13,9 @@ import {
     Toolbar,
     Box,
     Avatar,
-    MenuItem
+    MenuItem,
+    useTheme,
+    useMediaQuery
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
@@ -22,6 +24,9 @@ import faniry from "../assets/images/faniry.png"
 
 function NavBar({ onThemeChange }) {
     const [mode, setMode] = useState(null)
+
+    const theme = useTheme();
+    const mdScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     const handleThemeToggle = (e) => {
         const activedButton = e.target
@@ -114,9 +119,9 @@ function NavBar({ onThemeChange }) {
         <AppBar position="sticky">
             <Container sx={{ height: 90 }} maxWidth="xl">
                 <Toolbar sx={{ height: '100%', }} disableGutters>
-                    <Box sx={{ mr: 2, flexGrow: 0, position: 'sticky', top: 0 }}>
+                    <Box sx={{ mr: 1, flexGrow: 0, }}>
                         <IconButton sx={{ p: 2 }}>
-                            <Avatar sx={{ width: 125, height: 125, bgcolor: blueGrey[100] }} src={faniry} alt="Faniry R." aria-label='Faniry R.' />
+                            <Avatar sx={{ width: 80, height: 80, bgcolor: blueGrey[100] }} src={faniry} alt="Faniry R." aria-label='Faniry R.' />
                         </IconButton>
                     </Box>
                     <Typography
@@ -126,7 +131,7 @@ function NavBar({ onThemeChange }) {
                         href="#propos"
                         sx={{
                             mr: 1,
-                            fontSize: '1em',
+                            fontSize: mdScreen ? '0.7em' : '1em',
                             fontWeight: 800,
                             letterSpacing: '.1rem',
                             color: 'inherit',
