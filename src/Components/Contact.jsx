@@ -4,9 +4,11 @@ import { Mail, PhoneAndroid } from '@mui/icons-material';
 import SocialLinkIcons from './SocialLinkIcons';
 import { purple } from '@mui/material/colors';
 import InputMask from 'react-input-mask';
+import { doc, setDoc } from "firebase/firestore";
+import { db } from '../firebase-config';
 
 function Contact() {
-    const [values, setValues] = useState({
+    const defaultFormData = {
         firstname: { value: '', empty: false, required: false },
         lastname: { value: '', empty: false, required: true },
         email: { value: '', empty: false, required: true },
@@ -14,9 +16,9 @@ function Contact() {
         subject: { value: '', empty: false, required: true },
         message: { value: '', empty: false, required: true },
         consent: { checked: false, helpIsVisible: false }
-    })
-
-    const requiredTextHelper = 'Champ obligatoire'
+    }
+    
+    const [values, setValues] = useState(defaultFormData)
 
     const handleChange = (e) => {
         if (e.target.name === 'consent') {
@@ -25,43 +27,63 @@ function Contact() {
             setValues({ ...values, ...currentConsentData })
         } else {
             const empty = e.target.value !== '' ? false : true
-            const change = { [e.target.name]: {value: e.target.value, empty: empty, required: values[e.target.name].required  } }
+            const change = { [e.target.name]: { value: e.target.value, empty: empty, required: values[e.target.name].required } }
             setValues({ ...values, ...change })
         }
-        console.log(values)
     }
 
     const theme = useTheme()
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let currentValues = { ...values }
-        updateEmptyStatus(currentValues);
-        console.log(currentValues)
-        setValues(currentValues)
+        for (const fieldName in values) {
+            const field = values[fieldName];
+            if (field.required && field.value === "") {
+                let currentValues = { ...values }
+                updateEmptyStatus(currentValues);
+                setValues(currentValues)
+                console.log('champs obligatoires non remplis')
+                return
+            }
+        }
+        if (!values.consent.checked) {
+            setValues({ ...values, consent: { checked: false, helpIsVisible: true } })
+            console.log('pas de consentement')
+            return
+        }
+        sendMessage()
+        setValues(defaultFormData)
+        console.log('message sent')
     }
 
     function updateEmptyStatus(fields) {
         for (const fieldName in fields) {
-            if (fields.hasOwnProperty(fieldName)) {
-                const field = fields[fieldName];
-    
-                if (field.required && field.value === "") {
-                    fields[fieldName].empty = true;
-                } else {
-                    fields[fieldName].empty = false;
-                }
-                
-                if(!field.checked) {
-                    fields[fieldName].helpIsVisible = true
-                } else {
-                    fields[fieldName].helpIsVisible = false;
-                }
+            const field = fields[fieldName];
+
+            if (field.required && field.value === "") {
+                fields[fieldName].empty = true;
+            } else {
+                fields[fieldName].empty = false;
             }
         }
     }
 
     const { firstname, lastname, email, phone, subject, message, consent } = values
+
+    const sendMessage = async () => {
+        const date = Date()
+        await setDoc(doc(db, 'messages', date), {
+            firstname: firstname.value,
+            lastname: lastname.value,
+            email: email.value,
+            phone: phone.value,
+            subject: subject.value,
+            message: message.value,
+            consent: consent.checked,
+        });
+    }
+
+    const requiredTextHelper = 'Champ obligatoire'
 
     return (
         <Box component='section' className='mainSection' id='contact'>
