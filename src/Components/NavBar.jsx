@@ -15,7 +15,8 @@ import {
     Avatar,
     MenuItem,
     useTheme,
-    useMediaQuery
+    useMediaQuery,
+    ButtonGroup
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
@@ -71,7 +72,6 @@ function NavBar({ onThemeChange }) {
         }
 
         let observe = function (elements) {
-
             const options = { rootMargin: `-${windowHeight - y - 100}px 0px -${y}px 0px` } // en lecture seule donc ne se met pas à jour quand on redimmentionne la fenêtre
             const observer = new IntersectionObserver(callback, options);
 
@@ -81,7 +81,7 @@ function NavBar({ onThemeChange }) {
         }
 
 
-// Permet de ne pas appelé la fonction trop de fois (ex: listener "resize")
+        // Permet de ne pas appelé la fonction trop de fois (ex: listener "resize")
         const debounce = function (callback, delay) {
             let timer;
             return function () {
@@ -204,22 +204,24 @@ function NavBar({ onThemeChange }) {
                         </Menu>
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
-                        {sections.map((section) => (
-                            <Button
-                                key={section.id}
-                                onClick={() => {
-                                    scrollTo(section.id)
-                                }}
-                                sx={{
-                                    my: 1, px: 2, fontSize: '1em', color: 'white', display: 'block', height: '100%', m: 0, '&:hover': {
-                                        backgroundColor: blueGrey[300],
-                                    }
-                                }}
-                            >
-                                <Typography component='a' className="nav-link active" id={`my${section.id}`}  >{section.label}</Typography>
-                            </Button>
-                        ))}
-                        <Box sx={{mx: 1}}>
+                        <ButtonGroup   variant='text'  size='large' sx={{height: '100%', display: 'flex', alignItems: 'center'}}>
+                            {sections.map((section) => (
+                                <Button
+                                    key={section.id}
+                                    onClick={() => {
+                                        scrollTo(section.id)
+                                    }}
+                                    sx={{
+                                        my: 1, px: 2, fontSize: '1em', color: 'white', height: '70%', '&:hover': {
+                                            backgroundColor: blueGrey[300],
+                                        }
+                                    }}
+                                >
+                                    <Typography component='a' className="nav-link active" id={`my${section.id}`}  >{section.label}</Typography>
+                                </Button>
+                            ))}
+                        </ButtonGroup>
+                        <Box sx={{ mx: 1 }}>
                             <Typography variant='h6' sx={{ textAlign: 'center', color: blueGrey[200], fontSize: '1em' }}>MODE</Typography>
                             <ToggleButtonGroup
                                 variant='contained'
