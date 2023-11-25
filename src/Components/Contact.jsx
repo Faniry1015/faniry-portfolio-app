@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Box, Button, Typography, Grid, Paper, useTheme, Container, TextField, FormControlLabel, Checkbox, List, ListItem, ListItemIcon, ListItemText, Divider, } from '@mui/material'
-import { Mail, PhoneAndroid } from '@mui/icons-material';
+import { Mail, PhoneAndroid, TrendingUp } from '@mui/icons-material';
 import SocialLinkIcons from './SocialLinkIcons';
-import { purple, teal } from '@mui/material/colors';
+import { blueGrey, purple, teal } from '@mui/material/colors';
 import InputMask from 'react-input-mask';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '../firebase-config';
+import { maxWidth } from '@mui/system';
 
 function Contact() {
     const theme = useTheme()
@@ -87,7 +88,6 @@ function Contact() {
 
     const togglePopupVisibility = () => {
         const changeVisibility = !popupIsVisible
-        console.log(changeVisibility)
         setPopupIsVisible(changeVisibility)
     }
 
@@ -236,31 +236,33 @@ function Contact() {
                                 </Box>
                             </Grid>
                         </Grid>
-                    </Container>    
+                    </Container>
                 </Paper>
             </Box >
-            { popupIsVisible && <Paper sx={{
+            {popupIsVisible && <Paper sx={{
                 position: 'fixed',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 height: window.innerHeight - 50,
                 width: window.innerWidth - 50,
-                bgcolor: theme.palette.secondary.light,
+                bgcolor: theme.palette.primary.dark,
                 zIndex: 10000,
                 flexDirection: 'column',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-            }} 
-            onClick={() => togglePopupVisibility()}
-            elevation={24} >
-                <Typography variant='h1' sx={{ margin: 3, textAlign: 'center', color: purple[600] }}>
-                    Merci pour votre message !
-                </Typography>
-                <Typography sx={{ margin: 3, textAlign: 'center', color: "black" }}>
-                    Soyez assuré(e) que je m'emploierai à vous répondre dans les plus brefs délais. En attendant, je vous invite à explorer mon portfolio pour en savoir plus sur mon travail.
-                </Typography>
+            }}
+                onClick={() => togglePopupVisibility()}
+                elevation={24} >
+                <Box sx={{maxWidth: 'sm'}}>
+                    <Typography variant='h1' sx={{ margin: 3, textAlign: 'center', color: teal['A700'] }}>
+                        Merci pour votre message !
+                    </Typography>
+                    <Typography sx={{ margin: 3, textAlign: 'center', color: blueGrey[100] }}>
+                        Soyez assuré(e) que je m'emploierai à vous répondre dans les plus brefs délais. En attendant, je vous invite à explorer mon portfolio pour en savoir plus sur mon travail.
+                    </Typography>
+                </Box>
             </Paper >}
 
         </>
