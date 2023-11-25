@@ -74,8 +74,9 @@ function Contact() {
     const { firstname, lastname, email, phone, subject, message, consent } = values
 
     const sendMessage = async () => {
-        const date = Date()
-        await setDoc(doc(db, 'messages', date), {
+        const date = new Date()
+        const timestamp = date.getTime().toString()
+        await setDoc(doc(db, 'messages', timestamp), {
             firstname: firstname.value,
             lastname: lastname.value,
             email: email.value,
