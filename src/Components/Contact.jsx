@@ -83,6 +83,7 @@ function Contact() {
             subject: subject.value,
             message: message.value,
             consent: consent.checked,
+            date: date
         });
     }
 
