@@ -1,5 +1,7 @@
 # Faniriantsoa RANDRIAHARIMINO - Front-End Developer
 
+<img src='./src/assets/images/mon-portfolio.jpg' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
+
 🌐 Location: Madagascar
 <p>Welcome to my portfolio! 👋 I'm Faniriantsoa RANDRIAHARIMINO, a junior front-end developer with a passion for new technologies and a fervent explorer of the world of development. My journey as an Agricultural Engineer turned Information System Manager in a ministerial entity has fueled my enthusiasm for technology and paved the way for my transition into development.</p>
 
