@@ -1,5 +1,5 @@
 # Faniriantsoa RANDRIAHARIMINO - Front-End Developer
-<div style="text-align: center;">
+<div style="margin: 0 auto; width: 50%;">
 <img src='./src/assets/images/mon-portfolio.jpg' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
 </div>
 
