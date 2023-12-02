@@ -22,4 +22,4 @@
     <li><strong>Facebook: </strong> https://web.facebook.com/rfaniriantsoa/</li>
 </ul>
 
-<h3>Feel free to reach out for any inquiries or collaboration opportunities!</h3>
+<h5>Feel free to reach out for any inquiries or collaboration opportunities!</h5>
