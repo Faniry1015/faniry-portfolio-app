@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Box} from '@mui/material';
+import { Box } from '@mui/material';
 import { useTheme } from '@mui/system';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
@@ -12,7 +12,11 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
 function App() {
+
+  const [loading, setLoading] = useState(true)
+
   const [themeStatus, setThemeStatus] = useState('')
+
   const handleThemeToggle = (themeLabel) => {
     setThemeStatus(themeLabel)
   }
@@ -37,19 +41,36 @@ function App() {
     },
   };
 
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false)
+    }
+
+    window.addEventListener('load', handleLoad)
+
+    return () => {
+      window.removeEventListener('load', handleLoad)
+    }
+  }, [])
+
   return (
     <>
-      <CustomThemeProvider onThemeChange={themeStatus} >
-        <Header onThemeChange={handleThemeToggle} />
-        <MainCarousel />
-        <Box sx={{ ...margins, textAlign: 'justify' }}>
-          <APropos />
-          <Competences />
-          <Portfolio />
-          <Contact />
-        </Box>
-        <Footer />
-      </CustomThemeProvider>
+      {JSON.stringify(loading)}
+      {loading && 'loading...'}
+      {
+        !loading &&
+        <CustomThemeProvider onThemeChange={themeStatus} >
+          <Header onThemeChange={handleThemeToggle} />
+          <MainCarousel />
+          <Box sx={{ ...margins, textAlign: 'justify' }}>
+            <APropos />
+            <Competences />
+            <Portfolio />
+            <Contact />
+          </Box>
+          <Footer />
+        </CustomThemeProvider>
+      }
     </>
   )
 }
