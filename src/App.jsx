@@ -42,21 +42,13 @@ function App() {
   };
 
   useEffect(() => {
-    const handleLoad = () => {
-      console.log('Page loaded!');
+    setTimeout(() => {
       setLoading(false)
-    }
-
-    window.addEventListener('load', handleLoad)
-
-    return () => {
-      window.removeEventListener('load', handleLoad)
-    }
+    }, 3000)
   }, [])
 
   return (
     <>
-      {JSON.stringify(loading)}
       {loading && 'loading...'}
       {
         !loading &&
