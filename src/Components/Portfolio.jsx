@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import PortfolioCard from './PortfolioCard'
 import { Box, Grid, Paper, Typography, useTheme, ToggleButtonGroup, ToggleButton } from '@mui/material'
 import supermanreact from '../assets/images/superman-eshop.jpg'
@@ -80,8 +81,16 @@ const projects = [
 
 function Portfolio() {
     const theme = useTheme()
+
     const [category, setCategory] = useState('tous')
+
     const [visibleProjects, setVisibleProjects] = useState(projects)
+
+        
+    const [ref, inView] = useInView({
+        triggerOnce: false,
+        rootMargin: '-100px 0px'
+    })
 
     useEffect(() => {
         const filteredProjects = projects.filter(project => {
@@ -100,7 +109,7 @@ function Portfolio() {
 
     return (
         <Box component='section' className='mainSection' id='portfolio'>
-            <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
+            <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }} >
                 <Typography variant='h3'>
                     Portfolio
                 </Typography>
@@ -123,7 +132,7 @@ function Portfolio() {
                         </ToggleButton>
                     </ToggleButtonGroup>
                 </Box>
-                <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center'}}>
+                <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center'}} ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
                     {visibleProjects.map((project) => {
                         return <Grid item sx={{ display: 'flex', justifyContent: 'center' }} xs={12} sm={6} md={4} key={project.id}>
                             <PortfolioCard

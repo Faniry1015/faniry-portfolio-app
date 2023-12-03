@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRef } from 'react';
+import { Box, useTheme } from '@mui/material';
 import '../Styles/Loader.css'
 
-function Loader() {
-    return <div className="loader-wrapper">
-        <div className="loader">
-            <div className="roller"></div>
-            <div className="roller"></div>
-        </div>
+function Loader({ loaderEffect }) {
+    const theme = useTheme()
 
-        <div id="loader2" className="loader">
-            <div className="roller"></div>
-            <div className="roller"></div>
-        </div>
+    const loaderRef = useRef(null)
 
-        <div id="loader3" className="loader">
-            <div className="roller"></div>
-            <div className="roller"></div>
-        </div>
-    </div>
+    useEffect(() => {
+        if (loaderEffect) {
+            loaderRef.current.classList.add('disapear')
+        }
+    }, [loaderEffect])
+
+    return <Box width={'100%'} height={'100%'} ref={loaderRef} sx={{ bgcolor: theme.palette.primary.light }}>
+        <Box className="loader-wrapper">
+            <Box className="loader">
+                <Box className="roller"></Box>
+                <Box className="roller"></Box>
+            </Box>
+
+            <Box id="loader2" className="loader">
+                <Box className="roller"></Box>
+                <Box className="roller"></Box>
+            </Box>
+
+            <Box id="loader3" className="loader">
+                <Box className="roller"></Box>
+                <Box className="roller"></Box>
+            </Box>
+        </Box>
+    </Box>
+
 }
 
 

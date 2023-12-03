@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/system'
+import { useInView } from 'react-intersection-observer'
 import { Typography, Grid, Paper, Stack, useTheme, IconButton, Tooltip } from '@mui/material'
 import '../Styles/Competences.css'
 import CircularWithValueLabel from './CompetCircularProgress'
@@ -19,6 +20,11 @@ import wordpress from "../assets/icons/wordpress.svg"
 import firebase from '../assets/icons/firebase.svg'
 
 function Competences() {
+    const [ref, inView] = useInView({
+        triggerOnce: false,
+        rootMargin: '-75px 0px'
+    })
+
     const theme = useTheme()
 
     const competPaper = { bgcolor: theme.palette.info.main, p: 3, height: '100%' }
@@ -31,7 +37,7 @@ function Competences() {
                 <Typography variant='h3'>
                     Mes Compétences
                 </Typography>
-                <Box sx={{ flexGrow: 1 }}>
+                <Box sx={{ flexGrow: 1 }} ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={6}>
                             <Paper sx={competPaper}>

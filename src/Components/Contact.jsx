@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
+import { useInView } from 'react-intersection-observer';
 import { Box, Button, Typography, Grid, Paper, useTheme, Container, TextField, FormControlLabel, Checkbox, List, ListItem, ListItemIcon, ListItemText, Divider, } from '@mui/material'
-import { Mail, PhoneAndroid, TrendingUp } from '@mui/icons-material';
+import { Mail, PhoneAndroid } from '@mui/icons-material';
 import SocialLinkIcons from './SocialLinkIcons';
 import { blueGrey, purple, teal } from '@mui/material/colors';
 import InputMask from 'react-input-mask';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '../firebase-config';
-import { maxWidth } from '@mui/system';
 
 function Contact() {
     const theme = useTheme()
+
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-100px 0px',
+      }); 
 
     const defaultFormData = {
         firstname: { value: '', empty: false, required: false },
@@ -102,7 +107,7 @@ function Contact() {
                     <Typography variant='h3'>
                         Me contacter
                     </Typography>
-                    <Container component="main" maxWidth='md'>
+                    <Container component="main" maxWidth='md' ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
                         <Grid container spacing={5}>
                             <Grid item xs={12} md={6} component="form" noValidate onSubmit={handleSubmit}>
                                 <Grid container spacing={2}>

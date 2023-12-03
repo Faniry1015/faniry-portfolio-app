@@ -1,7 +1,7 @@
 /* ----- Base ----- */
 :root {
-    --body-bg: rgba(206, 186, 202, 0.5);
-    --shadow-color: grey; /* Couleur utilisée pour l'ombre */
+    --body-bg: rgba(153, 152, 153, 0.5);
+    --shadow-color: #704c6b; /* Couleur utilisée pour l'ombre */
   }
   
   /* ----- Loader ----- */
@@ -72,7 +72,7 @@
     display: block;
     width: 15px;
     height: 15px;
-    background: #000;
+    background: #800080be;
     border-radius: 50%;
   }
   
@@ -127,12 +127,12 @@
     animation-delay: 0.3s;
   }
 
-  .loader-container {
+  .loader-wrapper {
     opacity: 1;
     transition: opacity 0.3s ease-out
   }
 
-  .loader-container.disapear {
+  .loader-wrapper.disapear {
     opacity: 0
   }
   

@@ -12,10 +12,13 @@ import Portfolio from './Components/Portfolio';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import { useRef } from 'react';
+import { AddBox, TroubleshootOutlined } from '@mui/icons-material';
 
 function App() {
 
   const [loading, setLoading] = useState(true)
+
+  const [loaderEffect, setLoaderEffect] = useState(false)
 
 
   const [themeStatus, setThemeStatus] = useState('')
@@ -44,12 +47,11 @@ function App() {
     },
   };
 
-  const loaderRef = useRef(null)
   const appRef = useRef(null)
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      loaderRef.current.classList.add('disapear')
+      setLoaderEffect(true)
       const effectTimer = setTimeout(() => {
         setLoading(false);
       }, 300)
@@ -66,27 +68,27 @@ function App() {
 
   return (
     <>
-      {loading &&
-        <div className='loader-container' ref={loaderRef}>
-          <Loader />
-        </div>
-      }
-      {
-        !loading &&
-        <div className={`transition-fade`} ref={appRef}>
-          <CustomThemeProvider onThemeChange={themeStatus}>
-            <Header onThemeChange={handleThemeToggle} />
-            <MainCarousel />
-            <Box sx={{ ...margins, textAlign: 'justify' }}>
-              <APropos />
-              <Competences />
-              <Portfolio />
-              <Contact />
+      <CustomThemeProvider onThemeChange={themeStatus}>
+        {loading &&
+            <Loader loaderEffect={loaderEffect} />
+        }
+        {
+          !loading &&
+          <div className={`transition-fade`} ref={appRef}>
+            <Box>
+              <Header onThemeChange={handleThemeToggle} />
+              <MainCarousel />
+              <Box sx={{ ...margins, textAlign: 'justify' }}>
+                <APropos />
+                <Competences />
+                <Portfolio />
+                <Contact />
+              </Box>
+              <Footer />
             </Box>
-            <Footer />
-          </CustomThemeProvider>
-        </div>
-      }
+          </div >
+        }
+      </CustomThemeProvider>
 
     </>
   )

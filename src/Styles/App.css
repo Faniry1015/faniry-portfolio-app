@@ -49,3 +49,14 @@ section {
   margin-top: 75px;
 }
 
+.zoom-in {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.zoom-in.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
