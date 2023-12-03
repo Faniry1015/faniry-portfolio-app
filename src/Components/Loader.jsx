@@ -15,20 +15,20 @@ function Loader({ loaderEffect }) {
     }, [loaderEffect])
 
     return <Box width={'100%'} height={'100%'} sx={{ bgcolor: theme.palette.primary.light }}>
-        <Box class="loader-wrapper" ref={loaderRef}>
-            <Box class="loader">
-                <Box class="roller"></Box>
-                <Box class="roller"></Box>
+        <Box className="loader-wrapper" ref={loaderRef}>
+            <Box className="loader">
+                <Box className="roller"></Box>
+                <Box className="roller"></Box>
             </Box>
 
-            <Box id="loader2" class="loader">
-                <Box class="roller"></Box>
-                <Box class="roller"></Box>
+            <Box id="loader2" className="loader">
+                <Box className="roller"></Box>
+                <Box className="roller"></Box>
             </Box>
 
-            <Box id="loader3" class="loader">
-                <Box class="roller"></Box>
-                <Box class="roller"></Box>
+            <Box id="loader3" className="loader">
+                <Box className="roller"></Box>
+                <Box className="roller"></Box>
             </Box>
         </Box>
     </Box>
