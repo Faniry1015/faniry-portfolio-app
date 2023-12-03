@@ -9,16 +9,17 @@ function APropos() {
 
     const [ref, inView] = useInView({
         triggerOnce: true,
+        rootMargin : '-250px 0px'
     })
     
     return (
-        <Box component='section' className='mainSection' id='propos'>
+        <Box component='section' className='mainSection' id='propos' ref={ref}>
             <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
                 <Container component="main" maxWidth='md'>
                     <Typography variant='h3'>
                         A propos de moi
                     </Typography>
-                    <Grid container spacing={1} sx={{ alignItems: 'center' }} ref={ref} className={`zoom-in ${inView ? 'active' : ''}  `}>
+                    <Grid container spacing={1} sx={{ alignItems: 'center' }} className={`zoom-in ${inView ? 'active' : ''}  `}>
                         <Grid item xs={12} md={5} display={{ xs: 'none', md: 'block' }}>
                             <Box><img src={aproposImg} alt="web developer" style={{ maxWidth: '100%' }} /></Box>
                         </Grid>

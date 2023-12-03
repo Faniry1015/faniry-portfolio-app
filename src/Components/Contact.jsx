@@ -13,7 +13,7 @@ function Contact() {
 
     const [ref, inView] = useInView({
         triggerOnce: true,
-        rootMargin: '-100px 0px',
+        rootMargin: '-250px 0px',
       }); 
 
     const defaultFormData = {
@@ -102,12 +102,12 @@ function Contact() {
 
     return (
         <>
-            <Box component='section' className='mainSection' id='contact'>
+            <Box component='section' className='mainSection' id='contact' ref={ref}>
                 <Paper elevation={4} sx={{ px: 3, py: 4, bgcolor: theme.palette.background.secondary }}>
                     <Typography variant='h3'>
                         Me contacter
                     </Typography>
-                    <Container component="main" maxWidth='md' ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
+                    <Container component="main" maxWidth='md' className={`zoom-in ${inView ? 'active' : ''}`}>
                         <Grid container spacing={5}>
                             <Grid item xs={12} md={6} component="form" noValidate onSubmit={handleSubmit}>
                                 <Grid container spacing={2}>

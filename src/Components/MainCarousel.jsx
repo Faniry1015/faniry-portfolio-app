@@ -13,7 +13,6 @@ function MainCarousel() {
 
     const [ref, inView] = useInView({
         triggerOnce: false, 
-        rootMargin : '-75px 0px'
       });
 
     return (
