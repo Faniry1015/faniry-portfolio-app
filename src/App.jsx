@@ -43,6 +43,7 @@ function App() {
 
   useEffect(() => {
     const handleLoad = () => {
+      console.log('Page loaded!');
       setLoading(false)
     }
 
