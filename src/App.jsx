@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/system';
+import Loader from './Components/Loader';
 import CustomThemeProvider from './ThemeProvider/ThemeProvider';
 import Header from './Components/Header';
 import MainCarousel from './Components/MainCarousel';
@@ -10,10 +11,12 @@ import Competences from './Components/Competences';
 import Portfolio from './Components/Portfolio';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
+import { useRef } from 'react';
 
 function App() {
 
   const [loading, setLoading] = useState(true)
+
 
   const [themeStatus, setThemeStatus] = useState('')
 
@@ -41,29 +44,50 @@ function App() {
     },
   };
 
+  const loaderRef = useRef(null)
+  const appRef = useRef(null)
+
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000)
+    const timeoutId = setTimeout(() => {
+      loaderRef.current.classList.add('disapear')
+      const effectTimer = setTimeout(() => {
+        setLoading(false);
+      }, 300)
+      return () => clearTimeout(effectTimer)
+    }, 2500);
+    return () => clearTimeout(timeoutId);
   }, [])
+
+  useEffect(() => {
+    if (appRef.current) {
+      appRef.current.classList.add('active');
+    }
+  }, [loading]);
 
   return (
     <>
-      {loading && 'loading...'}
+      {loading &&
+        <div className='loader-container' ref={loaderRef}>
+          <Loader />
+        </div>
+      }
       {
         !loading &&
-        <CustomThemeProvider onThemeChange={themeStatus} >
-          <Header onThemeChange={handleThemeToggle} />
-          <MainCarousel />
-          <Box sx={{ ...margins, textAlign: 'justify' }}>
-            <APropos />
-            <Competences />
-            <Portfolio />
-            <Contact />
-          </Box>
-          <Footer />
-        </CustomThemeProvider>
+        <div className={`transition-fade`} ref={appRef}>
+          <CustomThemeProvider onThemeChange={themeStatus}>
+            <Header onThemeChange={handleThemeToggle} />
+            <MainCarousel />
+            <Box sx={{ ...margins, textAlign: 'justify' }}>
+              <APropos />
+              <Competences />
+              <Portfolio />
+              <Contact />
+            </Box>
+            <Footer />
+          </CustomThemeProvider>
+        </div>
       }
+
     </>
   )
 }

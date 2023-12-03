@@ -33,6 +33,19 @@
   font-style: normal;
 }
 
+.transition-fade {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0.5s ease;
+}
+
+.transition-fade.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 section {
   margin-top: 75px;
 }
+
