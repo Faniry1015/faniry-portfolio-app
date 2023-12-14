@@ -1,7 +1,7 @@
 # Faniriantsoa RANDRIAHARIMINO - Front-End Developer
 <div style="margin: 0 auto; width: 50%;">
 <img src='./src/assets/images/mon-portfolio.jpg' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
-</div>
+</div> 
 
 🌐 Location: Madagascar
 <p>Welcome to my portfolio! 👋 I'm Faniriantsoa RANDRIAHARIMINO, a junior front-end developer with a passion for new technologies and a fervent explorer of the world of development.</p>
@@ -21,5 +21,7 @@
     <li><strong>🌐 Portfolio:</strong> https://faniriantsoa-portfolio.firebaseapp.com</li>
     <li><strong>Facebook: </strong> https://web.facebook.com/rfaniriantsoa/</li>
 </ul>
+
+<hr/>
 
 <h5>Feel free to reach out for any inquiries or collaboration opportunities!</h5>
