@@ -14,7 +14,7 @@ function APropos() {
     
     return (
         <Box component='section' className='mainSection' id='propos' ref={ref}>
-            <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
+            <Paper elevation={4} sx={{ py: 7, px: 4, bgcolor: theme.palette.background.secondary }} >
                 <Container component="main" maxWidth='md'>
                     <Typography variant='h3'>
                         A propos de moi
@@ -26,13 +26,13 @@ function APropos() {
 
                         <Grid item xs={12} md={7}>
                             <Box>
-                                <Typography>
+                                <Typography sx={{fontSize: {xs: '14px', sm:'18px'}}}>
                                     Bonjour, je suis Faniriantsoa RANDRIAHARIMINO, passionné par les nouvelles technologies et fervent explorateur du monde du développement. Ma fascination pour l'innovation technologique a été le moteur de ma transition vers ce domaine.
                                 </Typography>
-                                <Typography>
+                                <Typography sx={{fontSize: {xs: '14px', sm:'18px'}}}>
                                     Ingénieur Agronome de formation, mon parcours professionnel en tant que premier responsable du système d'information au sein d'une entité ministérielle a renforcé ma passion pour la tech. Cette expérience a contribué à façonner ma compréhension des technologies de l'information et a constitué une base solide pour ma transition vers le développement.
                                 </Typography>
-                                <Typography>
+                                <Typography sx={{fontSize: {xs: '14px', sm:'18px'}}}>
                                     Je suis ouvert à des collaborations passionnantes et enthousiaste à l'idée d'explorer de nouveaux horizons dans le monde du développement.
                                 </Typography>
                             </Box>

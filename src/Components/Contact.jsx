@@ -103,7 +103,7 @@ function Contact() {
     return (
         <>
             <Box component='section' className='mainSection' id='contact' ref={ref}>
-                <Paper elevation={4} sx={{ px: 3, py: 4, bgcolor: theme.palette.background.secondary }}>
+                <Paper elevation={4} sx={{ px: 4, py: 6, bgcolor: theme.palette.background.secondary }}>
                     <Typography variant='h3'>
                         Me contacter
                     </Typography>

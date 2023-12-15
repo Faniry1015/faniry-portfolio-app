@@ -102,7 +102,7 @@ function Portfolio() {
 
     return (
         <Box component='section' className='mainSection' id='portfolio'>
-            <Paper elevation={4} sx={{ p: 4, bgcolor: theme.palette.background.secondary }}>
+            <Paper elevation={4} sx={{ py: 7, px: 4, bgcolor: theme.palette.background.secondary }}>
                 <Typography variant='h3'>
                     Portfolio
                 </Typography>
@@ -125,7 +125,7 @@ function Portfolio() {
                         </ToggleButton>
                     </ToggleButtonGroup>
                 </Box>
-                <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center'}} >
+                <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center'}} >
                     {visibleProjects.map((project) => {
                         return <Grid item sx={{ display: 'flex', justifyContent: 'center' }} xs={12} sm={6} md={4} key={project.id}>
                             <PortfolioCard

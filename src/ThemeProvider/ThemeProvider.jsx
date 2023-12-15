@@ -49,7 +49,8 @@ function CustomThemeProvider({ children, onThemeChange }) {
         },
         typography: {
             fontSize: 16,
-            fontWeightRegular: 300,
+            fontWeight: 400,
+            textAlign: 'left',
             fontFamily: 'Poppins, Roboto, Arial',
             h1: {
                 fontFamily: 'ConcertOne, Roboto, Arial',
@@ -74,8 +75,8 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 textAlign: 'center',
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
-                marginTop: '25px',
-                marginBottom: '15px'
+                marginTop: '20px',
+                marginBottom: '20px'
             },
             h4: {
                 fontFamily: 'Roboto, Roboto, Arial',

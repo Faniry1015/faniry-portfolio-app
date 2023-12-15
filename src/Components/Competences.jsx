@@ -33,24 +33,24 @@ function Competences() {
 
     const theme = useTheme()
 
-    const competPaper = { bgcolor: theme.palette.info.main, p: 3, height: '100%' }
+    const competPaper = { bgcolor: theme.palette.info.main, px: 4, py: 6, height: '100%' }
 
     const competIconStyle = { width: '75px', height: '75px' }
 
     return (
         <Box component='section' className='mainSection' id='competences'>
-            <Paper elevation={4} sx={{ px: 3, py: 4, bgcolor: theme.palette.background.secondary }} >
+            <Paper elevation={4} sx={{ py: 7, px: 4, bgcolor: theme.palette.background.secondary }} >
                 <Typography variant='h3'>
                     Mes Compétences
                 </Typography>
                 <Box sx={{ flexGrow: 1 }} >
-                    <Grid container spacing={2}>
+                    <Grid container spacing={3}>
                         <Grid item xs={12} md={6} ref={ref1} className={`zoom-in ${inView1 ? 'active' : ''}`}>
                             <Paper sx={competPaper}>
                                 <Typography variant='h4'>
                                     Langages de base
                                 </Typography>
-                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                <Stack direction='row' spacing={6} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
                                         <Tooltip title='HTML' arrow>
                                             <IconButton sx={competIconStyle}>
@@ -83,7 +83,7 @@ function Competences() {
                                 <Typography variant='h4'>
                                     Frameworks et bibliothèques front-end
                                 </Typography>
-                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                <Stack direction='row' spacing={6} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
                                         <Tooltip title='React.js' arrow>
                                             <IconButton sx={competIconStyle}>
@@ -116,7 +116,7 @@ function Competences() {
                                 <Typography variant='h4'>
                                 Plate-forme Backend-as-Service (Bass) et contrôle de Version
                                 </Typography>
-                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                <Stack direction='row' spacing={6} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
                                         <Tooltip title='Firebase' arrow>
                                             <IconButton sx={competIconStyle}>
@@ -157,7 +157,7 @@ function Competences() {
                                 <Typography variant='h4'>
                                 CMS et Outils de design
                                 </Typography>
-                                <Stack direction='row' spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+                                <Stack direction='row' spacing={6} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
                                         <Tooltip title='Photoshop' arrow>
                                             <IconButton sx={competIconStyle}>
