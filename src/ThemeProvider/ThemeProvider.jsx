@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
-import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, useTheme, alpha } from '@mui/material';
-import { teal, purple, lime, blueGrey, grey, lightGreen } from '@mui/material/colors'
+import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, alpha } from '@mui/material';
+import { teal, purple, blueGrey, grey, lightGreen } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -51,9 +51,9 @@ function CustomThemeProvider({ children, onThemeChange }) {
             fontSize: 16,
             fontWeight: 400,
             textAlign: 'left',
-            fontFamily: 'Poppins, Roboto, Arial',
+            fontFamily: 'Poppins, Roboto, Arial, sans-serif',
             h1: {
-                fontFamily: 'ConcertOne, Roboto, Arial',
+                fontFamily: 'ConcertOne, Pacifico, Roboto, Arial, sans-serif',
                 fontSize: '4em',
                 '@media (max-width:900px)': {
                     fontSize: '3em',
@@ -63,14 +63,14 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 }
             },
             h2: {
-                fontFamily: 'Poppins, Roboto, Arial',
+                fontFamily: 'Poppins, Roboto, Arial, sans-serif',
                 fontSize: '3em',
                 textTransform: 'uppercase',
                 fontWeight: 'bold'
             },
             h3: {
-                fontFamily: 'Roboto, Roboto, Arial',
-                color: darkMode ? purple[400] : teal['A700'],
+                fontFamily: 'Quicksand, Roboto, Arial, sans-serif',
+                color: darkMode ? '#85ff9ecc' : '#ee6c4dee',
                 fontSize: '2em',
                 textAlign: 'center',
                 textTransform: 'uppercase',
@@ -79,7 +79,7 @@ function CustomThemeProvider({ children, onThemeChange }) {
                 marginBottom: '20px'
             },
             h4: {
-                fontFamily: 'Roboto, Roboto, Arial',
+                fontFamily: 'Roboto, Roboto, Arial, sans-serif',
                 color: darkMode ? lightGreen[500] : '#33658a',
                 fontSize: '1em',
                 textAlign: 'center',

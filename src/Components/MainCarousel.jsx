@@ -23,7 +23,7 @@ function MainCarousel() {
                             Développeur <br /> front-end junior
                         </Typography>
                     </Box>
-                    <Box sx={{ m: 2 }}  ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
+                    <Box sx={{ m: 4 }}  ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
                         <Button variant='contained' size={mdScreen ? 'medium': 'large'} onClick={() => scrollTo('propos')} >
                             Qui suis-je ?
                         </Button>

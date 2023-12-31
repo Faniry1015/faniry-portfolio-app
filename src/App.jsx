@@ -12,7 +12,6 @@ import Portfolio from './Components/Portfolio';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import { useRef } from 'react';
-import { AddBox, TroubleshootOutlined } from '@mui/icons-material';
 
 function App() {
 

@@ -33,6 +33,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 .transition-fade {
   opacity: 0;
   visibility: hidden;
