@@ -4,7 +4,7 @@ import Slider from './Slider';
 import '../Styles/Slider.css'
 import pccode from "../assets/images/pcCode.jpg"
 import code from "../assets/images/code.png"
-import react from "../assets/images/react.webp"
+import react from "../assets/images/react.jpg"
 
 function MainSlider() {
 

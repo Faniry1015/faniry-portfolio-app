@@ -110,5 +110,5 @@
   }
 
   .bluredImg {
-    filter: blur(2px)
+    filter: blur(1.5px)
   }
