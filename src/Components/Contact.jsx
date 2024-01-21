@@ -97,7 +97,6 @@ function Contact() {
         const timestamp = date.getTime().toString();
 
         try {
-            debugger
             await setDoc(doc(db, 'messages', timestamp), {
                 firstname: values.firstname?.value || "",
                 lastname: values.lastname?.value || "",
