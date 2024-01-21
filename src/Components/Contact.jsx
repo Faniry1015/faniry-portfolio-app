@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+// import emailjs from '@emailjs/browser';
 import { useInView } from 'react-intersection-observer';
 import { Box, Button, Typography, Grid, Paper, useTheme, Container, TextField, FormControlLabel, Checkbox, List, ListItem, ListItemIcon, ListItemText, Divider, } from '@mui/material'
 import { Mail, PhoneAndroid } from '@mui/icons-material';
@@ -28,6 +29,8 @@ function Contact() {
 
     const [values, setValues] = useState(defaultFormData)
     const [popupIsVisible, setPopupIsVisible] = useState(false)
+
+    const contactFormRef = useRef(null)
 
     const handleChange = (e) => {
         if (e.target.name === 'consent') {
@@ -59,10 +62,20 @@ function Contact() {
             return
         }
         sendMessage()
-        setValues(defaultFormData)
-        togglePopupVisibility()
-        console.log('message sent')
-    }
+
+        // Send mail
+    //     emailjs.sendForm('service_zxu10b5', 'template_r8cbyon', infraFormRef.current, 'FZirjPoVeRTkF65GT').then((result) => {
+    //         console.log(
+    //             "Data sent to firestore, mail sent to faniry"
+    //         );
+    //     }, (error) => {
+    //         console.log(error.text);
+    //     });
+    //     setValues(defaultFormData)
+    //     togglePopupVisibility()
+    //     console.log('message sent')
+    // 
+}
 
     function updateEmptyStatus(fields) {
         for (const fieldName in fields) {

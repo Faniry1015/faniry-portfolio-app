@@ -4,11 +4,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 const Footer = () => {
+  const date = new Date()
+  const anneeActuelle = date.getFullYear();
   return (
     <AppBar position="static" color="primary" sx={{m: '50px 0 0 0'}}>
       <Toolbar sx={{display: 'flex', justifyContent: 'center'}}>
         <Typography variant="body2" color="inherit">
-          © 2023 - Faniriantsoa RANDRIAHARIMINO
+          © {anneeActuelle} - Faniriantsoa RANDRIAHARIMINO
         </Typography>
       </Toolbar>
     </AppBar>
