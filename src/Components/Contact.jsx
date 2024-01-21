@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { useInView } from 'react-intersection-observer';
 import { Box, Button, Typography, Grid, Paper, useTheme, Container, TextField, FormControlLabel, Checkbox, List, ListItem, ListItemIcon, ListItemText, Divider, } from '@mui/material'
 import { Mail, PhoneAndroid } from '@mui/icons-material';
@@ -15,7 +15,7 @@ function Contact() {
     const [ref, inView] = useInView({
         triggerOnce: true,
         rootMargin: '-250px 0px',
-      }); 
+    });
 
     const defaultFormData = {
         firstname: { value: '', empty: false, required: false },
@@ -44,7 +44,7 @@ function Contact() {
         }
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         for (const fieldName in values) {
             const field = values[fieldName];
@@ -61,21 +61,22 @@ function Contact() {
             console.log('pas de consentement')
             return
         }
-        sendMessage()
 
         // Send mail
-    //     emailjs.sendForm('service_zxu10b5', 'template_r8cbyon', infraFormRef.current, 'FZirjPoVeRTkF65GT').then((result) => {
-    //         console.log(
-    //             "Data sent to firestore, mail sent to faniry"
-    //         );
-    //     }, (error) => {
-    //         console.log(error.text);
-    //     });
-    //     setValues(defaultFormData)
-    //     togglePopupVisibility()
-    //     console.log('message sent')
-    // 
-}
+        emailjs.sendForm('service_zxu10b5', 'template_r8cbyon', contactFormRef.current, 'FZirjPoVeRTkF65GT').then((result) => {
+            console.log(
+                "mail sent to faniry"
+            );
+        }, (error) => {
+            console.log(error.text);
+        });
+        setValues(defaultFormData)
+        togglePopupVisibility()
+
+        //Doesn't work
+        await sendMessageToFirebase()
+
+    }
 
     function updateEmptyStatus(fields) {
         for (const fieldName in fields) {
@@ -91,20 +92,28 @@ function Contact() {
 
     const { firstname, lastname, email, phone, subject, message, consent } = values
 
-    const sendMessage = async () => {
-        const date = new Date()
-        const timestamp = date.getTime().toString()
-        await setDoc(doc(db, 'messages', timestamp), {
-            firstname: firstname.value,
-            lastname: lastname.value,
-            email: email.value,
-            phone: phone.value,
-            subject: subject.value,
-            message: message.value,
-            consent: consent.checked,
-            date: date
-        });
-    }
+    const sendMessageToFirebase = async () => {
+        const date = new Date();
+        const timestamp = date.getTime().toString();
+
+        try {
+            debugger
+            await setDoc(doc(db, 'messages', timestamp), {
+                firstname: values.firstname?.value || "",
+                lastname: values.lastname?.value || "",
+                email: values.email?.value || "",
+                phone: values.phone?.value || "",
+                subject: values.subject?.value || "",
+                message: values.message?.value || "",
+                consent: values.consent?.checked || false,
+                date: date,
+            });
+            console.log("Message envoyé à Firestore avec succès");
+        } catch (error) {
+            console.error("Une erreur s'est produite lors de l'envoi du message à Firestore :", error);
+        }
+    };
+
 
     const togglePopupVisibility = () => {
         const changeVisibility = !popupIsVisible
@@ -122,7 +131,7 @@ function Contact() {
                     </Typography>
                     <Container component="main" maxWidth='md' className={`zoom-in ${inView ? 'active' : ''}`}>
                         <Grid container spacing={5}>
-                            <Grid item xs={12} md={6} component="form" noValidate onSubmit={handleSubmit}>
+                            <Grid item xs={12} md={6} component="form" noValidate onSubmit={handleSubmit} ref={contactFormRef}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} sm={6}>
                                         <TextField
@@ -275,7 +284,7 @@ function Contact() {
             }}
                 onClick={() => togglePopupVisibility()}
                 elevation={24} >
-                <Box sx={{maxWidth: 'sm'}}>
+                <Box sx={{ maxWidth: 'sm' }}>
                     <Typography variant='h1' sx={{ margin: 3, textAlign: 'center', color: teal['A700'] }}>
                         Merci pour votre message !
                     </Typography>

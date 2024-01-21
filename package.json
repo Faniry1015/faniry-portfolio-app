@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.16",
     "@mui/styles": "^5.14.16",
