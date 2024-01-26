@@ -73,7 +73,6 @@ function Contact() {
         setValues(defaultFormData)
         togglePopupVisibility()
 
-        //Doesn't work
         await sendMessageToFirebase()
 
     }
