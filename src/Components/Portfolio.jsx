@@ -4,9 +4,9 @@ import { Box, Grid, Paper, Typography, useTheme, ToggleButtonGroup, ToggleButton
 import supermanreact from '../assets/images/superman-eshop.jpg'
 import saynamobile from '../assets/images/sayna-mobile.jpg'
 import batmanreact from '../assets/images/batman-header.jpg'
-import blackpantherjs from '../assets/images/black-panther-header.jpg'
-import blackpantheruxui from '../assets/images/black-panther-footer.jpg'
+import blackpantheruxui from '../assets/images/black-panther-header.jpg'
 import monportfolio from '../assets/images/mon-portfolio.jpg'
+import draeMap from '../assets/images/draeVakMap.jpg'
 
 
 const projects = [
@@ -34,6 +34,16 @@ const projects = [
     },
     {
         id: 3,
+        title: 'DRAE Vak Interactive Map',
+        category: 'front',
+        context: 'Projet Professionnel',
+        techs: ['React', 'material ui', 'leaflet', 'firebase'],
+        link: 'https://drae-vakinankaratra.web.app/',
+        img: draeMap,
+        description: 'Carte interactive représentant les intervenants et interventions dans le secteur Agriculture/Elevage dans la Région Vakinankaratra - Madagascar'
+    },
+    {
+        id: 4,
         title: 'Batman React',
         category: 'front',
         context: 'réalisé dans le cadre de mon apprentissage de react.js',
@@ -42,17 +52,6 @@ const projects = [
         githubRepo: 'https://github.com/Faniry1015/SAYNA-REACTJS-BATMANREACT',
         img: batmanreact,
         description: 'site vitrine, e-commerce et quizz sur le thème de l\'univers de Batman'
-    },
-    {
-        id: 4,
-        title: 'Black Panther JS',
-        category: 'front',
-        context: 'évaluation dans le cadre de ma formation vanilla javascript',
-        techs: ['javascript', 'html', 'css'],
-        link: '',
-        githubRepo: 'https://github.com/Faniry1015/SAYNA-JSTSCANVAS-PANTHER-072022',
-        img: blackpantherjs,
-        description: 'création d\'un site vitrine et quizz à partir du prototype créé dans le projet Black Panther UX/UI'
     },
     {
         id: 5,
