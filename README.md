@@ -9,7 +9,7 @@
 <h2>Skills</h2>
 <ul>
     <li><strong>Basic Languages:</strong> HTML, CSS, JavaScript</li>
-    <li><strong>Front-End Frameworks and Libraries</strong> React.js, Material UI, Bootstrap</li>
+    <li><strong>Front-End Frameworks and Libraries</strong> React.js, Material UI, Bootstrap, Leaflet</li>
     <li><strong>Platform and Version Control:</strong> Firebase, Git, GitHub, GitLab</li>
     <li><strong>CMS and Design Tools: </strong> Photoshop, InDesign, Figma, WordPress</li>
 </ul>
