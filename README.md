@@ -3,13 +3,13 @@
 <img src='./src/assets/images/mon-portfolio.jpg' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
 </div> 
 
-🌐 Location: Madagascar
+🌐 Location: Madagascar 🇲🇬
 <p>Welcome to my portfolio! 👋 I'm Faniriantsoa RANDRIAHARIMINO, a junior front-end developer with a passion for new technologies and a fervent explorer of the world of development.</p>
 
 <h2>Skills</h2>
 <ul>
     <li><strong>Basic Languages:</strong> HTML, CSS, JavaScript</li>
-    <li><strong>Front-End Frameworks and Libraries</strong> React.js, Material UI, Bootstrap</li>
+    <li><strong>Front-End Frameworks and Libraries</strong> React.js, Material UI, Bootstrap, Leaflet</li>
     <li><strong>Platform and Version Control:</strong> Firebase, Git, GitHub, GitLab</li>
     <li><strong>CMS and Design Tools: </strong> Photoshop, InDesign, Figma, WordPress</li>
 </ul>
