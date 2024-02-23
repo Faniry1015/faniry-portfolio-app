@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dotenv from 'dotenv';
+import TerserPlugin from 'terser-webpack-plugin';
 
 // Charger les variables d'environnement à partir du fichier .env
 dotenv.config();

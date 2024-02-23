@@ -203,7 +203,7 @@ function NavBar({ onThemeChange }) {
                             </MenuItem>
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, height: '100%' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', height: '100%' }}>
                         <ButtonGroup   variant='text'  size='large' sx={{height: '100%', display: 'flex', alignItems: 'center'}}>
                             {sections.map((section) => (
                                 <Button
