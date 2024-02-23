@@ -11,4 +11,9 @@ export default defineConfig({
   define: {
     'process.env': { ...process.env }, // Ajouter les variables d'environnement
   },
+  build: {
+    chunkSizeWarningLimit: 1000, // Modifier la limite à 1000 kB (1 MB) ou une valeur appropriée
+  },
 });
+
+
