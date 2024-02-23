@@ -28,7 +28,7 @@ function APropos() {
                         <Grid item sm={12} md={7} sx={{ marginBottom: 2}}>
                             <Box>
                                 <Typography sx={{ fontSize: { xs: '16px', sm: '18px', marginBottom: '10px' } }}>
-                                    Hello 👋, je suis Randriaharimino Faniriantsoa, un développeur JavaScript passionné par React.js. Explorez mes projets et plongez dans l'univers des interfaces utilisateur réactives.
+                                    Hello 👋, je suis Randriaharimino Faniriantsoa, un développeur JavaScript spécialisé en React.js. Explorez mes projets et plongez dans l'univers des interfaces utilisateur réactives et responsives.
                                 </Typography>
                                 <Typography sx={{ fontSize: { xs: '16px', sm: '18px', marginBottom: '10px' } }}>
                                     Toujours en quête d'apprentissage pour améliorer mes compétences. N'hésitez pas à me contacter pour échanger sur des opportunités de collaboration. <span role="img" aria-label="Rocket">🚀</span>

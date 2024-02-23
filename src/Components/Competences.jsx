@@ -8,8 +8,9 @@ import html5 from '../assets/icons/html-5.svg'
 import css3 from "../assets/icons/css-3.svg"
 import javascript from "../assets/icons/javascript.svg"
 import react from "../assets/icons/reactjs.svg"
+import reactNative from "../assets/icons/react-native.svg"
 import mui from "../assets/icons/mui.svg"
-import bootstrap5 from "../assets/icons/bootstrap-5.svg"
+import reactLeaflet from "../assets/icons/react-leaflet.svg"
 import git from "../assets/icons/git.svg"
 import github from "../assets/icons/github.svg"
 import gitlab from "../assets/icons/gitlab.svg"
@@ -57,7 +58,7 @@ function Competences() {
                                                 <img className='competIcon' src={html5} alt="HTML" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={80} />
+                                        <CircularWithValueLabel maxValue={80} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='CSS' arrow>
@@ -65,7 +66,7 @@ function Competences() {
                                                 <img className='competIcon' src={css3} alt="CSS" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={75} />
+                                        <CircularWithValueLabel maxValue={75} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='Javascript' arrow>
@@ -73,7 +74,7 @@ function Competences() {
                                                 <img className='competIcon' src={javascript} alt="Javascript" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={65} />
+                                        <CircularWithValueLabel maxValue={65} />
                                     </Box>
                                 </Stack>
                             </Paper>
@@ -90,7 +91,15 @@ function Competences() {
                                                 <img className='competIcon' src={react} alt="React.js" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={65   } />
+                                        <CircularWithValueLabel maxValue={75} />
+                                    </Box>
+                                    <Box position='relative'>
+                                        <Tooltip title='React Native' arrow>
+                                            <IconButton sx={competIconStyle}>
+                                                <img className='competIcon' src={reactNative} alt="React Native" />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <CircularWithValueLabel maxValue={50} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='Material UI' arrow>
@@ -98,15 +107,15 @@ function Competences() {
                                                 <img className='competIcon' src={mui} alt="Material UI" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={65} />
+                                        <CircularWithValueLabel maxValue={80} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Bootstrap' arrow>
+                                        <Tooltip title='React Leaflet' arrow>
                                             <IconButton sx={competIconStyle}>
-                                                <img className='competIcon' src={bootstrap5} alt="Bootstrap" />
+                                                <img className='competIcon' src={reactLeaflet} alt="React Leaflet" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={75} />
+                                        <CircularWithValueLabel maxValue={70} />
                                     </Box>
                                 </Stack>
                             </Paper>
@@ -114,7 +123,7 @@ function Competences() {
                         <Grid item xs={12} md={6} ref={ref3} className={`zoom-in ${inView3 ? 'active' : ''}`}>
                             <Paper sx={competPaper}>
                                 <Typography variant='h4'>
-                                Plate-forme Backend-as-Service (Bass) et contrôle de Version
+                                    Plate-forme Backend-as-Service (Bass) et contrôle de Version
                                 </Typography>
                                 <Stack direction='row' spacing={6} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
@@ -123,7 +132,7 @@ function Competences() {
                                                 <img className='competIcon' src={firebase} alt="Firebase" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={65} />
+                                        <CircularWithValueLabel maxValue={75} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='Git' arrow>
@@ -131,7 +140,7 @@ function Competences() {
                                                 <img className='competIcon' src={git} alt="Git" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={55} />
+                                        <CircularWithValueLabel maxValue={65} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='GitHub' arrow>
@@ -139,7 +148,7 @@ function Competences() {
                                                 <img className='competIcon' src={github} alt="GitHub" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={70} />
+                                        <CircularWithValueLabel maxValue={70} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='GitLab' arrow>
@@ -147,7 +156,7 @@ function Competences() {
                                                 <img className='competIcon' src={gitlab} alt="GitLab" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={40} />
+                                        <CircularWithValueLabel maxValue={40} />
                                     </Box>
                                 </Stack>
                             </Paper>
@@ -155,7 +164,7 @@ function Competences() {
                         <Grid item xs={12} md={6} ref={ref4} className={`zoom-in ${inView4 ? 'active' : ''}`}>
                             <Paper sx={competPaper}>
                                 <Typography variant='h4'>
-                                CMS et Outils de design
+                                    CMS et Outils de design
                                 </Typography>
                                 <Stack direction='row' spacing={6} justifyContent="center" useFlexGap flexWrap="wrap">
                                     <Box position='relative'>
@@ -164,7 +173,7 @@ function Competences() {
                                                 <img className='competIcon' src={photoshop} alt="Photoshop" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={60} />
+                                        <CircularWithValueLabel maxValue={60} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='InDesign' arrow>
@@ -172,15 +181,15 @@ function Competences() {
                                                 <img className='competIcon' src={indesign} alt="InDesign" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={50} />
+                                        <CircularWithValueLabel maxValue={50} />
                                     </Box>
                                     <Box position='relative'>
-                                        <Tooltip title='Figma' arrow> 
+                                        <Tooltip title='Figma' arrow>
                                             <IconButton sx={competIconStyle}>
                                                 <img className='competIcon' src={figma} alt="Figma" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={65} />
+                                        <CircularWithValueLabel maxValue={65} />
                                     </Box>
                                     <Box position='relative'>
                                         <Tooltip title='Wordpress' arrow>
@@ -188,7 +197,7 @@ function Competences() {
                                                 <img className='competIcon' src={wordpress} alt="Wordpress" />
                                             </IconButton>
                                         </Tooltip>
-                                        <CircularWithValueLabel  maxValue={40} />
+                                        <CircularWithValueLabel maxValue={40} />
                                     </Box>
                                 </Stack>
                             </Paper>
