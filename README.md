@@ -24,4 +24,4 @@
 
 <hr/>
 
-<h5>Feel free to reach out for any inquiries or collaboration opportunities! </h5>
+<h5>Feel free to reach out for any inquiries or collaboration opportunities! 🙏 </h5>
