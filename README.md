@@ -1,4 +1,4 @@
-# Faniriantsoa RANDRIAHARIMINO - Front-End Developer
+# 👋 Faniriantsoa RANDRIAHARIMINO - Front-End Developer
 <div style="margin: 0 auto; width: 50%;">
 <img src='./src/assets/images/mon-portfolio.jpg' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
 </div> 
@@ -24,4 +24,4 @@
 
 <hr/>
 
-<h5>Feel free to reach out for any inquiries or collaboration opportunities!</h5>
+<h5>Feel free to reach out for any inquiries or collaboration opportunities! </h5>
