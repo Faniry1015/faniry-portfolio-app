@@ -5,13 +5,34 @@ import supermanreact from '../assets/images/superman-eshop.jpg'
 import saynamobile from '../assets/images/sayna-mobile.jpg'
 import batmanreact from '../assets/images/batman-header.jpg'
 import blackpantheruxui from '../assets/images/black-panther-header.jpg'
-import monportfolio from '../assets/images/mon-portfolio.jpg'
+import draeStatAdmin from '../assets/images/draeStatAdmin.jpg'
 import draeMap from '../assets/images/draeVakMap.jpg'
 
 
 const projects = [
     {
         id: 1,
+        title: 'DRAE Vak Interactive Map',
+        category: 'front',
+        context: 'Projet Professionnel',
+        techs: ['React', 'material ui', 'leaflet', 'firebase'],
+        link: 'https://drae-vakinankaratra.web.app/',
+        img: draeMap,
+        description: 'Carte interactive représentant les intervenants et interventions dans le secteur Agriculture/Elevage dans la Région Vakinankaratra - Madagascar'
+    },
+    {
+        id: 2,
+        title: 'DRAE Vak Stats & Administration',
+        category: 'front',
+        context: 'Projet professionnel',
+        techs: ['material ui', 'react.js', 'vite'],
+        link: 'https://drae-vakinankaratra-admin.web.app/',
+        githubRepo: 'https://github.com/Faniry1015/drae-vakinankaratra-admin',
+        img: draeStatAdmin,
+        description: 'Gestion et visualisation de données statistiques et gestion de la Direction en générale'
+    },
+    {
+        id: 3,
         title: 'Superman React',
         category: 'front',
         context: 'évaluation dans le cadre de ma formation react.js',
@@ -22,7 +43,7 @@ const projects = [
         description: 'site vitrine et e-commerce sur le thème de l\'univers de Superman'
     },
     {
-        id: 2,
+        id: 4,
         title: 'Sayna Mobile UX/UI',
         category: 'design',
         context: 'projet réalisé dans le cadre de mon initiation au design UX/UI',
@@ -33,17 +54,7 @@ const projects = [
         description: 'reproduction d\'une maquette mobile sur figma'
     },
     {
-        id: 3,
-        title: 'DRAE Vak Interactive Map',
-        category: 'front',
-        context: 'Projet Professionnel',
-        techs: ['React', 'material ui', 'leaflet', 'firebase'],
-        link: 'https://drae-vakinankaratra.web.app/',
-        img: draeMap,
-        description: 'Carte interactive représentant les intervenants et interventions dans le secteur Agriculture/Elevage dans la Région Vakinankaratra - Madagascar'
-    },
-    {
-        id: 4,
+        id: 5,
         title: 'Batman React',
         category: 'front',
         context: 'réalisé dans le cadre de mon apprentissage de react.js',
@@ -54,7 +65,7 @@ const projects = [
         description: 'site vitrine, e-commerce et quizz sur le thème de l\'univers de Batman'
     },
     {
-        id: 5,
+        id: 6,
         title: 'Black Panther UX/UI',
         category: 'design',
         context: 'évaluation dans le cadre de ma formation au design UX/UI',
@@ -63,18 +74,7 @@ const projects = [
         githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
         img: blackpantheruxui,
         description: 'reproduction d\'un prototype d\'une site vitrine sur l\'univers de black panther'
-    },
-    {
-        id: 6,
-        title: 'Mon Portfolio MUI',
-        category: 'front',
-        context: 'Mon premier projet personnel post formation',
-        techs: ['material ui', 'react.js', 'vite'],
-        link: '#',
-        githubRepo: 'https://github.com/Faniry1015/faniry-portfolio-app',
-        img: monportfolio,
-        description: 'vous y êtes'
-    },
+    }
 ]
 
 function Portfolio() {
