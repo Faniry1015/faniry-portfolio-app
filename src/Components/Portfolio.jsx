@@ -7,6 +7,7 @@ import batmanreact from '../assets/images/batman-header.jpg'
 import blackpantheruxui from '../assets/images/black-panther-header.jpg'
 import draeStatAdmin from '../assets/images/draeStatAdmin.jpg'
 import draeMap from '../assets/images/draeVakMap.jpg'
+import pdipapp from '../assets/images/pdip-app.png'
 
 
 const projects = [
@@ -33,6 +34,16 @@ const projects = [
     },
     {
         id: 3,
+        title: 'P-dipping App',
+        category: 'front',
+        context: 'Application mobile pour l\'enregistrement et l\'envoi de données de ventes d\'engrais chimique',
+        techs: ['flutter', 'firebase'],
+        // link: 'https://www.figma.com/proto/RMqxHCO54BVhwlcbwyTIIv/SAYNA-UXUI-DESIGNPANTHER?type=design&node-id=96-371&t=YnZTGLIyUmPyKQan-1&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=34%3A97&mode=design',
+        img: pdipapp,
+        description: 'Enregistrement, modification, suppression et envoi des données ; Gestion des données envoyées par l\' administrateur ; Fiche technique pour la formation des clients à la technique P-Dipping'
+    },
+    {
+        id: 4,
         title: 'Superman React',
         category: 'front',
         context: 'évaluation dans le cadre de ma formation react.js',
@@ -43,7 +54,7 @@ const projects = [
         description: 'site vitrine et e-commerce sur le thème de l\'univers de Superman'
     },
     {
-        id: 4,
+        id: 5,
         title: 'Sayna Mobile UX/UI',
         category: 'design',
         context: 'projet réalisé dans le cadre de mon initiation au design UX/UI',
@@ -54,7 +65,7 @@ const projects = [
         description: 'reproduction d\'une maquette mobile sur figma'
     },
     {
-        id: 5,
+        id: 6,
         title: 'Batman React',
         category: 'front',
         context: 'réalisé dans le cadre de mon apprentissage de react.js',
@@ -65,7 +76,7 @@ const projects = [
         description: 'site vitrine, e-commerce et quizz sur le thème de l\'univers de Batman'
     },
     {
-        id: 6,
+        id: 7,
         title: 'Black Panther UX/UI',
         category: 'design',
         context: 'évaluation dans le cadre de ma formation au design UX/UI',
@@ -74,16 +85,6 @@ const projects = [
         githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
         img: blackpantheruxui,
         description: 'reproduction d\'un prototype d\'une site vitrine sur l\'univers de black panther'
-    },
-    {
-        id: 7,
-        title: 'P-dipping App',
-        category: 'front',
-        context: 'Application mobile destinée aux revendeurs de TSP ',
-        techs: ['flutter', 'firebase'],
-        // link: 'https://www.figma.com/proto/RMqxHCO54BVhwlcbwyTIIv/SAYNA-UXUI-DESIGNPANTHER?type=design&node-id=96-371&t=YnZTGLIyUmPyKQan-1&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=34%3A97&mode=design',
-        img: blackpantheruxui,
-        description: 'Enregistrement, modification, suppression et envoi des données ; Gestion des données envoyées par l\' administrateur ; Fiche technique pour la formation des clients à la technique P-Dipping'
     }
 ]
 

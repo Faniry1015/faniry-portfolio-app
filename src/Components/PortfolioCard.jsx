@@ -41,7 +41,7 @@ function PortfolioCard({ title, category, context, techs, link, githubRepo, img,
     return (
         <Box ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
             <Card sx={{ maxWidth: 400, height: 'fit-content' }} >
-                <Box position='relative' sx={{ overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                <Box position='relative' sx={{ overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center',  }} >
                     <Paper sx={{ opacity: 0, '&:hover': { opacity: 0.9, transition: 'opacity 0.4s ease-in-out' }, position: 'absolute', zIndex: 10, width: 'calc(100% - 5px)', height: 'calc(100% - 5px)', display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: theme.palette.info.main }}>
                         <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
                             <Box sx={{ '&:hover': { transform: 'scale(1.2)' } }}>
@@ -97,9 +97,9 @@ function PortfolioCard({ title, category, context, techs, link, githubRepo, img,
                             <Typography variant='body2'>
                                 <strong>Desciption :</strong> {description}
                             </Typography>
-                            <Button href={link} variant='contained' size='small' sx={{ my: 1 }}>
+                            {link && <Button href={link} variant='contained' size='small' sx={{ my: 1 }}>
                                 {category === 'front' ? 'visiter' : 'voir'}
-                            </Button>
+                            </Button>}
                         </Stack>
                     </CardContent>
                 </Collapse>

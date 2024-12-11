@@ -4,10 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { Typography, Grid, Paper, Stack, useTheme } from '@mui/material';
 import '../Styles/Competences.css';
 import CompetenceItem from './CompetenceItem';
-import CircularWithValueLabel from './CompetCircularProgress';
 import html5 from '../assets/icons/html-5.svg';
 import css3 from "../assets/icons/css-3.svg";
 import javascript from "../assets/icons/javascript.svg";
+import typescript from "../assets/icons/typescript.svg";
 import dart from "../assets/icons/dart.svg";
 import python from "../assets/icons/python.svg";
 import react from "../assets/icons/reactjs.svg";
@@ -44,9 +44,10 @@ function Competences() {
         {
             category: 'Langages de base',
             items: [
-                { title: 'HTML', iconSrc: html5, maxValue: 80 },
+                { title: 'HTML', iconSrc: html5, maxValue: 85 },
                 { title: 'CSS', iconSrc: css3, maxValue: 75 },
-                { title: 'Javascript', iconSrc: javascript, maxValue: 75 },
+                { title: 'Javascript', iconSrc: javascript, maxValue: 80 },
+                { title: 'Typescript', iconSrc: typescript, maxValue: 65 },
                 { title: 'Dart', iconSrc: dart, maxValue: 70 },
                 { title: 'Python', iconSrc: python, maxValue: 50 },
             ],
@@ -56,9 +57,9 @@ function Competences() {
             items: [
                 { title: 'React.js', iconSrc: react, maxValue: 85 },
                 { title: 'React Native', iconSrc: reactNative, maxValue: 50 },
+                { title: 'Next.js', iconSrc: nextjs, maxValue: 75 },
                 { title: 'Material UI', iconSrc: mui, maxValue: 85 },
                 { title: 'React Leaflet', iconSrc: reactLeaflet, maxValue: 80 },
-                { title: 'Next.js', iconSrc: nextjs, maxValue: 75 },
                 { title: 'Flutter', iconSrc: flutter, maxValue: 75 },
             ],
         },
