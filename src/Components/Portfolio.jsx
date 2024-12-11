@@ -74,6 +74,16 @@ const projects = [
         githubRepo: 'https://github.com/Faniry1015/SAYNA-UXUI-DESIGNPANTHER.git',
         img: blackpantheruxui,
         description: 'reproduction d\'un prototype d\'une site vitrine sur l\'univers de black panther'
+    },
+    {
+        id: 7,
+        title: 'P-dipping App',
+        category: 'front',
+        context: 'Application mobile destinée aux revendeurs de TSP ',
+        techs: ['flutter', 'firebase'],
+        // link: 'https://www.figma.com/proto/RMqxHCO54BVhwlcbwyTIIv/SAYNA-UXUI-DESIGNPANTHER?type=design&node-id=96-371&t=YnZTGLIyUmPyKQan-1&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=34%3A97&mode=design',
+        img: blackpantheruxui,
+        description: 'Enregistrement, modification, suppression et envoi des données ; Gestion des données envoyées par l\' administrateur ; Fiche technique pour la formation des clients à la technique P-Dipping'
     }
 ]
 
