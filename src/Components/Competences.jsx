@@ -16,6 +16,9 @@ import reactNative from "../assets/icons/react-native.svg";
 import mui from "../assets/icons/mui.svg";
 import reactLeaflet from "../assets/icons/react-leaflet.svg";
 import flutter from "../assets/icons/flutter.svg";
+import nodejs from "../assets/icons/node-js.svg";
+import sqlite from "../assets/icons/sqlite.svg";
+import fastify from "../assets/icons/fastify.svg";
 import git from "../assets/icons/git.svg";
 import github from "../assets/icons/github.svg";
 import gitlab from "../assets/icons/gitlab.svg";
@@ -35,6 +38,7 @@ function Competences() {
     const [ref2, inView2] = useInView(inViewOptions);
     const [ref3, inView3] = useInView(inViewOptions);
     const [ref4, inView4] = useInView(inViewOptions);
+    const [ref5, inView5] = useInView(inViewOptions);
 
     const theme = useTheme();
     const competPaper = { bgcolor: theme.palette.info.main, px: 4, py: 6, height: '100%' };
@@ -64,9 +68,17 @@ function Competences() {
             ],
         },
         {
-            category: 'Plate-forme Backend-as-Service (BaaS) et contrôle de Version',
+            category: 'Back-end et Base de données',
             items: [
-                { title: 'Firebase', iconSrc: firebase, maxValue: 75 },
+                { title: 'Node.js', iconSrc: nodejs, maxValue: 60 },
+                { tittle: 'Sqlite', iconSrc: sqlite, maxValue: 50 },
+                { title: 'Fastify', iconSrc: fastify, maxValue: 40 },
+                { title: 'Firebase', iconSrc: firebase, maxValue: 80 },
+            ]
+        },
+        {
+            category: 'Contrôle de versions',
+            items: [
                 { title: 'Git', iconSrc: git, maxValue: 65 },
                 { title: 'GitHub', iconSrc: github, maxValue: 70 },
                 { title: 'GitLab', iconSrc: gitlab, maxValue: 40 },
@@ -78,7 +90,7 @@ function Competences() {
                 { title: 'Photoshop', iconSrc: photoshop, maxValue: 60 },
                 { title: 'InDesign', iconSrc: indesign, maxValue: 50 },
                 { title: 'Figma', iconSrc: figma, maxValue: 65 },
-                { title: 'Wordpress', iconSrc: wordpress, maxValue: 40 },
+                { title: 'Wordpress', iconSrc: wordpress, maxValue: 50 },
             ],
         },
     ];
@@ -87,15 +99,15 @@ function Competences() {
         <Box component="section" className="mainSection" id="competences">
             <Paper elevation={4} sx={{ py: 7, px: 4, bgcolor: theme.palette.background.secondary }}>
                 <Typography variant="h3">Mes Compétences</Typography>
-                <Box sx={{ flexGrow: 1 }}>
-                    <Grid container spacing={3}>
+                <Box sx={{ flexGrow: 1, justifyContent: 'center' }}>
+                    <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
                         {skills.map((skill, index) => (
                             <Grid
                                 item
                                 xs={12}
                                 md={6}
-                                ref={[ref1, ref2, ref3, ref4][index]}
-                                className={`zoom-in ${[inView1, inView2, inView3, inView4][index] ? 'active' : ''}`}
+                                ref={[ref1, ref2, ref3, ref4, ref5][index]}
+                                className={`zoom-in ${[inView1, inView2, inView3, inView4, inView5][index] ? 'active' : ''}`}
                                 key={index}
                             >
                                 <Paper sx={competPaper}>

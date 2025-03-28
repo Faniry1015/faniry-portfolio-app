@@ -20,7 +20,7 @@ function MainCarousel() {
                 <Box sx={{ height: '100%', width: '100%', p: 5, position: 'absolute', zIndex: 10, background: theme.palette.primary.light, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <Box ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
                         <Typography className='mainTitle' variant='h1' sx={{ textAlign: 'center', color: 'whitesmoke' }} >
-                            Développeur <br /> front-end junior
+                            Développeur <br /> front-end
                         </Typography>
                     </Box>
                     <Box sx={{ m: 4 }}  ref={ref} className={`zoom-in ${inView ? 'active' : ''}`}>
