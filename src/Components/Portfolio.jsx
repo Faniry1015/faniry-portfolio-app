@@ -13,7 +13,7 @@ import pdipapp from '../assets/images/pdip-app.png'
 const projects = [
     {
         id: 1,
-        title: 'Site Web de la DRAE Vakinankaratra',
+        title: 'Site Web - DRAE Vak',
         category: 'front',
         context: 'Projet Professionnel',
         techs: ['React', 'material ui', 'leaflet', 'firebase'],
@@ -23,7 +23,7 @@ const projects = [
     },
     {
         id: 2,
-        title: 'DRAE Vak Stats & Administration',
+        title: 'Dashboard - DRAE Vak',
         category: 'front',
         context: 'Projet professionnel',
         techs: ['material ui', 'react.js', 'vite'],
@@ -44,7 +44,7 @@ const projects = [
     },
     {
         id: 4,
-        title: 'Superman React',
+        title: 'E-commerce - Superman',
         category: 'front',
         context: 'évaluation dans le cadre de ma formation react.js',
         techs: ['react.js', 'bootstrap', 'firebase'],
@@ -66,7 +66,7 @@ const projects = [
     },
     {
         id: 6,
-        title: 'Batman React',
+        title: 'E-commerce - Batman',
         category: 'front',
         context: 'réalisé dans le cadre de mon apprentissage de react.js',
         techs: ['react.js', 'bootstrap', 'firebase'],

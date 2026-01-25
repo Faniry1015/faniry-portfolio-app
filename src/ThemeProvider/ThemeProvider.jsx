@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/App.css'
-import { createTheme, ThemeProvider, CssBaseline, useMediaQuery, alpha } from '@mui/material';
+import { createTheme, ThemeProvider, alpha } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { teal, purple, blueGrey, grey, lightGreen } from '@mui/material/colors'
 
 function CustomThemeProvider({ children, onThemeChange }) {

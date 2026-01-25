@@ -18,15 +18,18 @@ import reactLeaflet from "../assets/icons/react-leaflet.svg";
 import flutter from "../assets/icons/flutter.svg";
 import nodejs from "../assets/icons/node-js.svg";
 import sqlite from "../assets/icons/sqlite.svg";
+import postgresql from "../assets/icons/postgresql.svg";
 import fastify from "../assets/icons/fastify.svg";
 import git from "../assets/icons/git.svg";
 import github from "../assets/icons/github.svg";
 import gitlab from "../assets/icons/gitlab.svg";
+import lightroom from "../assets/icons/lightroom.svg";
 import photoshop from "../assets/icons/photoshop.svg";
 import indesign from "../assets/icons/indesign.svg";
 import figma from "../assets/icons/figma.svg";
 import wordpress from "../assets/icons/wordpress.svg";
 import firebase from '../assets/icons/firebase.svg';
+import { light } from '@mui/material/styles/createPalette';
 
 function Competences() {
     const inViewOptions = {
@@ -60,16 +63,17 @@ function Competences() {
             category: 'Frameworks et bibliothèques front-end',
             items: [
                 { title: 'React.js', iconSrc: react, maxValue: 85 },
-                { title: 'React Native', iconSrc: reactNative, maxValue: 50 },
-                { title: 'Next.js', iconSrc: nextjs, maxValue: 75 },
+                { title: 'Flutter', iconSrc: flutter, maxValue: 85 },
+                { title: 'Next.js', iconSrc: nextjs, maxValue: 80 },
                 { title: 'Material UI', iconSrc: mui, maxValue: 85 },
                 { title: 'React Leaflet', iconSrc: reactLeaflet, maxValue: 80 },
-                { title: 'Flutter', iconSrc: flutter, maxValue: 75 },
+                { title: 'React Native', iconSrc: reactNative, maxValue: 60 },
             ],
         },
         {
             category: 'Back-end et Base de données',
             items: [
+                { title: 'PostgreSQL', iconSrc: postgresql, maxValue: 75 },
                 { title: 'Node.js', iconSrc: nodejs, maxValue: 60 },
                 { tittle: 'Sqlite', iconSrc: sqlite, maxValue: 50 },
                 { title: 'Fastify', iconSrc: fastify, maxValue: 40 },
@@ -79,15 +83,16 @@ function Competences() {
         {
             category: 'Contrôle de versions',
             items: [
-                { title: 'Git', iconSrc: git, maxValue: 65 },
-                { title: 'GitHub', iconSrc: github, maxValue: 70 },
+                { title: 'Git', iconSrc: git, maxValue: 70 },
+                { title: 'GitHub', iconSrc: github, maxValue: 85 },
                 { title: 'GitLab', iconSrc: gitlab, maxValue: 40 },
             ],
         },
         {
             category: 'CMS et Outils de design',
             items: [
-                { title: 'Photoshop', iconSrc: photoshop, maxValue: 60 },
+                { title: 'Lightroom', iconSrc: lightroom, maxValue: 75 },
+                { title: 'Photoshop', iconSrc: photoshop, maxValue: 70 },
                 { title: 'InDesign', iconSrc: indesign, maxValue: 50 },
                 { title: 'Figma', iconSrc: figma, maxValue: 65 },
                 { title: 'Wordpress', iconSrc: wordpress, maxValue: 50 },
