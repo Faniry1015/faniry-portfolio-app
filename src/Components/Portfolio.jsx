@@ -6,20 +6,20 @@ import saynamobile from '../assets/images/sayna-mobile.jpg'
 import batmanreact from '../assets/images/batman-header.jpg'
 import blackpantheruxui from '../assets/images/black-panther-header.jpg'
 import draeStatAdmin from '../assets/images/draeStatAdmin.jpg'
-import draeMap from '../assets/images/draeVakMap.jpg'
+import draeWebSite from '../assets/images/drae_website.png'
 import pdipapp from '../assets/images/pdip-app.png'
 
 
 const projects = [
     {
         id: 1,
-        title: 'DRAE Vak Interactive Map',
+        title: 'Site Web de la DRAE Vakinankaratra',
         category: 'front',
         context: 'Projet Professionnel',
         techs: ['React', 'material ui', 'leaflet', 'firebase'],
         link: 'https://drae-vakinankaratra.web.app/',
-        img: draeMap,
-        description: 'Carte interactive représentant les intervenants et interventions dans le secteur Agriculture/Elevage dans la Région Vakinankaratra - Madagascar'
+        img: draeWebSite,
+        description: 'Site vitrine, carte interactive, annuaire des préstataires de services de proximités, documentation, fonctionnalité IA, etc.'
     },
     {
         id: 2,
