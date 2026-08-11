@@ -5,13 +5,13 @@ import { Header } from "@/ui/header";
 import "./globals.css";
 
 const poppins = localFont({
-  src: "../assets/fonts/Poppins/Poppins-Regular.ttf",
+  src: "./fonts/Poppins-Regular.ttf",
   variable: "--font-body",
   display: "swap",
 });
 
 const quicksand = localFont({
-  src: "../assets/fonts/Quicksand/Quicksand-Bold.ttf",
+  src: "./fonts/Quicksand-Bold.ttf",
   variable: "--font-display",
   weight: "700",
   display: "swap",

@@ -88,8 +88,8 @@ export default function Home() {
               Agriculture numérique • Suivi-évaluation • Data
             </p>
             <h1>
-              Je conçois des solutions numériques qui rendent les données{" "}
-              <span>utiles à l’action.</span>
+              Je développe des outils numériques au service {" "}
+              <span>du terrain et de la décision.</span>
             </h1>
             <p className="hero-lead">
               Plateformes web, applications mobiles et systèmes d’aide à la décision —

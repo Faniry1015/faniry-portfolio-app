@@ -9,9 +9,5 @@ export default defineConfig([
     ".next/**",
     "out/**",
     "dist/**",
-    "src/Components/**",
-    "src/ThemeProvider/**",
-    "src/Styles/**",
-    "src/*.jsx",
   ]),
 ]);

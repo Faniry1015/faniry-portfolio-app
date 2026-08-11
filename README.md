@@ -1,6 +1,6 @@
-# 👋 Faniriantsoa RANDRIAHARIMINO - Front-End Developer
+# 👋 Faniriantsoa RANDRIAHARIMINO — Concepteur-développeur full-stack et mobile
 <div style="margin: 0 auto; width: 50%;">
-<img src='./src/assets/images/mon-portfolio.jpg' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
+<img src='./public/og.png' alt='Faniriantsoa RANDRIAHARIMINO - Portfolio' >
 </div> 
 
 🌐 Location: Madagascar 🇲🇬
