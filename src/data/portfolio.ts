@@ -60,7 +60,9 @@ export const projects: Project[] = [
       "Gemini",
     ],
     tags: ["Next.js", "IA", "Cartographie", "Bilingue"],
-    visual: "agri",
+    visual: "image",
+    image: "/projects/hero-agri-vulg-dvfar.png",
+    imageAlt: "Identité visuelle du projet Agri-Vulgarisation Madagascar",
     featured: true,
   },
   {
