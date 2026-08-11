@@ -1,41 +1,27 @@
 {
-  "name": "faniriantsoa-portfolio-vite-app",
+  "name": "faniriantsoa-portfolio",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build && node scripts/prepare-sites-build.mjs",
+    "start": "next start",
+    "lint": "eslint src/app src/ui src/data next.config.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.12.1",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^5.14.16",
-    "@mui/material": "^5.14.16",
-    "@mui/styles": "^5.14.16",
-    "@mui/system": "^5.14.16",
-    "bootstrap": "^5.3.2",
-    "dotenv": "^16.3.1",
-    "firebase": "^10.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-input-mask": "^2.0.4",
-    "react-intersection-observer": "^9.5.3",
-    "react-phone-number-input": "^3.3.7",
-    "react-router-dom": "^6.17.0"
+    "lucide-react": "^1.31.0",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "terser-webpack-plugin": "^5.3.10",
-    "vite": "^4.4.5"
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.0",
+    "typescript": "^5.9.3"
   }
 }

@@ -11,6 +11,16 @@ node_modules
 *.local
 .env
 
+# Next.js and generated outputs
+.next/
+out/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local preview helpers
+.codex-next.*.log
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
