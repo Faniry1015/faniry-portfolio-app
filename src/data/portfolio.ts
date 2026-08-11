@@ -135,7 +135,10 @@ export const projects: Project[] = [
     ],
     stack: ["Flutter", "Dart", "Stockage local", "Synchronisation cloud", "PDF"],
     tags: ["Flutter", "Offline-first", "Finance", "Freelance"],
-    visual: "mobile",
+    visual: "image",
+    image: "/projects/gec-app-android.png",
+    imageAlt:
+      "Tableau de bord de l’application GEC présenté dans un cadre Android",
   },
   {
     slug: "ecosysteme-drae-vakinankaratra",
