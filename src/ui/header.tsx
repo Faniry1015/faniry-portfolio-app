@@ -2,19 +2,40 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
-const navigation = [
+const navigationFr = [
   { label: "Services", href: "/#services" },
   { label: "Études de cas", href: "/#projets" },
   { label: "Approche", href: "/#approche" },
   { label: "Profil", href: "/#a-propos" },
 ];
 
-const cvPath = "/documents/CV_Faniriantsoa_RANDRIAHARIMINO.pdf";
+const navigationEn = [
+  { label: "Services", href: "/en/#services" },
+  { label: "Case studies", href: "/en/#projects" },
+  { label: "Approach", href: "/en/#approach" },
+  { label: "Profile", href: "/en/#about" },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
+  const navigation = isEnglish ? navigationEn : navigationFr;
+  const cvPath = isEnglish
+    ? "/documents/CV_Faniriantsoa_RANDRIAHARIMINO_EN.pdf"
+    : "/documents/CV_Faniriantsoa_RANDRIAHARIMINO.pdf";
+  const alternatePath = isEnglish
+    ? pathname.replace(/^\/en\/projects/, "/projets").replace(/^\/en/, "") || "/"
+    : pathname.startsWith("/projets/")
+      ? pathname.replace(/^\/projets/, "/en/projects")
+      : "/en";
+
+  useEffect(() => {
+    document.documentElement.lang = isEnglish ? "en" : "fr";
+  }, [isEnglish]);
 
   return (
     <header className="site-header">
@@ -50,11 +71,14 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <a href={cvPath} download onClick={() => setOpen(false)}>
-            CV (PDF)
-          </a>
+          <a href={cvPath} download onClick={() => setOpen(false)}>CV (PDF)</a>
+          <span className="language-switch" aria-label={isEnglish ? "Language" : "Langue"}>
+            <Link href={isEnglish ? alternatePath : pathname} aria-current={isEnglish ? undefined : "page"}>FR</Link>
+            <span aria-hidden="true">/</span>
+            <Link href={isEnglish ? pathname : alternatePath} aria-current={isEnglish ? "page" : undefined}>EN</Link>
+          </span>
           <a className="button button--compact" href="mailto:frandriaharimino@yahoo.com">
-            Parler d’une mission
+            {isEnglish ? "Discuss an assignment" : "Parler d’une mission"}
           </a>
         </nav>
       </div>

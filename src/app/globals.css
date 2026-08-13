@@ -200,6 +200,19 @@ h3 {
   transform-origin: left;
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.language-switch a[aria-current="page"] {
+  color: var(--green);
+}
+
 .menu-button {
   display: none;
   width: 44px;

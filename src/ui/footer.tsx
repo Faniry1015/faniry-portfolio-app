@@ -1,15 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import { Code2, ContactRound } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const isEnglish = usePathname().startsWith("/en");
+
   return (
     <footer className="site-footer">
       <div className="shell footer-inner">
         <div>
-          <Link className="footer-brand" href="/">
+          <Link className="footer-brand" href={isEnglish ? "/en" : "/"}>
             Faniriantsoa Randriaharimino
           </Link>
-          <p>Solutions numériques utiles au terrain et à la décision.</p>
+          <p>{isEnglish ? "Digital solutions for fieldwork and decision-making." : "Solutions numériques utiles au terrain et à la décision."}</p>
         </div>
         <div className="footer-links">
           <a href="https://github.com/Faniry1015" target="_blank" rel="noreferrer">

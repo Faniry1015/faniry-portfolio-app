@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Footer } from "@/ui/footer";
 import { Header } from "@/ui/header";
+import { SkipLink } from "@/ui/skip-link";
 import "./globals.css";
 
 const poppins = localFont({
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
   creator: "Faniriantsoa Randriaharimino",
   alternates: {
     canonical: "/",
+    languages: { fr: "/", en: "/en" },
   },
   openGraph: {
     type: "website",
@@ -74,9 +76,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${poppins.variable} ${quicksand.variable}`}>
       <body>
-        <a className="skip-link" href="#contenu">
-          Aller au contenu
-        </a>
+        <SkipLink />
         <Header />
         {children}
         <Footer />
