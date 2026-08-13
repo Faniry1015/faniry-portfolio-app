@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Check, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -102,6 +103,9 @@ export function Header() {
             </Link>
           ))}
           <a href={cvPath} download onClick={() => setOpen(false)}>CV (PDF)</a>
+          <a className="button button--compact" href="#contact" onClick={() => setOpen(false)}>
+            {isEnglish ? "Contact me" : "Parler d’une mission"}
+          </a>
           <div className={`language-menu ${languageOpen ? "is-open" : ""}`} ref={languageMenuRef}>
             <button
               className="language-menu__trigger"
@@ -111,7 +115,7 @@ export function Header() {
               aria-controls="language-options"
               onClick={() => setLanguageOpen((value) => !value)}
             >
-              <span className="language-menu__flag" aria-hidden="true">{isEnglish ? "🇬🇧" : "🇫🇷"}</span>
+              <Image className="language-menu__flag" src={isEnglish ? "/flags/gb.png" : "/flags/fr.png"} alt="" width={22} height={15} />
               <span className="language-menu__code">{isEnglish ? "ENG" : "FR"}</span>
               <ChevronDown size={15} aria-hidden="true" />
             </button>
@@ -127,7 +131,7 @@ export function Header() {
                 aria-current={!isEnglish ? "page" : undefined}
                 onClick={() => { setLanguageOpen(false); setOpen(false); }}
               >
-                <span className="language-menu__flag" aria-hidden="true">🇫🇷</span>
+                <Image className="language-menu__flag" src="/flags/fr.png" alt="" width={22} height={15} />
                 <span>FR</span>
                 {!isEnglish ? <Check size={15} aria-hidden="true" /> : null}
               </Link>
@@ -137,15 +141,12 @@ export function Header() {
                 aria-current={isEnglish ? "page" : undefined}
                 onClick={() => { setLanguageOpen(false); setOpen(false); }}
               >
-                <span className="language-menu__flag" aria-hidden="true">🇬🇧</span>
+                <Image className="language-menu__flag" src="/flags/gb.png" alt="" width={22} height={15} />
                 <span>ENG</span>
                 {isEnglish ? <Check size={15} aria-hidden="true" /> : null}
               </Link>
             </div>
           </div>
-          <a className="button button--compact" href="mailto:frandriaharimino@yahoo.com">
-            {isEnglish ? "Discuss an assignment" : "Parler d’une mission"}
-          </a>
         </nav>
       </div>
     </header>

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { ProjectCard } from "@/ui/project-card";
 import { SectionHeading } from "@/ui/section-heading";
+import { ContactForm } from "@/ui/contact-form";
 import { capabilities, expertise, projects } from "@/data/portfolio";
 
 const processSteps = [
@@ -368,18 +369,13 @@ export default function Home() {
 
       <section className="contact-section" id="contact">
         <div className="shell contact-panel">
-          <div>
+          <div className="contact-copy">
             <p className="eyebrow">Un besoin, une idée, un projet ?</p>
             <h2>Fiabilisons vos données et votre pilotage.</h2>
             <p>
               Audit qualité, système MEL numérique ou mission de recherche à Madagascar :
               commençons par clarifier le résultat attendu.
             </p>
-          </div>
-          <div className="contact-actions">
-            <a className="button button--light" href="mailto:frandriaharimino@yahoo.com">
-              <Mail size={19} aria-hidden="true" /> Écrire un message
-            </a>
             <div className="contact-details">
               <span><Mail size={17} aria-hidden="true" /> frandriaharimino@yahoo.com</span>
               <a href="tel:+261340871766"><Phone size={17} aria-hidden="true" /> +261 34 08 717 66</a>
@@ -392,6 +388,7 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <ContactForm />
         </div>
       </section>
     </main>
