@@ -10,6 +10,8 @@ import {
   Download,
   Mail,
   MapPin,
+  MessageCircle,
+  Phone,
   Sprout,
   Workflow,
 } from "lucide-react";
@@ -378,7 +380,17 @@ export default function Home() {
             <a className="button button--light" href="mailto:frandriaharimino@yahoo.com">
               <Mail size={19} aria-hidden="true" /> Écrire un message
             </a>
-            <a href="tel:+261340871766">+261 34 08 717 66</a>
+            <div className="contact-details">
+              <span><Mail size={17} aria-hidden="true" /> frandriaharimino@yahoo.com</span>
+              <a href="tel:+261340871766"><Phone size={17} aria-hidden="true" /> +261 34 08 717 66</a>
+              <a
+                href="https://wa.me/261340581360?text=Bonjour%20Faniriantsoa%2C%20je%20vous%20contacte%20depuis%20votre%20portfolio."
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle size={17} aria-hidden="true" /> WhatsApp&nbsp;: +261 34 05 813 60
+              </a>
+            </div>
           </div>
         </div>
       </section>

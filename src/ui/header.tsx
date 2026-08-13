@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Check, ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const navigationFr = [
@@ -21,6 +21,8 @@ const navigationEn = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
   const navigation = isEnglish ? navigationEn : navigationFr;
@@ -37,10 +39,38 @@ export function Header() {
     document.documentElement.lang = isEnglish ? "en" : "fr";
   }, [isEnglish]);
 
+  useEffect(() => {
+    if (!languageOpen) return;
+
+    function closeOnOutsideClick(event: PointerEvent) {
+      if (!languageMenuRef.current?.contains(event.target as Node)) {
+        setLanguageOpen(false);
+      }
+    }
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setLanguageOpen(false);
+    }
+
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [languageOpen]);
+
+  const frenchPath = isEnglish ? alternatePath : pathname;
+  const englishPath = isEnglish ? pathname : alternatePath;
+
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <Link className="brand" href="/" aria-label="Accueil — Faniriantsoa Randriaharimino">
+        <Link
+          className="brand"
+          href={isEnglish ? "/en" : "/"}
+          aria-label={isEnglish ? "Home — Faniriantsoa Randriaharimino" : "Accueil — Faniriantsoa Randriaharimino"}
+        >
           <span className="brand-mark" aria-hidden="true">
             FR
           </span>
@@ -72,11 +102,47 @@ export function Header() {
             </Link>
           ))}
           <a href={cvPath} download onClick={() => setOpen(false)}>CV (PDF)</a>
-          <span className="language-switch" aria-label={isEnglish ? "Language" : "Langue"}>
-            <Link href={isEnglish ? alternatePath : pathname} aria-current={isEnglish ? undefined : "page"}>FR</Link>
-            <span aria-hidden="true">/</span>
-            <Link href={isEnglish ? pathname : alternatePath} aria-current={isEnglish ? "page" : undefined}>EN</Link>
-          </span>
+          <div className={`language-menu ${languageOpen ? "is-open" : ""}`} ref={languageMenuRef}>
+            <button
+              className="language-menu__trigger"
+              type="button"
+              aria-label={isEnglish ? "Change language" : "Changer de langue"}
+              aria-expanded={languageOpen}
+              aria-controls="language-options"
+              onClick={() => setLanguageOpen((value) => !value)}
+            >
+              <span className="language-menu__flag" aria-hidden="true">{isEnglish ? "🇬🇧" : "🇫🇷"}</span>
+              <span className="language-menu__code">{isEnglish ? "ENG" : "FR"}</span>
+              <ChevronDown size={15} aria-hidden="true" />
+            </button>
+            <div
+              className="language-menu__panel"
+              id="language-options"
+              aria-label={isEnglish ? "Language options" : "Choix de langue"}
+              hidden={!languageOpen}
+            >
+              <Link
+                className={!isEnglish ? "is-current" : ""}
+                href={frenchPath}
+                aria-current={!isEnglish ? "page" : undefined}
+                onClick={() => { setLanguageOpen(false); setOpen(false); }}
+              >
+                <span className="language-menu__flag" aria-hidden="true">🇫🇷</span>
+                <span>FR</span>
+                {!isEnglish ? <Check size={15} aria-hidden="true" /> : null}
+              </Link>
+              <Link
+                className={isEnglish ? "is-current" : ""}
+                href={englishPath}
+                aria-current={isEnglish ? "page" : undefined}
+                onClick={() => { setLanguageOpen(false); setOpen(false); }}
+              >
+                <span className="language-menu__flag" aria-hidden="true">🇬🇧</span>
+                <span>ENG</span>
+                {isEnglish ? <Check size={15} aria-hidden="true" /> : null}
+              </Link>
+            </div>
+          </div>
           <a className="button button--compact" href="mailto:frandriaharimino@yahoo.com">
             {isEnglish ? "Discuss an assignment" : "Parler d’une mission"}
           </a>

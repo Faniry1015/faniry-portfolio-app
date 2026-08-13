@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowDown, ArrowRight, BarChart3, CheckCircle2, Code2, ContactRound,
-  Database, Download, Mail, MapPin, Sprout, Workflow,
+  Database, Download, Mail, MapPin, MessageCircle, Phone, Sprout, Workflow,
 } from "lucide-react";
 import { ProjectCard } from "@/ui/project-card";
 import { SectionHeading } from "@/ui/section-heading";
@@ -101,7 +101,7 @@ export default function EnglishHome() {
         </div>
       </div></section>
 
-      <section className="contact-section" id="contact"><div className="shell contact-panel"><div><p className="eyebrow">A need, an idea, a project?</p><h2>Let us strengthen your data and project management.</h2><p>Data quality audit, digital MEL system or research assignment in Madagascar: let us start by clarifying the expected result.</p></div><div className="contact-actions"><a className="button button--light" href="mailto:frandriaharimino@yahoo.com"><Mail size={19} aria-hidden="true" /> Send a message</a><a href="tel:+261340871766">+261 34 08 717 66</a></div></div></section>
+      <section className="contact-section" id="contact"><div className="shell contact-panel"><div><p className="eyebrow">A need, an idea, a project?</p><h2>Let us strengthen your data and project management.</h2><p>Data quality audit, digital MEL system or research assignment in Madagascar: let us start by clarifying the expected result.</p></div><div className="contact-actions"><a className="button button--light" href="mailto:frandriaharimino@yahoo.com"><Mail size={19} aria-hidden="true" /> Send a message</a><div className="contact-details"><span><Mail size={17} aria-hidden="true" /> frandriaharimino@yahoo.com</span><a href="tel:+261340871766"><Phone size={17} aria-hidden="true" /> +261 34 08 717 66</a><a href="https://wa.me/261340581360?text=Hello%20Faniriantsoa%2C%20I%20am%20contacting%20you%20from%20your%20portfolio." target="_blank" rel="noreferrer"><MessageCircle size={17} aria-hidden="true" /> WhatsApp: +261 34 05 813 60</a></div></div></div></section>
     </main>
   );
 }
