@@ -3,15 +3,12 @@ import {
   ArrowDown,
   ArrowRight,
   BarChart3,
-  Braces,
   CheckCircle2,
   Code2,
   ContactRound,
   Database,
   Mail,
   MapPin,
-  Smartphone,
-  Sparkles,
   Sprout,
   Workflow,
 } from "lucide-react";
@@ -28,21 +25,51 @@ const processSteps = [
   },
   {
     number: "02",
-    title: "Structurer le métier et la donnée",
+    title: "Auditer et structurer",
     description:
-      "Transformer les règles, indicateurs et parcours en un modèle cohérent, testable et durable.",
+      "Vérifier les indicateurs, les sources, les règles de qualité et les parcours de données avant de bâtir la réponse.",
   },
   {
     number: "03",
-    title: "Concevoir et développer",
+    title: "Construire la réponse",
     description:
-      "Construire une expérience simple sur une architecture full-stack adaptée au niveau de risque du produit.",
+      "Mettre en place les outils, procédures, tableaux de bord ou systèmes numériques adaptés au niveau de risque.",
   },
   {
     number: "04",
-    title: "Livrer et accompagner",
+    title: "Transférer et améliorer",
     description:
-      "Tester les cas métier, documenter, déployer et préparer les utilisateurs à prendre en main la solution.",
+      "Tester, documenter, former les utilisateurs et organiser une amélioration continue fondée sur les retours du terrain.",
+  },
+];
+
+const priorityServices = [
+  {
+    icon: Database,
+    label: "Offre d’entrée",
+    title: "Data Quality Audit",
+    description:
+      "Un diagnostic court pour identifier les anomalies, les risques et les corrections prioritaires dans votre chaîne de données.",
+    deliverables: ["Revue des outils et bases", "Contrôles de cohérence", "Plan d’action priorisé"],
+    subject: "Échange — Data Quality Audit",
+  },
+  {
+    icon: Workflow,
+    label: "Système complet",
+    title: "Digital M&E System",
+    description:
+      "Un dispositif cohérent qui relie indicateurs, collecte, base de données, dashboard, procédures et appropriation par l’équipe.",
+    deliverables: ["Architecture MEL & data", "Collecte et tableaux de bord", "Documentation et formation"],
+    subject: "Échange — Digital M&E System",
+  },
+  {
+    icon: MapPin,
+    label: "Partenaire local",
+    title: "Madagascar Research & Field Partner",
+    description:
+      "Un relais opérationnel à Madagascar pour préparer et coordonner des études, enquêtes et missions de terrain fiables.",
+    deliverables: ["Équipes et logistique terrain", "Collecte numérique et SIG", "Qualité et reporting"],
+    subject: "Échange — Madagascar Research & Field Partner",
   },
 ];
 
@@ -52,7 +79,7 @@ const structuredData = {
   name: "Faniriantsoa Randriaharimino",
   url: "https://faniriantsoa-portfolio.firebaseapp.com",
   image: "https://faniriantsoa-portfolio.firebaseapp.com/images/faniry.png",
-  jobTitle: "Concepteur-développeur full-stack et mobile",
+  jobTitle: "Consultant Data, MEL, Digital Systems et GIS",
   address: {
     "@type": "PostalAddress",
     addressCountry: "MG",
@@ -64,10 +91,11 @@ const structuredData = {
   knowsAbout: [
     "Agriculture numérique",
     "Suivi-évaluation",
+    "Qualité des données",
+    "Systèmes d’information",
+    "Systèmes d’information géographique",
+    "Recherche terrain",
     "Analyse de données",
-    "Next.js",
-    "Flutter",
-    "PostgreSQL",
   ],
 };
 
@@ -85,22 +113,23 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow">
               <span className="eyebrow-dot" />
-              Agriculture numérique • Suivi-évaluation • Data
+              Data • MEL • Digital Systems • GIS
             </p>
             <h1>
-              Je développe des outils numériques au service {" "}
-              <span>du terrain et de la décision.</span>
+              J’aide les projets à passer de la {" "}
+              <span>donnée terrain à la décision.</span>
             </h1>
             <p className="hero-lead">
-              Plateformes web, applications mobiles et systèmes d’aide à la décision —
-              de l’analyse du besoin métier jusqu’au déploiement et à l’accompagnement.
+              Collecte numérique, qualité des données, suivi-évaluation, SIG,
+              dashboards et systèmes métier — à Madagascar, à distance ou comme
+              partenaire local.
             </p>
             <div className="hero-actions">
               <a className="button" href="#projets">
-                Découvrir mes projets <ArrowDown size={18} aria-hidden="true" />
+                Voir les études de cas <ArrowDown size={18} aria-hidden="true" />
               </a>
-              <a className="button button--ghost" href="mailto:frandriaharimino@yahoo.com">
-                Parler d’un besoin <ArrowRight size={18} aria-hidden="true" />
+              <a className="button button--ghost" href="mailto:frandriaharimino@yahoo.com?subject=Échange%20sur%20une%20mission">
+                Parler d’une mission <ArrowRight size={18} aria-hidden="true" />
               </a>
             </div>
             <div className="hero-location">
@@ -122,50 +151,93 @@ export default function Home() {
               <div className="portrait-card__caption">
                 <span className="status-dot" />
                 <div>
-                  <strong>Concepteur-développeur</strong>
-                  <small>Full-stack • Mobile • Data</small>
+                  <strong>Consultant & partenaire local</strong>
+                  <small>Data • MEL • Digital • GIS</small>
                 </div>
               </div>
             </div>
             <div className="hero-signal hero-signal--top">
               <Database size={18} aria-hidden="true" />
               <span>
-                <small>Données</small>
-                PostgreSQL · Supabase
+                <small>Chaîne complète</small>
+                Terrain → reporting
               </span>
             </div>
             <div className="hero-signal hero-signal--bottom">
               <Workflow size={18} aria-hidden="true" />
               <span>
-                <small>Produits métier</small>
-                Web · Mobile · IA
+                <small>Deux formats</small>
+                Consultant · équipe locale
               </span>
             </div>
           </div>
         </div>
 
-        <div className="shell proof-strip" aria-label="Principales expertises techniques">
-          <span>
-            <Braces size={18} aria-hidden="true" /> Next.js & TypeScript
-          </span>
-          <span>
-            <Smartphone size={18} aria-hidden="true" /> Flutter offline-first
-          </span>
-          <span>
-            <BarChart3 size={18} aria-hidden="true" /> Indicateurs & dashboards
-          </span>
-          <span>
-            <Sparkles size={18} aria-hidden="true" /> Recherche & IA appliquée
-          </span>
+        <div className="shell proof-strip" aria-label="Principales preuves d’expérience">
+          <div className="proof-item">
+            <Sprout size={18} aria-hidden="true" />
+            <span><strong>12+ ans</strong><small>développement rural</small></span>
+          </div>
+          <div className="proof-item">
+            <Workflow size={18} aria-hidden="true" />
+            <span><strong>8+ ans</strong><small>suivi-évaluation</small></span>
+          </div>
+          <div className="proof-item">
+            <BarChart3 size={18} aria-hidden="true" />
+            <span><strong>48 rapports</strong><small>produits et consolidés</small></span>
+          </div>
+          <div className="proof-item">
+            <MapPin size={18} aria-hidden="true" />
+            <span><strong>13 000+ producteurs</strong><small>registre régional contrôlé</small></span>
+          </div>
         </div>
       </section>
 
-      <section className="section" id="expertise">
+      <section className="section" id="services">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Services prioritaires"
+            title="Trois réponses concrètes aux besoins des projets de développement."
+            description="Une intervention peut commencer par un diagnostic ciblé, évoluer vers un système complet ou mobiliser une capacité locale de recherche et de coordination à Madagascar."
+          />
+          <div className="services-grid">
+            {priorityServices.map((service) => {
+              const Icon = service.icon;
+
+              return (
+                <article className="service-card" key={service.title}>
+                  <div className="service-card__topline">
+                    <span className="service-card__icon"><Icon size={21} aria-hidden="true" /></span>
+                    <span className="service-card__label">{service.label}</span>
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <ul>
+                    {service.deliverables.map((deliverable) => (
+                      <li key={deliverable}>
+                        <CheckCircle2 size={16} aria-hidden="true" /> {deliverable}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    className="text-link"
+                    href={`mailto:frandriaharimino@yahoo.com?subject=${encodeURIComponent(service.subject)}`}
+                  >
+                    Discuter de ce besoin <ArrowRight size={17} aria-hidden="true" />
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tint" id="expertise">
         <div className="shell">
           <SectionHeading
             eyebrow="Mes domaines d’intervention"
-            title="Le métier d’abord. La technologie au service du résultat."
-            description="Je travaille à l’intersection des besoins terrain, des systèmes d’information et de l’ingénierie logicielle."
+            title="Une chaîne continue entre terrain, données et décision."
+            description="Je combine expérience institutionnelle, méthodes MEL, analyse, SIG et ingénierie numérique pour traiter le problème dans son ensemble."
           />
           <div className="expertise-grid">
             {expertise.map((item) => (
@@ -186,12 +258,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--tint" id="projets">
+      <section className="section" id="projets">
         <div className="shell">
           <SectionHeading
             eyebrow="Études de cas"
-            title="Des produits complets, conçus pour des usages réels."
-            description="Chaque projet part d’un problème métier concret et relie interface, données, règles de gestion et déploiement."
+            title="Des systèmes, études et livrables ancrés dans le réel."
+            description="Ces expériences illustrent la chaîne complète : enquête terrain, qualité des données, suivi-évaluation, capitalisation et outils numériques."
           />
           <div className="projects-grid">
             {projects.map((project) => (
@@ -205,8 +277,8 @@ export default function Home() {
         <div className="shell">
           <SectionHeading
             eyebrow="Mon approche"
-            title="De l’idée au produit exploitable."
-            description="Une méthode simple pour réduire les incompréhensions, fiabiliser les données et livrer une solution qui peut réellement être utilisée."
+            title="Du besoin à un dispositif réellement exploitable."
+            description="Une méthode simple pour clarifier les décisions à soutenir, fiabiliser les données et transférer une solution que les équipes peuvent utiliser."
           />
           <div className="process-grid">
             {processSteps.map((step) => (
@@ -224,10 +296,10 @@ export default function Home() {
         <div className="shell capabilities-layout">
           <div className="capabilities-intro">
             <p className="eyebrow">Capacités</p>
-            <h2 id="capacites-title">Une vision de produit, une pratique full-stack.</h2>
+            <h2 id="capacites-title">Une expertise hybride, du cadre de résultats au système numérique.</h2>
             <p>
-              J’interviens sur toute la chaîne utile : compréhension du besoin,
-              architecture, données, interfaces, tests, déploiement et documentation.
+              J’interviens sur toute la chaîne utile : conception du dispositif,
+              collecte, qualité, analyse, cartographie, restitution et accompagnement.
             </p>
           </div>
           <div className="capabilities-list">
@@ -255,15 +327,15 @@ export default function Home() {
             <p className="eyebrow">À propos</p>
             <h2>Une double lecture : le terrain et le système.</h2>
             <p className="about-lead">
-              Je conçois des outils numériques pour des environnements où la qualité des
-              données, la simplicité d’usage et la compréhension du métier sont
-              indissociables.
+              Je travaille avec les projets de développement dans des environnements où
+              la qualité des données, la compréhension du terrain et la simplicité des
+              systèmes sont indissociables.
             </p>
             <p>
-              Mon travail couvre aujourd’hui des plateformes agricoles bilingues, des
-              systèmes de suivi-évaluation, des applications mobiles hors connexion et
-              des dashboards institutionnels. Cette diversité me permet de dialoguer
-              avec les utilisateurs métier comme avec les équipes techniques.
+              Plus de douze années dans le développement rural et plus de huit années en
+              suivi-évaluation me permettent de dialoguer avec les équipes terrain, les
+              institutions, les chercheurs et les développeurs — puis de traduire leurs
+              besoins en processus, données et outils utilisables.
             </p>
             <div className="about-links">
               <a
@@ -289,10 +361,10 @@ export default function Home() {
         <div className="shell contact-panel">
           <div>
             <p className="eyebrow">Un besoin, une idée, un projet ?</p>
-            <h2>Construisons une solution utile et durable.</h2>
+            <h2>Fiabilisons vos données et votre pilotage.</h2>
             <p>
-              Agriculture, suivi-évaluation, data ou application métier : commençons
-              par clarifier le problème à résoudre.
+              Audit qualité, système MEL numérique ou mission de recherche à Madagascar :
+              commençons par clarifier le résultat attendu.
             </p>
           </div>
           <div className="contact-actions">

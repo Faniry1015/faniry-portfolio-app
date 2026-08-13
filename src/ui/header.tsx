@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navigation = [
-  { label: "Expertise", href: "/#expertise" },
-  { label: "Projets", href: "/#projets" },
+  { label: "Services", href: "/#services" },
+  { label: "Études de cas", href: "/#projets" },
   { label: "Approche", href: "/#approche" },
-  { label: "À propos", href: "/#a-propos" },
+  { label: "Profil", href: "/#a-propos" },
 ];
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
           </span>
           <span className="brand-copy">
             <strong>Faniriantsoa</strong>
-            <small>Solutions numériques métier</small>
+            <small>Data • MEL • Digital • GIS</small>
           </span>
         </Link>
 
@@ -49,7 +49,7 @@ export function Header() {
             </Link>
           ))}
           <a className="button button--compact" href="mailto:frandriaharimino@yahoo.com">
-            Me contacter
+            Parler d’une mission
           </a>
         </nav>
       </div>

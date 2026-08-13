@@ -9,6 +9,8 @@ import {
   Check,
   Coins,
   ExternalLink,
+  BarChart3,
+  MapPinned,
   Smartphone,
   Sprout,
 } from "lucide-react";
@@ -50,9 +52,59 @@ export async function generateMetadata({
 }
 
 function CaseVisual({ project }: { project: Project }) {
-  if (project.visual === "image" && project.image) {
+  if (project.visual === "registry") {
     return (
-      <div className="case-visual case-visual--image">
+      <div className="case-visual case-visual--evidence case-visual--registry" aria-hidden="true">
+        <div className="case-evidence-brand case-evidence-brand--minae">
+          <Image src="/projects/logo-minae.png" alt="" fill sizes="190px" />
+        </div>
+        <strong>13 041 matricules producteurs uniques</strong>
+        <span>7 districts • 67 communes • supervision • validation</span>
+      </div>
+    );
+  }
+
+  if (project.visual === "research") {
+    return (
+      <div className="case-visual case-visual--evidence case-visual--research" aria-hidden="true">
+        <MapPinned size={92} strokeWidth={1.2} />
+        <strong>Dénombrement • enquêtes • rendement</strong>
+        <span>Itinéraires • collecte CAPI • encadrement • contrôle qualité</span>
+      </div>
+    );
+  }
+
+  if (project.visual === "mel") {
+    return (
+      <div className="case-visual case-visual--evidence case-visual--mel" aria-hidden="true">
+        <BarChart3 size={92} strokeWidth={1.2} />
+        <strong>48 rapports périodiques</strong>
+        <span>PTAB • indicateurs • suivi physique et financier</span>
+      </div>
+    );
+  }
+
+  if (project.visual === "report") {
+    return (
+      <div className="case-visual case-visual--evidence case-visual--report" aria-hidden="true">
+        <div className="case-evidence-brand case-evidence-brand--purpa">
+          <Image src="/projects/logo-purpa.jpg" alt="" fill sizes="210px" />
+        </div>
+        <strong>Rapport final & capitalisation</strong>
+        <span>Consolidation • restitution • apprentissage</span>
+      </div>
+    );
+  }
+
+  if (project.visual === "image" && project.image) {
+    const isFieldPhoto =
+      project.slug === "jircas-tsukuba-recherche-terrain" ||
+      project.slug === "enquetes-agricoles-rga-eaa";
+
+    return (
+      <div
+        className={`case-visual case-visual--image ${isFieldPhoto ? "case-visual--photo" : ""}`}
+      >
         <Image
           src={project.image}
           alt={project.imageAlt ?? ""}
@@ -60,6 +112,18 @@ function CaseVisual({ project }: { project: Project }) {
           priority
           sizes="(max-width: 800px) 100vw, 45vw"
         />
+        {project.slug === "jircas-tsukuba-recherche-terrain" ? (
+          <div className="case-photo-stats" aria-label="Repères de l’enquête JIRCAS">
+            <span><strong>600</strong> ménages</span>
+            <span><strong>25</strong> communes</span>
+          </div>
+        ) : null}
+        {project.slug === "enquetes-agricoles-rga-eaa" ? (
+          <div className="case-photo-stats case-photo-stats--rga" aria-label="Repères des enquêtes RGA et EAA">
+            <span>Dénombrement • enquêtes • rendement</span>
+            <span>CAPI • itinéraires • encadrement • qualité</span>
+          </div>
+        ) : null}
       </div>
     );
   }
@@ -120,12 +184,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </span>
                 {project.externalUrl ? (
                   <a
-                    className="text-link"
+                    className="button button--compact"
                     href={project.externalUrl}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Voir ${project.title} en ligne dans un nouvel onglet`}
                   >
-                    Visiter le projet <ExternalLink size={16} aria-hidden="true" />
+                    Voir le projet en ligne <ExternalLink size={16} aria-hidden="true" />
                   </a>
                 ) : null}
               </div>
@@ -179,8 +244,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="section section--tint">
         <div className="shell">
           <SectionTitle
-            eyebrow="Fonctionnalités"
-            title="Les briques principales de la solution."
+            eyebrow="Composantes clés"
+            title="Les principales dimensions de l’intervention."
           />
           <div className="feature-grid">
             {project.features.map((feature) => (
@@ -191,7 +256,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             ))}
           </div>
           <div className="case-stack">
-            <p className="case-label">Socle technique</p>
+            <p className="case-label">Outils et méthodes</p>
             <ul className="tag-list tag-list--large">
               {project.stack.map((technology) => (
                 <li key={technology}>{technology}</li>

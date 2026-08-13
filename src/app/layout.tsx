@@ -23,20 +23,19 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Faniriantsoa Randriaharimino — Solutions numériques métier",
+    default: "Faniriantsoa Randriaharimino — Data, MEL, Digital & GIS",
     template: "%s — Faniriantsoa Randriaharimino",
   },
   description:
-    "Concepteur-développeur full-stack et mobile spécialisé en agriculture numérique, suivi-évaluation, data et applications métier.",
+    "Consultant à Madagascar en qualité des données, suivi-évaluation, systèmes numériques, SIG et coordination de recherches terrain.",
   keywords: [
-    "développeur Next.js Madagascar",
-    "agriculture numérique",
-    "suivi-évaluation",
-    "data analyst",
-    "développeur full-stack",
-    "Flutter",
-    "PostgreSQL",
-    "Supabase",
+    "consultant suivi-évaluation Madagascar",
+    "Data Quality Audit",
+    "Digital M&E System",
+    "research field partner Madagascar",
+    "SIG Madagascar",
+    "collecte numérique",
+    "reporting bailleur",
   ],
   authors: [{ name: "Faniriantsoa Randriaharimino" }],
   creator: "Faniriantsoa Randriaharimino",
@@ -48,21 +47,21 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "/",
     siteName: "Portfolio de Faniriantsoa Randriaharimino",
-    title: "Solutions numériques pour l’agriculture, le suivi-évaluation et la data",
+    title: "Data, MEL, Digital & GIS pour les projets de développement",
     description:
-      "Plateformes web, applications mobiles et systèmes de données conçus pour des besoins métier réels.",
+      "De la donnée terrain au reporting : qualité, suivi-évaluation, SIG, systèmes numériques et recherche à Madagascar.",
     images: [
       {
         url: "/og.png",
-        alt: "Faniriantsoa Randriaharimino — Agriculture numérique, suivi-évaluation et data",
+        alt: "Faniriantsoa Randriaharimino — Data, MEL, Digital et GIS",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Faniriantsoa Randriaharimino — Solutions numériques métier",
+    title: "Faniriantsoa Randriaharimino — Data, MEL, Digital & GIS",
     description:
-      "Agriculture numérique, suivi-évaluation, data et développement full-stack.",
+      "Qualité des données, suivi-évaluation, SIG, systèmes numériques et recherche terrain à Madagascar.",
     images: ["/og.png"],
   },
 };
