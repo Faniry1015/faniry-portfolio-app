@@ -7,6 +7,7 @@ import {
   Code2,
   ContactRound,
   Database,
+  Download,
   Mail,
   MapPin,
   Sprout,
@@ -338,6 +339,12 @@ export default function Home() {
               besoins en processus, données et outils utilisables.
             </p>
             <div className="about-links">
+              <a
+                href="/documents/CV_Faniriantsoa_RANDRIAHARIMINO.pdf"
+                download
+              >
+                <Download size={19} aria-hidden="true" /> Télécharger mon CV (PDF)
+              </a>
               <a
                 href="https://github.com/Faniry1015"
                 target="_blank"

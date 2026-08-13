@@ -265,7 +265,7 @@ export const projects: Project[] = [
     solution:
       "Un circuit de supervision combinant collecte numérique, accès superviseur à la plateforme, consolidation des fichiers, contrôles d’identité et de couverture territoriale, retour aux équipes et validation progressive.",
     impact:
-      "L’extrait régional audité au 4 juillet 2024 contient 13 141 enregistrements et 13 041 matricules producteurs uniques après contrôle des doublons, couvrant les sept districts et 67 communes.",
+      "Au 4 juillet 2024, le registre régional comptait 13 141 enregistrements et 13 041 matricules producteurs uniques après contrôle des doublons, dans les sept districts et 67 communes.",
     features: [
       "Coordination de la collecte dans 7 districts",
       "Contrôle de 13 141 enregistrements",

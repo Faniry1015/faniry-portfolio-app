@@ -11,6 +11,8 @@ const navigation = [
   { label: "Profil", href: "/#a-propos" },
 ];
 
+const cvPath = "/documents/CV_Faniriantsoa_RANDRIAHARIMINO.pdf";
+
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -48,6 +50,9 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a href={cvPath} download onClick={() => setOpen(false)}>
+            CV (PDF)
+          </a>
           <a className="button button--compact" href="mailto:frandriaharimino@yahoo.com">
             Parler d’une mission
           </a>
