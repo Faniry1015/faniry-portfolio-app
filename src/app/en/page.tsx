@@ -40,7 +40,7 @@ export default function EnglishHome() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="shell hero-layout">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-dot" />Data • MEL • Digital Systems • GIS</p>
+            <p className="eyebrow"><span className="eyebrow-dot" />Agricultural engineer • Data • MEL • Digital • GIS</p>
             <h1>I help projects move from <span>field data to decisions.</span></h1>
             <p className="hero-lead">Digital data collection, data quality, monitoring and evaluation, GIS, dashboards and business systems - in Madagascar, remotely or as a local partner.</p>
             <div className="hero-actions">
@@ -53,7 +53,7 @@ export default function EnglishHome() {
             <div className="portrait-card">
               <div className="portrait-card__accent" />
               <Image src="/images/faniry.png" alt="Faniriantsoa Randriaharimino" width={324} height={332} priority />
-              <div className="portrait-card__caption"><span className="status-dot" /><div><strong>Consultant & local partner</strong><small>Data • MEL • Digital • GIS</small></div></div>
+              <div className="portrait-card__caption"><span className="status-dot" /><div><strong>Agricultural engineer & consultant</strong><small>Data • MEL • Digital • GIS</small></div></div>
             </div>
             <div className="hero-signal hero-signal--top"><Database size={18} aria-hidden="true" /><span><small>End-to-end chain</small>Field → reporting</span></div>
             <div className="hero-signal hero-signal--bottom"><Workflow size={18} aria-hidden="true" /><span><small>Two delivery models</small>Consultant · local team</span></div>

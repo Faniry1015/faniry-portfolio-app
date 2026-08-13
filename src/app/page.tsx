@@ -82,7 +82,7 @@ const structuredData = {
   name: "Faniriantsoa Randriaharimino",
   url: "https://faniriantsoa-portfolio.firebaseapp.com",
   image: "https://faniriantsoa-portfolio.firebaseapp.com/images/faniry.png",
-  jobTitle: "Consultant Data, MEL, Digital Systems et GIS",
+  jobTitle: "Ingénieur agronome et consultant Data, MEL, Digital Systems et GIS",
   address: {
     "@type": "PostalAddress",
     addressCountry: "MG",
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow">
               <span className="eyebrow-dot" />
-              Data • MEL • Digital Systems • GIS
+              Ingénieur agronome • Data • MEL • Digital • GIS
             </p>
             <h1>
               J’aide les projets à passer de la {" "}
@@ -154,7 +154,7 @@ export default function Home() {
               <div className="portrait-card__caption">
                 <span className="status-dot" />
                 <div>
-                  <strong>Consultant & partenaire local</strong>
+                  <strong>Ingénieur agronome & consultant</strong>
                   <small>Data • MEL • Digital • GIS</small>
                 </div>
               </div>
