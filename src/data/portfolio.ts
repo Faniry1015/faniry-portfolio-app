@@ -391,7 +391,7 @@ export const expertise = [
     title: "MEL & qualité des données",
     description:
       "Cadres de résultats, collecte, contrôles et reporting pour transformer les données en décisions fiables.",
-    items: ["Indicateurs", "Data Quality Audit", "PTA / PTAB", "Reporting bailleur"],
+    items: ["Indicateurs", "Assurance qualité des données", "PTA / PTAB", "Reporting bailleur"],
   },
   {
     number: "02",
@@ -412,7 +412,7 @@ export const expertise = [
 export const capabilities = [
   {
     title: "MEL & reporting",
-    items: ["PTAB", "Cadres de résultats", "Indicateurs", "Data Quality Audit", "Capitalisation"],
+    items: ["PTAB", "Cadres de résultats", "Indicateurs", "Qualité des données", "Capitalisation"],
   },
   {
     title: "Data & systèmes",

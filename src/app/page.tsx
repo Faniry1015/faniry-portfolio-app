@@ -49,22 +49,13 @@ const processSteps = [
 
 const priorityServices = [
   {
-    icon: Database,
-    label: "Offre d’entrée",
-    title: "Data Quality Audit",
-    description:
-      "Un diagnostic court pour identifier les anomalies, les risques et les corrections prioritaires dans votre chaîne de données.",
-    deliverables: ["Revue des outils et bases", "Contrôles de cohérence", "Plan d’action priorisé"],
-    subject: "Échange — Data Quality Audit",
-  },
-  {
     icon: Workflow,
-    label: "Système complet",
-    title: "Digital M&E System",
+    label: "Offre principale",
+    title: "Digital M&E & Data Systems",
     description:
-      "Un dispositif cohérent qui relie indicateurs, collecte, base de données, dashboard, procédures et appropriation par l’équipe.",
-    deliverables: ["Architecture MEL & data", "Collecte et tableaux de bord", "Documentation et formation"],
-    subject: "Échange — Digital M&E System",
+      "Un dispositif cohérent qui relie diagnostic et qualité des données, indicateurs, collecte, base, dashboard, procédures et appropriation par l’équipe.",
+    deliverables: ["Diagnostic MEL & qualité", "Collecte et tableaux de bord", "Documentation et formation"],
+    subject: "Échange — Digital M&E & Data Systems",
   },
   {
     icon: MapPin,
@@ -74,6 +65,15 @@ const priorityServices = [
       "Un relais opérationnel à Madagascar pour préparer et coordonner des études, enquêtes et missions de terrain fiables.",
     deliverables: ["Équipes et logistique terrain", "Collecte numérique et SIG", "Qualité et reporting"],
     subject: "Échange — Madagascar Research & Field Partner",
+  },
+  {
+    icon: BarChart3,
+    label: "Appui institutionnel",
+    title: "Reporting, Capitalisation & Programme Support",
+    description:
+      "Un appui pour consolider les résultats, produire les rapports, capitaliser les approches et coordonner les contributions des partenaires.",
+    deliverables: ["Consolidation des résultats", "Rapports et capitalisation", "Planification et coordination"],
+    subject: "Échange — Reporting, Capitalisation & Programme Support",
   },
 ];
 
@@ -341,6 +341,11 @@ export default function Home() {
               institutions, les chercheurs et les développeurs — puis de traduire leurs
               besoins en processus, données et outils utilisables.
             </p>
+            <p>
+              Mon expérience institutionnelle comprend également deux fonctions de point
+              focal ou homologue régional auprès de projets JICA : PASAN/SAHAZA de 2019 à
+              2024, puis SHEP depuis janvier 2026.
+            </p>
             <div className="about-links">
               <a
                 href="/documents/CV_Faniriantsoa_RANDRIAHARIMINO.pdf"
@@ -373,8 +378,8 @@ export default function Home() {
             <p className="eyebrow">Un besoin, une idée, un projet ?</p>
             <h2>Fiabilisons vos données et votre pilotage.</h2>
             <p>
-              Audit qualité, système MEL numérique ou mission de recherche à Madagascar :
-              commençons par clarifier le résultat attendu.
+              Système MEL numérique, mission de recherche à Madagascar, reporting ou appui
+              de programme : commençons par clarifier le résultat attendu.
             </p>
             <div className="contact-details">
               <span><Mail size={17} aria-hidden="true" /> frandriaharimino@yahoo.com</span>

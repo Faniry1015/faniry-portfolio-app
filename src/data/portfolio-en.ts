@@ -133,13 +133,13 @@ export const projectsEn: Project[] = [
 ];
 
 export const expertiseEn = [
-  { number: "01", title: "MEL & data quality", description: "Results frameworks, collection, controls and reporting that turn data into reliable decisions.", items: ["Indicators", "Data Quality Audit", "Annual work plans", "Donor reporting"] },
+  { number: "01", title: "MEL & data quality", description: "Results frameworks, collection, controls and reporting that turn data into reliable decisions.", items: ["Indicators", "Data quality assurance", "Annual work plans", "Donor reporting"] },
   { number: "02", title: "Digital systems", description: "Web and mobile tools that structure project workflows, data and dashboards.", items: ["Mobile collection", "Databases", "Dashboards", "Business applications"] },
   { number: "03", title: "GIS & field evidence", description: "Surveys, mapping and local coordination that document territorial realities rigorously.", items: ["QGIS / QField", "Digital surveys", "Field coordination", "Mapping"] },
 ];
 
 export const capabilitiesEn = [
-  { title: "MEL & reporting", items: ["Annual work plans", "Results frameworks", "Indicators", "Data Quality Audit", "Knowledge capture"] },
+  { title: "MEL & reporting", items: ["Annual work plans", "Results frameworks", "Indicators", "Data quality", "Knowledge capture"] },
   { title: "Data & systems", items: ["Kobo", "SQL", "PostgreSQL", "Python", "Dashboards", "Next.js", "Supabase"] },
   { title: "GIS & fieldwork", items: ["QGIS", "QField", "GPS", "Offline mobile", "Surveys", "Quality control"] },
   { title: "Sector & coordination", items: ["Rural development", "Public institutions", "Donors", "Research", "Malagasy / French / English"] },

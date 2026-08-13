@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "Consultant à Madagascar en qualité des données, suivi-évaluation, systèmes numériques, SIG et coordination de recherches terrain.",
   keywords: [
     "consultant suivi-évaluation Madagascar",
-    "Data Quality Audit",
-    "Digital M&E System",
+    "Digital M&E & Data Systems",
     "research field partner Madagascar",
+    "reporting bailleur et capitalisation",
     "SIG Madagascar",
     "collecte numérique",
     "reporting bailleur",
